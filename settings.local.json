@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git push:*)",
+      "SlashCommand(/BMad:agents:dev)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_file_upload",
+      "Bash(npm test:*)",
+      "Bash(aws amplify list-jobs:*)",
+      "Read(//Users/linus/.cache/**)",
+      "Read(//Users/linus/Library/Caches/ms-playwright/mcp-chrome-85b0855/**)",
+      "Bash(for f in .bmad-core/agents/*.md)",
+      "Bash(do echo \"=== $f ===\")",
+      "Bash(done)",
+      "Bash(aws amplify get-job:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
