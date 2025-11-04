@@ -1,15 +1,34 @@
+{%- comment -%} Full-screen hero with background image {%- endcomment -%}
+<div style="position: relative; width: 100%; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+  {%- if section.settings.hero_image -%}
+    <img src="{{ section.settings.hero_image | image_url: width: 2000 }}"
+         alt="{{ section.settings.heading }}"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+  {%- else -%}
+    {%- comment -%} Placeholder gradient background {%- endcomment -%}
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+  {%- endif -%}
+
+  {%- comment -%} Dark overlay for better text readability {%- endcomment -%}
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3);"></div>
+
+  {%- comment -%} Hero heading {%- endcomment -%}
+  <h1 style="position: relative; z-index: 10; color: #fff; font-size: clamp(3rem, 8vw, 6rem); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; padding: 0 1.5rem;">
+    {{ section.settings.heading }}
+  </h1>
+</div>
+
+{%- comment -%} Main content section with narrower width {%- endcomment -%}
 <div class="page-width section-{{ section.id }}-padding">
-  <div class="coaching-hero" style="max-width: 64rem; margin: 0 auto; padding: 4rem 1.5rem; text-align: center;">
+  <div class="coaching-hero" style="max-width: 48rem; margin: 0 auto; padding: 4rem 1.5rem;">
 
-    <h1 style="font-size: 3rem; font-weight: 300; margin-bottom: 2rem; line-height: 1.2;">
-      {{ section.settings.heading }}
-    </h1>
+    <div style="text-align: center; margin-bottom: 4rem;">
+      <p style="font-size: 1.25rem; color: #4a5568; line-height: 1.6;">
+        {{ section.settings.subheading }}
+      </p>
+    </div>
 
-    <p style="font-size: 1.25rem; color: #4a5568; margin-bottom: 4rem;">
-      {{ section.settings.subheading }}
-    </p>
-
-    <div style="max-width: 48rem; margin: 0 auto; padding: 2rem 0;">
+    <div style="padding: 2rem 0;">
       <h2 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 1.5rem; text-align: left;">
         {{ section.settings.question }}
       </h2>
@@ -43,10 +62,16 @@
   "name": "Coaching Hero",
   "settings": [
     {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image",
+      "info": "Recommended size: 2000x1200px. If no image is selected, a gradient placeholder will be shown."
+    },
+    {
       "type": "text",
       "id": "heading",
-      "label": "Main Heading",
-      "default": "Kreativt skapande"
+      "label": "Hero Heading",
+      "default": "COACHING"
     },
     {
       "type": "textarea",
