@@ -39,27 +39,37 @@ https://github.com/linusnikander/artblendart.com
 - [x] Create 4 coaching pages in Shopify admin
 - [x] Set URL handles and visibility
 - [x] Test all pages with Shopify styling
+- [x] Merge 4 separate pages into 1 unified page (following PDF order)
+- [x] Add anchor links from CTA buttons to contact form
+- [x] Set up URL redirect /coaching → /pages/coaching
 
-### 🎉 All Coaching Pages Live!
+### 🎉 Coaching Page Live!
 
-**Live Page URLs:**
-- ✅ https://artblendart.com/pages/coaching (Landing page)
-- ✅ https://artblendart.com/pages/coaching-about (About & Process)
-- ✅ https://artblendart.com/pages/coaching-who (Who & Topics)
-- ✅ https://artblendart.com/pages/coaching-contact (Contact/Booking)
+**Live URL:**
+- ✅ https://artblendart.com/pages/coaching (Single combined page with all content)
+- ✅ Redirect: /coaching → /pages/coaching
+
+**Page Structure:**
+- Single unified coaching page with 4 sections (following PDF order):
+  1. **Hero/Landing** - Main coaching introduction
+  2. **About & Process** - About Therese and how coaching works
+  3. **Who & Topics** - Client personas and themes explored
+  4. **Contact/Booking** - Application form at the bottom
+- All CTA buttons use `#contact` anchor links to scroll to form
+- Smooth in-page navigation
+- Contact form integrated with Shopify contact system
 
 **Page Details:**
-- All pages use Shopify Dawn theme styling
-- All pages set to "Visible" (accessible via direct URL)
-- Pages won't appear in search results automatically
-- Access via hardcoded "Coaching" link in navigation or direct URLs
-- Contact form integrated with Shopify contact system
+- Uses Shopify Dawn theme styling
+- Set to "Visible" (accessible via direct URL)
+- Access via "Coaching" link in main navigation
+- All content from PDF integrated into single page
 
 **Sections Created:**
 1. `coaching-hero.liquid` - Landing page hero section
 2. `coaching-about.liquid` - About Therese & process explanation
 3. `coaching-who.liquid` - Client personas & coaching themes
-4. `coaching-contact.liquid` - Contact form with 3-step process
+4. `coaching-contact.liquid` - Contact form with 3-step process (has `id="contact"` anchor)
 
 ### 📝 Future Improvements
 - [ ] Add proper menu management (replace hardcoded "Coaching" link)

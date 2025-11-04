@@ -1,6 +1,6 @@
 {
   "sections": {
-    "main": {
+    "hero": {
       "type": "coaching-hero",
       "settings": {
         "heading": "Kreativt skapande",
@@ -11,11 +11,161 @@
         "cta_text": "Den här coachingen är för dig som vill utforska, utvecklas och våga skapa på riktigt – på ditt eget sätt.",
         "cta_text_2": "Du behöver inte ha ett mål att prestera, bara en vilja att vara nyfiken och närvarande i din process.",
         "cta_button_text": "Boka gratis 15-minuters samtal",
-        "cta_link": "/pages/coaching-contact"
+        "cta_link": "#contact"
       }
+    },
+    "about": {
+      "type": "coaching-about",
+      "settings": {
+        "page_title": "Om mig & Hur går det till?",
+        "about_heading": "Om mig",
+        "about_content": "<p>Jag heter Therese Parner och är konstnär, kreativ coach, tidigare lärare inom konst och kulturarbetare inom offentlig sektor, med magisterexamen i fri konst samt över ett decenniums erfarenhet som yrkesverksam konstnär. Genom åren har jag arbetat med många olika uttryck och material – från trä och textil till lera, metall och andra oväntade kombinationer. Mina olika roller har lärt mig att möta skapande på många sätt och jag kan guida dig både kreativt och konkret.</p><p>För mig är naturen och utomhus som ett magiskt rum där tid och fantasi möts. Här kan idéer ta form, tankarna rensas och skapandeprocessen får egna andetag. Det är en stund utan prestation, där sinnet får vandra fritt och oväntade uppslag kan spira – en källa till själslig energi.</p><p>I coachingen möts lekfull nyfikenhet och handfast guidning. Oavsett om du söker konstnärlig fördjupning, ny inspiration eller en trygg plats för skapandeprocessen, finns jag här som samtalspartner, handledare och påhejare i ditt kreativa utforskande.</p>",
+        "location_note": "Coaching sker online, tillgängligt var du än är.",
+        "process_heading": "Hur går det till?",
+        "process_content": "<p>Vi börjar med en <strong>15 minuters avstämning</strong> på Teams eller telefon. Det är ett kort samtal där du får berätta vad du vill få ut av coachningen, och vi tillsammans känner av hur det känns att arbeta tillsammans, innan vi bokar in vårt första coachingtillfälle.</p><p>Min coachning består sedan av samtal, och min erfarenhet är att de flesta behöver minst <strong>tre tillfällen</strong> för att få en rättvisande bild av vad coachningen kan ge och känna sig trygga i processen. Samtalen är 60 minuter långa.</p>",
+        "first_session_heading": "Det första samtalet",
+        "first_session_content": "Utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål, få nya perspektiv på ditt skapande och redan här verktyg för att komma igång.",
+        "process_content_2": "<p>Efter varje samtal får du en <strong>skriftlig sammanfattning</strong> samt inspirerande hemuppgifter – praktiska, kreativa eller reflekterande – som gör att ditt arbete fortsätter utvecklas mellan mötena. Vi avslutar alltid varje samtal med en kort sammanfattning och en plan för vad du vill fokusera på fram till nästa gång.</p><p>Allt material skickas till dig, så att du har din process dokumenterad – ett personligt verktyg som du kan återvända till när du vill.</p><p><em>Du behöver inte förbereda dig inför det första samtalet, men om du reflekterar lite över vad du vill få ut av coachningen innan vi ses kan vi använda tiden ännu mer effektivt.</em></p>",
+        "cta_button_text": "Boka ditt första samtal",
+        "cta_link": "#contact"
+      }
+    },
+    "who": {
+      "type": "coaching-who",
+      "settings": {
+        "page_title": "För vem & Vad vi utforskar",
+        "personas_heading": "Exempel på klienter jag möter",
+        "themes_heading": "Exempel på teman vi kan utforska",
+        "closing_text": "Varje samtal anpassas helt efter dig – där du befinner dig i livet och i ditt skapande.",
+        "closing_text_bold": "Du behöver inte veta var du skall börja, vi utforskar det tillsammans.",
+        "cta_button_text": "Boka gratis konsultation",
+        "cta_link": "#contact"
+      },
+      "blocks": {
+        "persona_1": {
+          "type": "persona",
+          "settings": {
+            "name": "Den kreativa livsnjutaren",
+            "persona": "Eva, 59 år",
+            "description": "Du längtar efter att ge plats åt din kreativitet, kanske för första gången på länge, och vill fylla din fritid med något som ger extra mening. Skapandet är din egen plats att utvecklas på ditt sätt. Här får du stöd att hitta ditt uttryck, skapa utan krav och låta processen bli en källa till glädje, reflektion och balans."
+          }
+        },
+        "persona_2": {
+          "type": "persona",
+          "settings": {
+            "name": "Den målmedvetna sökaren",
+            "persona": "Leo, 26 år",
+            "description": "Du vet att du har något att säga, men behöver hjälp att forma din konstnärliga idé. Tillsammans arbetar vi med uttryck, portfölj, ansökningar eller projekt. Om du vill utforskar vi även ditt varför och bygger tillit till din inre drivkraft."
+          }
+        },
+        "persona_3": {
+          "type": "persona",
+          "settings": {
+            "name": "Den nyfikna hantverkaren",
+            "persona": "Erik, 45 år",
+            "description": "Du skapar redan – i trä, färg, tyg eller ord – men vill förstå mer och utvecklas vidare. Här får du feedback, tips och nya perspektiv som hjälper dig att ta ditt skapande till nästa nivå. Vill du kan vi även väva in ett mer holistiskt perspektiv, där skapandet blir en väg till närvaro och personlig utveckling."
+          }
+        },
+        "persona_4": {
+          "type": "persona",
+          "settings": {
+            "name": "Den uppvaknande kreatören",
+            "persona": "Sofia, 38 år",
+            "description": "Du har alltid haft fullt upp med jobb, vardag och ansvar, och kanske har du tänkt att du \"inte är kreativ\" eller att skapande inte är för dig. Nu känner du allt starkare att du vill ge utrymme åt kreativiteten – som en egen plats utanför yrkesrollen och vardagens måsten. Här får du stöd att börja utforska, experimentera och uttrycka dig på ditt sätt, utan krav, och upptäcka glädjen och friheten som skapandet kan ge."
+          }
+        },
+        "theme_1": {
+          "type": "theme",
+          "settings": {
+            "theme": "Bollplank och feedback på ditt skapande och din process"
+          }
+        },
+        "theme_2": {
+          "type": "theme",
+          "settings": {
+            "theme": "Hitta ditt steg in i kreativt skapande"
+          }
+        },
+        "theme_3": {
+          "type": "theme",
+          "settings": {
+            "theme": "Utveckla teknik, material och formspråk"
+          }
+        },
+        "theme_4": {
+          "type": "theme",
+          "settings": {
+            "theme": "Stöd i skapandevanor och kreativitet i vardagen"
+          }
+        },
+        "theme_5": {
+          "type": "theme",
+          "settings": {
+            "theme": "Kreativitet som inre resa och självutforskande"
+          }
+        },
+        "theme_6": {
+          "type": "theme",
+          "settings": {
+            "theme": "Portfolioarbete eller förberedelse för konstskolor"
+          }
+        }
+      },
+      "block_order": [
+        "persona_1",
+        "persona_2",
+        "persona_3",
+        "persona_4",
+        "theme_1",
+        "theme_2",
+        "theme_3",
+        "theme_4",
+        "theme_5",
+        "theme_6"
+      ]
+    },
+    "contact": {
+      "type": "coaching-contact",
+      "settings": {
+        "page_title": "Boka ditt samtal",
+        "page_subtitle": "Första steget är en gratis 15-minuters avstämning där vi känner av hur det känns att arbeta tillsammans.",
+        "contact_email": "therese@artblendart.com",
+        "process_heading": "Vad händer sen?"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Jag hör av mig inom 1-2 dagar",
+            "step_description": "Vi bokar in ett 15-minuters samtal på Teams eller telefon"
+          }
+        },
+        "step_2": {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Vi pratar och känner av",
+            "step_description": "Ett kort samtal där du får berätta om dina behov"
+          }
+        },
+        "step_3": {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Om det känns rätt, bokar vi första coachingsession",
+            "step_description": "Ingen bindningstid – du bestämmer hur länge vi arbetar tillsammans"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ]
     }
   },
   "order": [
-    "main"
+    "hero",
+    "about",
+    "who",
+    "contact"
   ]
 }
