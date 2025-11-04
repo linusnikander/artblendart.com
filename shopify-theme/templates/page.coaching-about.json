@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main": {
+      "type": "coaching-about",
+      "settings": {
+        "page_title": "Om mig & Hur går det till?",
+        "about_heading": "Om mig",
+        "about_content": "<p>Jag heter Therese Parner och är konstnär, kreativ coach, tidigare lärare inom konst och kulturarbetare inom offentlig sektor, med magisterexamen i fri konst samt över ett decenniums erfarenhet som yrkesverksam konstnär. Genom åren har jag arbetat med många olika uttryck och material – från trä och textil till lera, metall och andra oväntade kombinationer. Mina olika roller har lärt mig att möta skapande på många sätt och jag kan guida dig både kreativt och konkret.</p><p>För mig är naturen och utomhus som ett magiskt rum där tid och fantasi möts. Här kan idéer ta form, tankarna rensas och skapandeprocessen får egna andetag. Det är en stund utan prestation, där sinnet får vandra fritt och oväntade uppslag kan spira – en källa till själslig energi.</p><p>I coachingen möts lekfull nyfikenhet och handfast guidning. Oavsett om du söker konstnärlig fördjupning, ny inspiration eller en trygg plats för skapandeprocessen, finns jag här som samtalspartner, handledare och påhejare i ditt kreativa utforskande.</p>",
+        "location_note": "Coaching sker online, tillgängligt var du än är.",
+        "process_heading": "Hur går det till?",
+        "process_content": "<p>Vi börjar med en <strong>15 minuters avstämning</strong> på Teams eller telefon. Det är ett kort samtal där du får berätta vad du vill få ut av coachningen, och vi tillsammans känner av hur det känns att arbeta tillsammans, innan vi bokar in vårt första coachingtillfälle.</p><p>Min coachning består sedan av samtal, och min erfarenhet är att de flesta behöver minst <strong>tre tillfällen</strong> för att få en rättvisande bild av vad coachningen kan ge och känna sig trygga i processen. Samtalen är 60 minuter långa.</p>",
+        "first_session_heading": "Det första samtalet",
+        "first_session_content": "Utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål, få nya perspektiv på ditt skapande och redan här verktyg för att komma igång.",
+        "process_content_2": "<p>Efter varje samtal får du en <strong>skriftlig sammanfattning</strong> samt inspirerande hemuppgifter – praktiska, kreativa eller reflekterande – som gör att ditt arbete fortsätter utvecklas mellan mötena. Vi avslutar alltid varje samtal med en kort sammanfattning och en plan för vad du vill fokusera på fram till nästa gång.</p><p>Allt material skickas till dig, så att du har din process dokumenterad – ett personligt verktyg som du kan återvända till när du vill.</p><p><em>Du behöver inte förbereda dig inför det första samtalet, men om du reflekterar lite över vad du vill få ut av coachningen innan vi ses kan vi använda tiden ännu mer effektivt.</em></p>",
+        "cta_button_text": "Boka ditt första samtal",
+        "cta_link": "/pages/coaching-contact"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

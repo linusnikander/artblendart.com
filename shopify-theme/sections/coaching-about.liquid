@@ -1,0 +1,164 @@
+<div class="page-width section-{{ section.id }}-padding">
+  <div class="coaching-about" style="max-width: 64rem; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="text-align: center; padding: 4rem 1.5rem;">
+      <h1 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 4rem; line-height: 1.2;">
+        {{ section.settings.page_title }}
+      </h1>
+    </div>
+
+    {%- comment -%} About Section {%- endcomment -%}
+    <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; padding: 2rem 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: start;">
+        <div>
+          <h2 style="font-size: 1.875rem; font-weight: 300; margin-bottom: 1.5rem;">
+            {{ section.settings.about_heading }}
+          </h2>
+
+          <div style="line-height: 1.75; color: #4a5568;">
+            {{ section.settings.about_content }}
+          </div>
+
+          <p style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: #718096; margin-top: 1.5rem;">
+            <span style="color: #f56565;">📍</span>
+            {{ section.settings.location_note }}
+          </p>
+        </div>
+
+        <div style="margin-top: 4rem;">
+          {% if section.settings.image %}
+            <img
+              src="{{ section.settings.image | img_url: '800x' }}"
+              alt="{{ section.settings.image.alt | escape }}"
+              style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 0.5rem;"
+              loading="lazy"
+            >
+          {% else %}
+            <div style="background: #e2e8f0; aspect-ratio: 3/4; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #a0aec0;">
+              <span style="font-size: 0.875rem;">[Image: Therese in nature]</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    {%- comment -%} How It Works Section {%- endcomment -%}
+    <div style="padding: 4rem 1.5rem;">
+      <h2 style="font-size: 1.875rem; font-weight: 300; margin-bottom: 2rem;">
+        {{ section.settings.process_heading }}
+      </h2>
+
+      <div style="line-height: 1.75; color: #4a5568;">
+        {{ section.settings.process_content }}
+      </div>
+
+      <div style="background: #f7fafc; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
+        <h3 style="font-size: 1.25rem; font-weight: 300; margin-bottom: 1rem;">
+          {{ section.settings.first_session_heading }}
+        </h3>
+        <p style="color: #4a5568;">
+          {{ section.settings.first_session_content }}
+        </p>
+      </div>
+
+      <div style="line-height: 1.75; color: #4a5568;">
+        {{ section.settings.process_content_2 }}
+      </div>
+    </div>
+
+    {%- comment -%} CTA {%- endcomment -%}
+    <div style="text-align: center; padding: 3rem 1.5rem;">
+      <a
+        href="{{ section.settings.cta_link }}"
+        style="display: inline-block; background: #000; color: #fff; padding: 0.75rem 2rem; border-radius: 0.25rem; text-decoration: none; transition: background 0.2s;"
+      >
+        {{ section.settings.cta_button_text }}
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching About",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Om mig & Hur går det till?"
+    },
+    {
+      "type": "text",
+      "id": "about_heading",
+      "label": "About Heading",
+      "default": "Om mig"
+    },
+    {
+      "type": "richtext",
+      "id": "about_content",
+      "label": "About Content",
+      "default": "<p>Jag heter Therese Parner och är konstnär, kreativ coach, tidigare lärare inom konst och kulturarbetare inom offentlig sektor, med magisterexamen i fri konst samt över ett decenniums erfarenhet som yrkesverksam konstnär. Genom åren har jag arbetat med många olika uttryck och material – från trä och textil till lera, metall och andra oväntade kombinationer. Mina olika roller har lärt mig att möta skapande på många sätt och jag kan guida dig både kreativt och konkret.</p><p>För mig är naturen och utomhus som ett magiskt rum där tid och fantasi möts. Här kan idéer ta form, tankarna rensas och skapandeprocessen får egna andetag. Det är en stund utan prestation, där sinnet får vandra fritt och oväntade uppslag kan spira – en källa till själslig energi.</p><p>I coachingen möts lekfull nyfikenhet och handfast guidning. Oavsett om du söker konstnärlig fördjupning, ny inspiration eller en trygg plats för skapandeprocessen, finns jag här som samtalspartner, handledare och påhejare i ditt kreativa utforskande.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "location_note",
+      "label": "Location Note",
+      "default": "Coaching sker online, tillgängligt var du än är."
+    },
+    {
+      "type": "text",
+      "id": "process_heading",
+      "label": "Process Heading",
+      "default": "Hur går det till?"
+    },
+    {
+      "type": "richtext",
+      "id": "process_content",
+      "label": "Process Content",
+      "default": "<p>Vi börjar med en <strong>15 minuters avstämning</strong> på Teams eller telefon. Det är ett kort samtal där du får berätta vad du vill få ut av coachningen, och vi tillsammans känner av hur det känns att arbeta tillsammans, innan vi bokar in vårt första coachingtillfälle.</p><p>Min coachning består sedan av samtal, och min erfarenhet är att de flesta behöver minst <strong>tre tillfällen</strong> för att få en rättvisande bild av vad coachningen kan ge och känna sig trygga i processen. Samtalen är 60 minuter långa.</p>"
+    },
+    {
+      "type": "text",
+      "id": "first_session_heading",
+      "label": "First Session Heading",
+      "default": "Det första samtalet"
+    },
+    {
+      "type": "text",
+      "id": "first_session_content",
+      "label": "First Session Content",
+      "default": "Utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål, få nya perspektiv på ditt skapande och redan här verktyg för att komma igång."
+    },
+    {
+      "type": "richtext",
+      "id": "process_content_2",
+      "label": "Process Content Part 2",
+      "default": "<p>Efter varje samtal får du en <strong>skriftlig sammanfattning</strong> samt inspirerande hemuppgifter – praktiska, kreativa eller reflekterande – som gör att ditt arbete fortsätter utvecklas mellan mötena. Vi avslutar alltid varje samtal med en kort sammanfattning och en plan för vad du vill fokusera på fram till nästa gång.</p><p>Allt material skickas till dig, så att du har din process dokumenterad – ett personligt verktyg som du kan återvända till när du vill.</p><p><em>Du behöver inte förbereda dig inför det första samtalet, men om du reflekterar lite över vad du vill få ut av coachningen innan vi ses kan vi använda tiden ännu mer effektivt.</em></p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Boka ditt första samtal"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching About"
+    }
+  ]
+}
+{% endschema %}

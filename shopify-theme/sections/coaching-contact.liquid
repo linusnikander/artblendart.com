@@ -1,0 +1,223 @@
+<div class="page-width section-{{ section.id }}-padding">
+  <div class="coaching-contact" style="max-width: 64rem; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="text-align: center; padding: 4rem 1.5rem;">
+      <h1 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 2rem; line-height: 1.2;">
+        {{ section.settings.page_title }}
+      </h1>
+      <p style="color: #4a5568; max-width: 42rem; margin: 0 auto;">
+        {{ section.settings.page_subtitle }}
+      </p>
+    </div>
+
+    {%- comment -%} Contact Form Section {%- endcomment -%}
+    <div style="max-width: 42rem; margin: 0 auto; padding: 2rem 1.5rem;">
+      <div style="background: #f7fafc; padding: 2rem; border-radius: 0.5rem;">
+        {% form 'contact', class: 'contact-form' %}
+          {% if form.posted_successfully? %}
+            <div style="background: #c6f6d5; color: #22543d; padding: 1rem; border-radius: 0.25rem; margin-bottom: 1.5rem;">
+              Tack för ditt meddelande! Jag hör av mig inom 1-2 dagar.
+            </div>
+          {% endif %}
+
+          {% if form.errors %}
+            <div style="background: #fed7d7; color: #742a2a; padding: 1rem; border-radius: 0.25rem; margin-bottom: 1.5rem;">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div>
+              <label for="ContactForm-name" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
+                Namn *
+              </label>
+              <input
+                type="text"
+                id="ContactForm-name"
+                name="contact[name]"
+                required
+                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
+              >
+            </div>
+
+            <div>
+              <label for="ContactForm-email" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
+                E-post *
+              </label>
+              <input
+                type="email"
+                id="ContactForm-email"
+                name="contact[email]"
+                required
+                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
+              >
+            </div>
+
+            <div>
+              <label for="ContactForm-phone" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
+                Telefon
+              </label>
+              <input
+                type="tel"
+                id="ContactForm-phone"
+                name="contact[phone]"
+                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
+              >
+            </div>
+
+            <div>
+              <label for="ContactForm-body" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
+                Berätta lite om vad du vill få ut av coachningen
+              </label>
+              <textarea
+                id="ContactForm-body"
+                name="contact[body]"
+                rows="5"
+                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem; resize: vertical;"
+                placeholder="Frivilligt, men hjälper oss använda tiden mer effektivt..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="ContactForm-preference" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
+                Föredrar du Teams eller telefon?
+              </label>
+              <select
+                id="ContactForm-preference"
+                name="contact[preference]"
+                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
+              >
+                <option value="">Välj...</option>
+                <option value="teams">Teams</option>
+                <option value="phone">Telefon</option>
+                <option value="either">Spelar ingen roll</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              style="width: 100%; background: #000; color: #fff; padding: 0.75rem 2rem; border-radius: 0.25rem; border: none; cursor: pointer; font-size: 1rem; transition: background 0.2s;"
+            >
+              Skicka förfrågan
+            </button>
+          </div>
+        {% endform %}
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center; font-size: 0.875rem; color: #718096;">
+        <p>
+          Du kan också nå mig direkt på
+          <a href="mailto:{{ section.settings.contact_email }}" style="text-decoration: underline; color: #2d3748;">
+            {{ section.settings.contact_email }}
+          </a>
+        </p>
+      </div>
+    </div>
+
+    {%- comment -%} Info Section {%- endcomment -%}
+    <div style="max-width: 42rem; margin: 0 auto; padding: 3rem 1.5rem;">
+      <div style="border-top: 1px solid #e2e8f0; padding-top: 2rem;">
+        <h2 style="font-size: 1.5rem; font-weight: 300; margin-bottom: 1.5rem; text-align: center;">
+          {{ section.settings.process_heading }}
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem; color: #4a5568;">
+          {% for block in section.blocks %}
+            {% if block.type == 'process_step' %}
+              <div style="display: flex; gap: 1rem;">
+                <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 500;">
+                  {{ forloop.index }}
+                </span>
+                <div>
+                  <p style="font-weight: 500;">{{ block.settings.step_title }}</p>
+                  <p style="font-size: 0.875rem; color: #718096;">{{ block.settings.step_description }}</p>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Boka ditt samtal"
+    },
+    {
+      "type": "text",
+      "id": "page_subtitle",
+      "label": "Page Subtitle",
+      "default": "Första steget är en gratis 15-minuters avstämning där vi känner av hur det känns att arbeta tillsammans."
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact Email",
+      "default": "therese@artblendart.com"
+    },
+    {
+      "type": "text",
+      "id": "process_heading",
+      "label": "Process Heading",
+      "default": "Vad händer sen?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "process_step",
+      "name": "Process Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Jag hör av mig inom 1-2 dagar"
+        },
+        {
+          "type": "text",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "Vi bokar in ett 15-minuters samtal på Teams eller telefon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Contact",
+      "blocks": [
+        {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Jag hör av mig inom 1-2 dagar",
+            "step_description": "Vi bokar in ett 15-minuters samtal på Teams eller telefon"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Vi pratar och känner av",
+            "step_description": "Ett kort samtal där du får berätta om dina behov"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Om det känns rätt, bokar vi första coachingsession",
+            "step_description": "Ingen bindningstid – du bestämmer hur länge vi arbetar tillsammans"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

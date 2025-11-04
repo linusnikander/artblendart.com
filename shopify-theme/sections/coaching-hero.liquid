@@ -1,0 +1,105 @@
+<div class="page-width section-{{ section.id }}-padding">
+  <div class="coaching-hero" style="max-width: 64rem; margin: 0 auto; padding: 4rem 1.5rem; text-align: center;">
+
+    <h1 style="font-size: 3rem; font-weight: 300; margin-bottom: 2rem; line-height: 1.2;">
+      {{ section.settings.heading }}
+    </h1>
+
+    <p style="font-size: 1.25rem; color: #4a5568; margin-bottom: 4rem;">
+      {{ section.settings.subheading }}
+    </p>
+
+    <div style="max-width: 48rem; margin: 0 auto; padding: 2rem 0;">
+      <h2 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 1.5rem; text-align: left;">
+        {{ section.settings.question }}
+      </h2>
+
+      <div style="text-align: left; line-height: 1.75; color: #4a5568;">
+        {{ section.settings.content }}
+      </div>
+    </div>
+
+    <div style="background: #f7fafc; padding: 2rem; border-radius: 0.5rem; margin-top: 4rem;">
+      <h3 style="font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem;">
+        {{ section.settings.cta_heading }}
+      </h3>
+      <p style="color: #4a5568; margin-bottom: 1rem;">
+        {{ section.settings.cta_text }}
+      </p>
+      <p style="color: #4a5568; margin-bottom: 2rem;">
+        {{ section.settings.cta_text_2 }}
+      </p>
+      <a href="{{ section.settings.cta_link }}"
+         style="display: inline-block; background: #000; color: #fff; padding: 0.75rem 2rem; border-radius: 0.25rem; text-decoration: none; transition: background 0.2s;">
+        {{ section.settings.cta_button_text }}
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Kreativt skapande"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Coaching för dig som vill skapa och bjuda in mer kreativitet i ditt liv"
+    },
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Question Heading",
+      "default": "Vad längtar du efter i ditt skapande?"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Main Content",
+      "default": "<p>Vill du börja utforska ditt uttryck, hitta något kreativt och meningsfullt att göra på din fritid, ta nästa steg i ett pågående projekt eller fördjupa kontakten med din kreativitet?</p><p>Jag erbjuder personlig coaching inom kreativt skapande – en plats för dig som vill utforska, växa och skapa på egna villkor.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Heading",
+      "default": "Välkommen till ett rum där kreativitet, utveckling och mening får mötas"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Den här coachingen är för dig som vill utforska, utvecklas och våga skapa på riktigt – på ditt eget sätt."
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTA Text 2",
+      "default": "Du behöver inte ha ett mål att prestera, bara en vilja att vara nyfiken och närvarande i din process."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Boka gratis 15-minuters samtal"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Hero"
+    }
+  ]
+}
+{% endschema %}
