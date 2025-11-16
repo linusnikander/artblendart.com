@@ -50,31 +50,104 @@ This repository is for creating mockups of Shopify pages for the ArtBlendArt sto
 - **Custom Domain**: `artblendart.com` (for live site access only)
 - **Live Theme ID**: `149756051720`
 
-### Shopify Commands
+### MANDATORY: Safe Shopify Update Process
 
-**IMPORTANT: Always use `--allow-live` flag to avoid interactive prompts (required for automation)**
+**⚠️ CRITICAL: Follow this exact process to avoid file deletion**
+
+**STEP-BY-STEP PROCESS:**
 
 ```bash
-# Push all changes to live theme
+# 1. Navigate to shopify-theme directory (REQUIRED)
 cd shopify-theme
-shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 --allow-live
 
-# Push specific file/section
-shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 --only='sections/file.liquid' --allow-live
+# 2. Verify you're in the correct directory
+pwd
+# Output should be: /path/to/artblendart.com/shopify-theme
 
-# Pull files from live theme
-shopify theme pull --store 82e997-6e.myshopify.com --theme 149756051720 --only='templates/page.coaching.json'
-# Note: Be careful with pull - it will overwrite local files!
+# 3. Make your changes to section/template files locally
+# Edit files in sections/ or templates/ directories
 
-# Preview theme locally
-shopify theme dev --store 82e997-6e.myshopify.com --theme 149756051720
+# 4. ALWAYS commit to git BEFORE pushing to Shopify
+git add sections/coaching-*.liquid templates/page.coaching.json
+git commit -m "Describe your changes"
+
+# 5. Push template AND all dependent sections in ONE command
+# Use multiple --only flags to specify all related files
+shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --only='sections/coaching-*.liquid' \
+  --only='templates/page.coaching.json' \
+  --allow-live
+
+# 6. Verify the changes on live site
+# Open https://artblendart.com/pages/coaching
+# Check that all sections are displaying correctly
+
+# 7. If something breaks, restore from git and try again
+git checkout HEAD -- sections/coaching-*.liquid templates/page.coaching.json
 ```
 
-**Best Practices:**
-- Always run `shopify theme push` from within the `shopify-theme/` directory
-- Use `--allow-live` to bypass interactive confirmation (required for Claude Code automation)
-- Use `--only='path/to/file'` to push single files (path relative to shopify-theme/)
-- Never use `shopify theme pull` without `--only` flag as it will overwrite all local files
+**CRITICAL RULES:**
+
+1. **NEVER push templates alone** - always include dependent sections
+2. **NEVER push sections alone** - always include the template that uses them
+3. **NEVER use `--path=` flag** - it deletes everything else
+4. **ALWAYS use multiple `--only=` flags** - one for sections, one for template
+5. **ALWAYS commit to git first** - enables easy recovery
+6. **ALWAYS verify on live site** - catch issues immediately
+
+**Example Commands:**
+
+```bash
+# ✅ CORRECT - Push template + sections together
+shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --only='sections/coaching-*.liquid' \
+  --only='templates/page.coaching.json' \
+  --allow-live
+
+# ✅ CORRECT - Push single section + template
+shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --only='sections/coaching-hero.liquid' \
+  --only='templates/page.coaching.json' \
+  --allow-live
+
+# ✅ CORRECT - Push image asset only
+shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --only='assets/coaching-hero-background.jpg' \
+  --allow-live
+
+# ❌ WRONG - Push template alone (triggers cleanup deletion)
+shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --only='templates/page.coaching.json' \
+  --allow-live
+
+# ❌ WRONG - Push sections alone (template may get deleted)
+shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --only='sections/coaching-*.liquid' \
+  --allow-live
+
+# ❌ WRONG - Using --path deletes everything else
+shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --path=assets \
+  --allow-live
+```
+
+**Pull Commands (Use with Extreme Caution):**
+
+```bash
+# ✅ CORRECT - Pull specific file only
+shopify theme pull --store 82e997-6e.myshopify.com --theme 149756051720 \
+  --only='templates/page.coaching.json'
+
+# ❌ WRONG - Pull without --only (deletes all local files not on server)
+shopify theme pull --store 82e997-6e.myshopify.com --theme 149756051720
+```
+
+**Preview Commands:**
+
+```bash
+# Preview theme locally (safe, doesn't modify anything)
+shopify theme dev --store 82e997-6e.myshopify.com --theme 149756051720
+```
 
 ### CRITICAL: Version Control & File Deletion Prevention
 
