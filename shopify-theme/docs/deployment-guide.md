@@ -11,7 +11,7 @@
 **⚠️ Critical Rule:** Always push templates AND sections together in ONE command.
 
 ```bash
-shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+shopify theme push --store 82e997-6e.myshopify.com --theme 189302341896 \
   --only='sections/coaching-*.liquid' \
   --only='templates/page.coaching.json' \
   --allow-live
@@ -53,7 +53,7 @@ git checkout HEAD -- shopify-theme/sections/coaching-*.liquid shopify-theme/temp
 
 # 2. Re-deploy atomically
 cd shopify-theme
-shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+shopify theme push --store 82e997-6e.myshopify.com --theme 189302341896 \
   --only='sections/coaching-*.liquid' \
   --only='templates/page.coaching.json' \
   --allow-live
