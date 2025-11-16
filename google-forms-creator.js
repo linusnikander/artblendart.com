@@ -30,6 +30,15 @@ function createCoachingForms() {
   const form2 = createForm2();
   const form3 = createForm3();
 
+  // Add email notifications to all forms
+  Logger.log('\n=== Setting up email notifications ===\n');
+  setupFormNotifications(form1.getId());
+  Logger.log('✅ Notifications added to Form 1');
+  setupFormNotifications(form2.getId());
+  Logger.log('✅ Notifications added to Form 2');
+  setupFormNotifications(form3.getId());
+  Logger.log('✅ Notifications added to Form 3');
+
   // Display results
   Logger.log('\n=== ✅ ALL FORMS CREATED SUCCESSFULLY ===\n');
   Logger.log('📋 FORM 1 - Inför vårt första samtal');
@@ -44,11 +53,13 @@ function createCoachingForms() {
   Logger.log('Edit URL: ' + form3.getEditUrl());
   Logger.log('Public URL: ' + form3.getPublishedUrl());
   Logger.log('Shortened URL: ' + form3.shortenFormUrl(form3.getPublishedUrl()));
+  Logger.log('\n=== EMAIL NOTIFICATIONS ===');
+  Logger.log('📧 Recipients: linus.nikander@lnc.no, therese@thereseparner.se');
   Logger.log('\n=== NEXT STEPS ===');
-  Logger.log('1. Copy the "Public URL" or "Shortened URL" for each form');
-  Logger.log('2. Use these URLs to embed in Shopify');
-  Logger.log('3. Test each form by filling it out');
-  Logger.log('4. Check responses in Google Forms or linked Google Sheets');
+  Logger.log('1. Copy the "Shortened URL" for each form');
+  Logger.log('2. Update these URLs in Shopify');
+  Logger.log('3. Test each form - both emails should receive notifications');
+  Logger.log('4. Delete old forms from Google Drive');
 }
 
 /**
@@ -293,4 +304,67 @@ function createForm3() {
 
   Logger.log('✓ Form 3 created');
   return form;
+}
+
+/**
+ * Set up email notifications for form submissions
+ */
+function setupFormNotifications(formId) {
+  var form = FormApp.openById(formId);
+
+  // Create a trigger to send emails on form submit
+  ScriptApp.newTrigger('sendFormNotification')
+    .forForm(form)
+    .onFormSubmit()
+    .create();
+}
+
+/**
+ * Send email notification when form is submitted
+ */
+function sendFormNotification(e) {
+  var form = e.source;
+  var formResponse = e.response;
+  var itemResponses = formResponse.getItemResponses();
+
+  // Email recipients
+  var recipients = 'linus.nikander@lnc.no, therese@thereseparner.se';
+
+  // Build email content
+  var subject = 'Ny coaching-formulärinsändning: ' + form.getTitle();
+  var message = 'Ett nytt svar har skickats in för: ' + form.getTitle() + '\n\n';
+  message += 'Tidpunkt: ' + new Date() + '\n\n';
+  message += '--- SVAR ---\n\n';
+
+  for (var i = 0; i < itemResponses.length; i++) {
+    var itemResponse = itemResponses[i];
+    message += itemResponse.getItem().getTitle() + '\n';
+    message += itemResponse.getResponse() + '\n\n';
+  }
+
+  message += '\n--- Visa alla svar ---\n';
+  message += form.getEditUrl().replace('/edit', '/edit#responses');
+
+  // Send email
+  MailApp.sendEmail(recipients, subject, message);
+}
+
+/**
+ * Add notifications to the 3 NEWEST coaching forms (created 2025-11-16 16:37)
+ */
+function addNotificationsToExistingForms() {
+  // NEWEST form IDs from execution log (2025-11-16 16:37)
+  var formIds = [
+    '1Z3230dCEiYrwd7M5I5tnc1xCRE0C53fxkvsW_OgLy-o',  // Form 1 - Inför vårt första samtal
+    '1PrmV6F0PkvmyuAnoDSKrawNQW4YVUx4t8FYE6hCOglA',  // Form 2 - Efter varje samtal
+    '1kTXCcaydRRxuEg6wufQ3t6ZRpUn7e_63FUIDPy0Dj9I'   // Form 3 - Slututvärdering
+  ];
+
+  for (var i = 0; i < formIds.length; i++) {
+    setupFormNotifications(formIds[i]);
+    Logger.log('✅ Notifications added to form: ' + formIds[i]);
+  }
+
+  Logger.log('\n🎉 Email notifications configured for all forms!');
+  Logger.log('📧 Recipients: linus.nikander@lnc.no, therese@thereseparner.se');
 }
