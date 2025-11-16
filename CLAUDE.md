@@ -78,6 +78,14 @@ shopify theme dev --store 82e997-6e.myshopify.com --theme 149756051720
 
 ### CRITICAL: Version Control & File Deletion Prevention
 
+**⚠️ ROOT CAUSE: Shopify CLI's "cleaning" behavior deletes files unexpectedly**
+
+The Shopify CLI has a "Cleaning your remote theme" phase that can delete files from the server. This happens because:
+- When you push a template file, Shopify validates that all referenced sections exist
+- If sections don't exist on the server (even if you just pushed them), the template push triggers a cleanup
+- The cleanup can delete the template itself or sections it depends on
+- This creates a cycle where files get deleted after being pushed
+
 **⚠️ COMMON ISSUES THAT DELETE FILES:**
 
 1. **`shopify theme pull` without `--only` DELETES local files that don't exist on server**
@@ -88,9 +96,15 @@ shopify theme dev --store 82e997-6e.myshopify.com --theme 149756051720
    - NEVER use `--path` flag - it uploads ONLY that directory and deletes everything else
    - Use `--only='assets/file.jpg'` for individual files instead
 
-3. **Templates can be deleted during pull operations**
-   - If a template doesn't exist on server, `pull` removes it locally
-   - Always verify template exists before pulling
+3. **Templates can be deleted during push operations due to missing section dependencies**
+   - If a template references a section that doesn't exist, the template may be removed
+   - Sections can be deleted if templates are pushed without sections being present
+   - Always push both templates AND sections together in one command
+
+4. **The "Cleaning your remote theme" phase can delete files**
+   - Shopify CLI automatically "cleans" files it thinks are orphaned
+   - This can happen even right after uploading files
+   - Templates and sections must be pushed together to avoid cleanup deletion
 
 **VERSION CONTROL WORKFLOW:**
 
@@ -128,9 +142,22 @@ shopify theme dev --store 82e997-6e.myshopify.com --theme 149756051720
 1. Make changes locally in `shopify-theme/`
 2. Test changes (if possible)
 3. **Git commit** the changes
-4. Push ONLY changed files: `shopify theme push --only='sections/file.liquid' --allow-live`
+4. **Push templates AND sections together** to prevent deletion:
+   ```bash
+   # For coaching page - push ALL related files in ONE command
+   shopify theme push --store 82e997-6e.myshopify.com --theme 149756051720 \
+     --only='sections/coaching-*.liquid' \
+     --only='templates/page.coaching.json' \
+     --allow-live
+   ```
 5. Verify on live site
 6. If broken, restore from git and try again
+
+**WHY PUSH TOGETHER:**
+- Pushing template alone can trigger cleanup that deletes sections
+- Pushing sections alone, then template can result in template deletion
+- Using multiple `--only` flags in one command ensures atomicity
+- All files are uploaded before the "cleaning" phase starts
 
 ### How to Add Background Color to Shopify Page Sections
 
