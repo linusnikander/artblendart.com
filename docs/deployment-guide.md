@@ -43,7 +43,7 @@ The Shopify CLI has a "cleaning" phase that **automatically deletes files** it c
 **Production Store:**
 - **Store Name (for CLI):** `82e997-6e.myshopify.com`
 - **Custom Domain:** `artblendart.com` (for live site access only)
-- **Live Theme ID:** `149756051720`
+- **Live Theme ID:** `189302341896` (ArtBlendArt Custom - formerly "Coaching Pages")
 
 **Critical:** Always use the `.myshopify.com` domain for CLI commands, NOT the custom domain.
 
