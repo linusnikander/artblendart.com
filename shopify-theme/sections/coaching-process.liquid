@@ -1,0 +1,92 @@
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-process" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
+        {{ section.settings.page_title }}
+      </h2>
+    </div>
+
+    {%- comment -%} Process Content {%- endcomment -%}
+    <div style="padding: 1rem 1.5rem;">
+      <div class="coaching-paragraph">
+        {{ section.settings.process_content }}
+      </div>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <p class="coaching-paragraph">{{ section.settings.first_session_heading }}</p>
+      <p class="coaching-paragraph">
+        {{ section.settings.first_session_content }}
+      </p>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <div class="coaching-paragraph">
+        {{ section.settings.process_content_2 }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Process",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Hur går det till?"
+    },
+    {
+      "type": "richtext",
+      "id": "process_content",
+      "label": "Process Content",
+      "default": "<p>Vi börjar med en 15 minuters avstämning på Teams eller telefon.</p>"
+    },
+    {
+      "type": "text",
+      "id": "first_session_heading",
+      "label": "First Session Heading",
+      "default": "Det första samtalet"
+    },
+    {
+      "type": "text",
+      "id": "first_session_content",
+      "label": "First Session Content",
+      "default": "Utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare."
+    },
+    {
+      "type": "richtext",
+      "id": "process_content_2",
+      "label": "Process Content Part 2",
+      "default": "<p>Efter varje samtal får du en skriftlig sammanfattning.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Process"
+    }
+  ]
+}
+{% endschema %}

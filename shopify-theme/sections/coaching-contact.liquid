@@ -1,141 +1,186 @@
-<div class="page-width section-{{ section.id }}-padding" id="contact">
-  <div class="coaching-contact" style="max-width: 48rem; margin: 0 auto; padding: 1.5rem;">
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" id="contact" style="background-color: #e0d0f2;">
+  <div class="coaching-contact" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} CTA Section {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h3 class="coaching-heading">{{ section.settings.cta_heading }}</h3>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <div>
+        <p class="coaching-paragraph">{{ section.settings.cta_text }}</p>
+        <p class="coaching-paragraph">{{ section.settings.cta_text_2 }}</p>
+        <p class="coaching-paragraph" style="margin-bottom: 2rem;">{{ section.settings.cta_text_3 }}</p>
+      </div>
+    </div>
+
+    {%- comment -%} Creative Collage Image {%- endcomment -%}
+    <div style="padding: 0 1.5rem 2rem 1.5rem;">
+      <img
+        src="{{ 'coaching-creative-collage.jpg' | asset_url }}"
+        alt="Creative coaching collage"
+        style="width: 100%; height: auto;"
+        loading="lazy"
+      >
+    </div>
 
     {%- comment -%} Page Header {%- endcomment -%}
-    <div style="text-align: center; padding: 4rem 1.5rem;">
-      <h1 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 2rem; line-height: 1.2;">
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
         {{ section.settings.page_title }}
-      </h1>
-      <p style="color: #4a5568; max-width: 42rem; margin: 0 auto;">
+      </h2>
+      <p class="coaching-paragraph">
         {{ section.settings.page_subtitle }}
       </p>
     </div>
 
-    {%- comment -%} Contact Form Section {%- endcomment -%}
-    <div style="max-width: 42rem; margin: 0 auto; padding: 2rem 1.5rem;">
-      <div style="background: #f7fafc; padding: 2rem; border-radius: 0.5rem;">
-        {% form 'contact', class: 'contact-form' %}
-          {% if form.posted_successfully? %}
-            <div style="background: #c6f6d5; color: #22543d; padding: 1rem; border-radius: 0.25rem; margin-bottom: 1.5rem;">
-              Tack för ditt meddelande! Jag hör av mig inom 1-2 dagar.
-            </div>
-          {% endif %}
+    {%- comment -%} Two-column layout: Form on left, Info on right {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
 
-          {% if form.errors %}
-            <div style="background: #fed7d7; color: #742a2a; padding: 1rem; border-radius: 0.25rem; margin-bottom: 1.5rem;">
-              {{ form.errors | default_errors }}
-            </div>
-          {% endif %}
-
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div>
-              <label for="ContactForm-name" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
-                Namn *
-              </label>
-              <input
-                type="text"
-                id="ContactForm-name"
-                name="contact[name]"
-                required
-                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
-              >
-            </div>
-
-            <div>
-              <label for="ContactForm-email" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
-                E-post *
-              </label>
-              <input
-                type="email"
-                id="ContactForm-email"
-                name="contact[email]"
-                required
-                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
-              >
-            </div>
-
-            <div>
-              <label for="ContactForm-phone" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
-                Telefon
-              </label>
-              <input
-                type="tel"
-                id="ContactForm-phone"
-                name="contact[phone]"
-                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
-              >
-            </div>
-
-            <div>
-              <label for="ContactForm-body" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
-                Berätta lite om vad du vill få ut av coachningen
-              </label>
-              <textarea
-                id="ContactForm-body"
-                name="contact[body]"
-                rows="5"
-                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem; resize: vertical;"
-                placeholder="Frivilligt, men hjälper oss använda tiden mer effektivt..."
-              ></textarea>
-            </div>
-
-            <div>
-              <label for="ContactForm-preference" style="display: block; font-size: 0.875rem; font-weight: 500; color: #4a5568; margin-bottom: 0.5rem;">
-                Föredrar du Teams eller telefon?
-              </label>
-              <select
-                id="ContactForm-preference"
-                name="contact[preference]"
-                style="width: 100%; padding: 0.5rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1rem;"
-              >
-                <option value="">Välj...</option>
-                <option value="teams">Teams</option>
-                <option value="phone">Telefon</option>
-                <option value="either">Spelar ingen roll</option>
-              </select>
-            </div>
-
-            <button
-              type="submit"
-              style="width: 100%; background: #000; color: #fff; padding: 0.75rem 2rem; border-radius: 0.25rem; border: none; cursor: pointer; font-size: 1rem; transition: background 0.2s;"
-            >
-              Skicka förfrågan
-            </button>
-          </div>
-        {% endform %}
-      </div>
-
-      <div style="margin-top: 2rem; text-align: center; font-size: 0.875rem; color: #718096;">
-        <p>
-          Du kan också nå mig direkt på
-          <a href="mailto:{{ section.settings.contact_email }}" style="text-decoration: underline; color: #2d3748;">
-            {{ section.settings.contact_email }}
-          </a>
-        </p>
-      </div>
-    </div>
-
-    {%- comment -%} Info Section {%- endcomment -%}
-    <div style="max-width: 42rem; margin: 0 auto; padding: 3rem 1.5rem;">
-      <div style="border-top: 1px solid #e2e8f0; padding-top: 2rem;">
-        <h2 style="font-size: 1.5rem; font-weight: 300; margin-bottom: 1.5rem; text-align: center;">
-          {{ section.settings.process_heading }}
-        </h2>
-        <div style="display: flex; flex-direction: column; gap: 1rem; color: #4a5568;">
-          {% for block in section.blocks %}
-            {% if block.type == 'process_step' %}
-              <div style="display: flex; gap: 1rem;">
-                <span style="flex-shrink: 0; width: 2rem; height: 2rem; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 500;">
-                  {{ forloop.index }}
-                </span>
-                <div>
-                  <p style="font-weight: 500;">{{ block.settings.step_title }}</p>
-                  <p style="font-size: 0.875rem; color: #718096;">{{ block.settings.step_description }}</p>
+        {%- comment -%} Contact Form Section {%- endcomment -%}
+        <div>
+          <div style="background: #f7fafc; padding: 2.5rem; border-radius: 0.5rem;">
+            {% form 'contact', class: 'contact-form' %}
+              {% if form.posted_successfully? %}
+                <div style="background: #c6f6d5; color: #22543d; padding: 1rem; border-radius: 0.25rem; margin-bottom: 1.5rem;">
+                  Tack för ditt meddelande! Jag hör av mig inom 1-2 dagar.
                 </div>
+              {% endif %}
+
+              {% if form.errors %}
+                <div style="background: #fed7d7; color: #742a2a; padding: 1rem; border-radius: 0.25rem; margin-bottom: 1.5rem;">
+                  {{ form.errors | default_errors }}
+                </div>
+              {% endif %}
+
+              <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+                <div>
+                  <label for="ContactForm-name" style="display: block; font-size: 0.95rem; font-weight: 500; color: #000; margin-bottom: 0.5rem;">
+                    Namn *
+                  </label>
+                  <input
+                    type="text"
+                    id="ContactForm-name"
+                    name="contact[name]"
+                    required
+                    style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1.05rem;"
+                  >
+                </div>
+
+                <div>
+                  <label for="ContactForm-email" style="display: block; font-size: 0.95rem; font-weight: 500; color: #000; margin-bottom: 0.5rem;">
+                    E-post *
+                  </label>
+                  <input
+                    type="email"
+                    id="ContactForm-email"
+                    name="contact[email]"
+                    required
+                    style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1.05rem;"
+                  >
+                </div>
+
+                <div>
+                  <label for="ContactForm-phone" style="display: block; font-size: 0.95rem; font-weight: 500; color: #000; margin-bottom: 0.5rem;">
+                    Telefon
+                  </label>
+                  <input
+                    type="tel"
+                    id="ContactForm-phone"
+                    name="contact[phone]"
+                    style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1.05rem;"
+                  >
+                </div>
+
+                <div>
+                  <label for="ContactForm-body" style="display: block; font-size: 0.95rem; font-weight: 500; color: #000; margin-bottom: 0.5rem;">
+                    Berätta lite om vad du vill få ut av coachningen
+                  </label>
+                  <textarea
+                    id="ContactForm-body"
+                    name="contact[body]"
+                    rows="6"
+                    style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1.05rem; resize: vertical;"
+                    placeholder="Frivilligt, men hjälper oss använda tiden mer effektivt..."
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label for="ContactForm-preference" style="display: block; font-size: 0.95rem; font-weight: 500; color: #000; margin-bottom: 0.5rem;">
+                    Föredrar du Teams eller telefon?
+                  </label>
+                  <select
+                    id="ContactForm-preference"
+                    name="contact[preference]"
+                    style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #cbd5e0; border-radius: 0.25rem; font-size: 1.05rem;"
+                  >
+                    <option value="">Välj...</option>
+                    <option value="teams">Teams</option>
+                    <option value="phone">Telefon</option>
+                    <option value="either">Spelar ingen roll</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  style="width: 100%; background: #000; color: #fff; padding: 1rem 2rem; border-radius: 0.25rem; border: none; cursor: pointer; font-size: 1.1rem; transition: background 0.2s;"
+                >
+                  Skicka förfrågan
+                </button>
               </div>
-            {% endif %}
-          {% endfor %}
+            {% endform %}
+          </div>
+
+          <div style="margin-top: 2rem; text-align: center; font-size: 0.95rem; color: #718096;">
+            <p>
+              Du kan också nå mig direkt på
+              <a href="mailto:{{ section.settings.contact_email }}" style="text-decoration: underline; color: #2d3748;">
+                {{ section.settings.contact_email }}
+              </a>
+            </p>
+          </div>
         </div>
+
+        {%- comment -%} Info Section - "Vad händer sen?" {%- endcomment -%}
+        <div>
+          <h3 class="coaching-heading" style="font-size: 2.25rem; margin-bottom: 1.5rem;">
+            {{ section.settings.process_heading }}
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 1.75rem; color: #000;">
+            {% for block in section.blocks %}
+              {% if block.type == 'process_step' %}
+                <div style="display: flex; gap: 1rem;">
+                  <span style="flex-shrink: 0; width: 2.5rem; height: 2.5rem; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500;">
+                    {{ forloop.index }}
+                  </span>
+                  <div>
+                    <p class="coaching-paragraph" style="font-weight: 500; font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.5;">{{ block.settings.step_title }}</p>
+                    <p class="coaching-paragraph" style="font-size: 1rem; line-height: 1.6;">{{ block.settings.step_description }}</p>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -146,6 +191,30 @@
 {
   "name": "Coaching Contact",
   "settings": [
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Heading",
+      "default": "Välkommen till ett rum där kreativitet, utveckling och mening får mötas"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Den här coachingen är för dig som vill utforska, utvecklas och våga skapa på riktigt – på ditt eget sätt."
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTA Text 2",
+      "default": "Du behöver inte ha ett mål att prestera, bara en vilja att vara nyfiken och närvarande i din process."
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text_3",
+      "label": "CTA Text 3",
+      "default": "Tillsammans utforskar vi hur ditt skapande kan bli ett levande samtal mellan dig och världen – där varje steg, varje idé och varje tvekan kan bli en del av något större."
+    },
     {
       "type": "text",
       "id": "page_title",

@@ -1,57 +1,55 @@
-{%- comment -%} Full-screen hero with background image {%- endcomment -%}
-<div style="position: relative; width: 100%; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-  {%- if section.settings.hero_image -%}
-    <img src="{{ section.settings.hero_image | image_url: width: 2000 }}"
-         alt="{{ section.settings.heading }}"
-         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
-  {%- else -%}
-    {%- comment -%} Placeholder gradient background {%- endcomment -%}
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-  {%- endif -%}
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
 
-  {%- comment -%} Dark overlay for better text readability {%- endcomment -%}
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3);"></div>
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+{%- comment -%} Hero section with background image {%- endcomment -%}
+<div style="position: relative; width: 100%; height: 65vh; min-height: 400px; max-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+  <img src="{{ 'coaching-hero-background.jpg' | asset_url }}"
+       alt="{{ section.settings.heading }}"
+       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.8) brightness(0.85);">
+
+  {%- comment -%} Purple color overlay using multiply blend mode for true color tone {%- endcomment -%}
+  <div style="position: absolute; inset: 0; background: rgba(100, 80, 120, 0.35); mix-blend-mode: multiply; display: block !important;"></div>
+
+  {%- comment -%} Darken overlay for depth {%- endcomment -%}
+  <div style="position: absolute; inset: 0; background: rgba(40, 30, 50, 0.25); display: block !important;"></div>
 
   {%- comment -%} Hero heading {%- endcomment -%}
-  <h1 style="position: relative; z-index: 10; color: #fff; font-size: clamp(3rem, 8vw, 6rem); font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; padding: 0 1.5rem;">
+  <h1 style="position: relative; z-index: 10; color: #fff; font-size: clamp(3rem, 8vw, 6rem); font-weight: 300; letter-spacing: 0.08em; text-align: center; padding: 0 1.5rem;">
     {{ section.settings.heading }}
   </h1>
 </div>
 
 {%- comment -%} Main content section with narrower width {%- endcomment -%}
-<div class="page-width section-{{ section.id }}-padding">
-  <div class="coaching-hero" style="max-width: 48rem; margin: 0 auto; padding: 4rem 1.5rem;">
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-hero" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
 
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <p style="font-size: 1.25rem; color: #4a5568; line-height: 1.6;">
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
         {{ section.settings.subheading }}
-      </p>
-    </div>
-
-    <div style="padding: 2rem 0;">
-      <h2 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 1.5rem; text-align: left;">
-        {{ section.settings.question }}
       </h2>
-
-      <div style="text-align: left; line-height: 1.75; color: #4a5568;">
-        {{ section.settings.content }}
-      </div>
     </div>
 
-    <div style="background: #f7fafc; padding: 2rem; border-radius: 0.5rem; margin-top: 4rem;">
-      <h3 style="font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem;">
-        {{ section.settings.cta_heading }}
-      </h3>
-      <p style="color: #4a5568; margin-bottom: 1rem;">
-        {{ section.settings.cta_text }}
-      </p>
-      <p style="color: #4a5568; margin-bottom: 2rem;">
-        {{ section.settings.cta_text_2 }}
-      </p>
-      <a href="{{ section.settings.cta_link }}"
-         style="display: inline-block; background: #000; color: #fff; padding: 0.75rem 2rem; border-radius: 0.25rem; text-decoration: none; transition: background 0.2s;">
-        {{ section.settings.cta_button_text }}
-      </a>
+    <div style="padding: 1rem 1.5rem;">
+      <div>
+        <p class="coaching-paragraph">{{ section.settings.question }}</p>
+        <div class="coaching-paragraph">
+          {{ section.settings.content }}
+        </div>
+      </div>
     </div>
 
   </div>
@@ -110,15 +108,10 @@
       "default": "Du behöver inte ha ett mål att prestera, bara en vilja att vara nyfiken och närvarande i din process."
     },
     {
-      "type": "text",
-      "id": "cta_button_text",
-      "label": "CTA Button Text",
-      "default": "Boka gratis 15-minuters samtal"
-    },
-    {
-      "type": "url",
-      "id": "cta_link",
-      "label": "CTA Button Link"
+      "type": "textarea",
+      "id": "cta_text_3",
+      "label": "CTA Text 3",
+      "default": "Tillsammans utforskar vi hur ditt skapande kan bli ett levande samtal mellan dig och världen – där varje steg, varje idé och varje tvekan kan bli en del av något större."
     }
   ],
   "presets": [

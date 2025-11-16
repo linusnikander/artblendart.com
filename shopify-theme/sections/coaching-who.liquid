@@ -1,73 +1,77 @@
-<div class="page-width section-{{ section.id }}-padding">
-  <div class="coaching-who" style="max-width: 48rem; margin: 0 auto; padding: 1.5rem;">
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-who" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
 
     {%- comment -%} Page Header {%- endcomment -%}
-    <div style="text-align: center; padding: 4rem 1.5rem;">
-      <h1 style="font-size: 2.5rem; font-weight: 300; margin-bottom: 4rem; line-height: 1.2;">
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
         {{ section.settings.page_title }}
-      </h1>
+      </h2>
     </div>
 
     {%- comment -%} Client Personas {%- endcomment -%}
-    <div style="padding: 2rem 1.5rem;">
-      <h2 style="font-size: 1.875rem; font-weight: 300; margin-bottom: 2rem;">
-        {{ section.settings.personas_heading }}
-      </h2>
-
-      <div style="display: flex; flex-direction: column; gap: 2rem;">
+    <div style="padding: 1rem 1.5rem;">
+      <div>
         {% for block in section.blocks %}
           {% if block.type == 'persona' %}
-            <div style="border-left: 2px solid #cbd5e0; padding-left: 1.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem;">
-              <h3 style="font-size: 1.25rem; font-weight: 500; margin-bottom: 0.5rem;">
-                {{ block.settings.name }}
-              </h3>
-              <p style="font-size: 0.875rem; color: #718096; margin-bottom: 0.75rem;">
-                {{ block.settings.persona }}
-              </p>
-              <p style="color: #4a5568; line-height: 1.75;">
-                {{ block.settings.description }}
-              </p>
-            </div>
+            <p class="coaching-paragraph">
+              <strong>{{ block.settings.name }} – {{ block.settings.persona }}</strong><br>
+              {{ block.settings.description }}
+            </p>
           {% endif %}
         {% endfor %}
       </div>
     </div>
 
     {%- comment -%} Themes Section {%- endcomment -%}
-    <div style="padding: 4rem 1.5rem;">
-      <h2 style="font-size: 1.875rem; font-weight: 300; margin-bottom: 2rem;">
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h3 class="coaching-heading">
         {{ section.settings.themes_heading }}
-      </h2>
+      </h3>
+    </div>
 
-      <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+    <div style="padding: 1rem 1.5rem;">
+      <ul style="list-style: disc; padding-left: 2rem;">
         {% for block in section.blocks %}
           {% if block.type == 'theme' %}
-            <li style="display: flex; align-items: start; gap: 0.75rem; color: #4a5568; margin-bottom: 0.75rem;">
-              <span style="color: #a0aec0; margin-top: 0.25rem;">•</span>
-              <span>{{ block.settings.theme }}</span>
+            <li class="coaching-paragraph">
+              {{ block.settings.theme }}
             </li>
           {% endif %}
         {% endfor %}
       </ul>
-
-      <div style="background: #f7fafc; padding: 1.5rem; border-radius: 0.5rem; text-align: center;">
-        <p style="color: #4a5568; line-height: 1.75;">
-          {{ section.settings.closing_text }}
-        </p>
-        <p style="color: #4a5568; margin-top: 0.5rem;">
-          <strong>{{ section.settings.closing_text_bold }}</strong>
-        </p>
-      </div>
     </div>
 
-    {%- comment -%} CTA {%- endcomment -%}
-    <div style="text-align: center; padding: 3rem 1.5rem;">
-      <a
-        href="{{ section.settings.cta_link }}"
-        style="display: inline-block; background: #000; color: #fff; padding: 0.75rem 2rem; border-radius: 0.25rem; text-decoration: none; transition: background 0.2s;"
+    {%- comment -%} Closing Text {%- endcomment -%}
+    <div style="padding: 1rem 1.5rem;">
+      <p class="coaching-paragraph">{{ section.settings.closing_text }}</p>
+      <p class="coaching-paragraph">{{ section.settings.closing_text_bold }}</p>
+    </div>
+
+    {%- comment -%} Exploration Image {%- endcomment -%}
+    <div style="padding: 0 1.5rem 2rem 1.5rem;">
+      <img
+        src="{{ 'coaching-exploration-image.jpg' | asset_url }}"
+        alt="Creative exploration"
+        style="width: 100%; height: auto;"
+        loading="lazy"
       >
-        {{ section.settings.cta_button_text }}
-      </a>
     </div>
 
   </div>
