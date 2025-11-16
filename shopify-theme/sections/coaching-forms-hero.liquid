@@ -1,0 +1,24 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="coaching-forms-hero" style="text-align: center; padding: 4rem 1.5rem;">
+    <h1 class="coaching-forms-title" style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 300; margin-bottom: 2rem; line-height: 1.2;">
+      Coaching Formulär
+    </h1>
+    <p class="coaching-forms-subtitle" style="font-size: 1.25rem; color: #374151; max-width: 600px; margin: 0 auto;">
+      Välj det formulär som passar var du är i din coachingresa
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Forms Hero",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Coaching Forms Hero"
+    }
+  ]
+}
+{% endschema %}

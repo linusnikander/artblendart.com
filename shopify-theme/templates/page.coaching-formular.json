@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "coaching_forms_hero": {
+      "type": "coaching-forms-hero",
+      "settings": {}
+    },
+    "coaching_forms_list": {
+      "type": "coaching-forms-list",
+      "settings": {}
+    }
+  },
+  "order": [
+    "coaching_forms_hero",
+    "coaching_forms_list",
+    "main"
+  ]
+}

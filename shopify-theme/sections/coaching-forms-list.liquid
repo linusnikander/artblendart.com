@@ -1,0 +1,138 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .coaching-forms-container {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .coaching-form-card {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .coaching-form-card h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .coaching-form-card p {
+    color: #374151;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .coaching-form-meta {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+  }
+
+  .coaching-form-meta strong {
+    font-weight: 600;
+  }
+
+  .coaching-form-button {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+
+  .coaching-form-button:hover {
+    background: #1f2937;
+    color: #fff;
+  }
+
+  .coaching-forms-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    border-top: 1px solid #e5e7eb;
+  }
+</style>
+
+<div class="coaching-forms-container">
+
+  <!-- Form 1: Pre-consultation -->
+  <div class="coaching-form-card">
+    <h2>✨ Inför vårt första samtal</h2>
+    <p>
+      Fyll i detta formulär innan vår första 15-minuters avstämning.
+      Det hjälper mig att förstå dina mål och förväntningar.
+    </p>
+    <p class="coaching-form-meta">
+      <strong>Tid:</strong> Ca 5 minuter
+    </p>
+    <a href="https://forms.gle/Sa7JsjhvcisP9b9XA"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="coaching-form-button">
+      Öppna formulär →
+    </a>
+  </div>
+
+  <!-- Form 2: After each session -->
+  <div class="coaching-form-card">
+    <h2>✨ Reflektion efter samtal</h2>
+    <p>
+      Fyll i detta formulär efter varje coachingsamtal.
+      Dina svar hjälper mig att anpassa kommande samtal efter dina behov.
+    </p>
+    <p class="coaching-form-meta">
+      <strong>Tid:</strong> Ca 10 minuter
+    </p>
+    <a href="https://forms.gle/aSMYCe5qDnjWtGca6"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="coaching-form-button">
+      Öppna formulär →
+    </a>
+  </div>
+
+  <!-- Form 3: Final evaluation -->
+  <div class="coaching-form-card">
+    <h2>✨ Slututvärdering</h2>
+    <p>
+      Fyll i detta formulär efter de tre coachingsessionerna.
+      Din feedback är ovärderlig för att utveckla coachningen vidare.
+    </p>
+    <p class="coaching-form-meta">
+      <strong>Tid:</strong> Ca 10-15 minuter
+    </p>
+    <a href="https://forms.gle/DuZfs1mSN8hAGmY57"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="coaching-form-button">
+      Öppna formulär →
+    </a>
+  </div>
+
+  <div class="coaching-forms-footer">
+    <p>Har du frågor om formulären? Kontakta mig gärna.</p>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Forms List",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Coaching Forms List"
+    }
+  ]
+}
+{% endschema %}
