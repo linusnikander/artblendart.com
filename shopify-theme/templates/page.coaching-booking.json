@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "coaching_booking_hero": {
+      "type": "coaching-booking-hero",
+      "settings": {}
+    },
+    "coaching_booking": {
+      "type": "coaching-booking",
+      "settings": {}
+    }
+  },
+  "order": [
+    "coaching_booking_hero",
+    "coaching_booking"
+  ]
+}
