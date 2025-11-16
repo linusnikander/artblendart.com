@@ -1,5 +1,19 @@
 {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
 <style>
   .coaching-forms-container {
     max-width: 56rem;
@@ -63,9 +77,10 @@
   }
 </style>
 
-<div class="coaching-forms-container">
+<div class="page-width section-{{ section.id }}-padding">
+  <div class="coaching-forms-container">
 
-  <!-- Form 1: Pre-consultation -->
+    <!-- Form 1: Pre-consultation -->
   <div class="coaching-form-card">
     <h2>✨ Inför vårt första samtal</h2>
     <p>
@@ -123,12 +138,40 @@
     <p>Har du frågor om formulären? Kontakta mig gärna.</p>
   </div>
 
+  </div>
 </div>
 
 {% schema %}
 {
   "name": "Coaching Forms List",
-  "settings": [],
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
   "presets": [
     {
       "name": "Coaching Forms List"
