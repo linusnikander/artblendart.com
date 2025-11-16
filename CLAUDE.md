@@ -48,7 +48,7 @@ This repository is for creating mockups of Shopify pages for the ArtBlendArt sto
 ### Important: Store Configuration
 - **Shopify Store Name for CLI**: `82e997-6e.myshopify.com` (MUST use this for `shopify theme push` commands, NOT the custom domain)
 - **Custom Domain**: `artblendart.com` (for live site access only)
-- **Live Theme ID**: `149756051720`
+- **Live Theme ID**: `189302341896` (ArtBlendArt Custom - formerly "Coaching Pages")
 
 ### MANDATORY: Safe Shopify Update Process
 

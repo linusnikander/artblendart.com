@@ -1,6 +1,6 @@
 export default function CoachingPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen" style={{ backgroundColor: '#e0d0f2' }}>
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-4xl md:text-5xl font-light text-center mb-8">
