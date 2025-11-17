@@ -81,12 +81,12 @@
             {% for block in section.blocks %}
               {% if block.type == 'process_step' %}
                 <div style="display: flex; gap: 1rem;">
-                  <span style="flex-shrink: 0; width: 2.5rem; height: 2.5rem; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 500;">
+                  <span style="flex-shrink: 0; width: 3.75rem; height: 3.75rem; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 500;">
                     {{ forloop.index }}
                   </span>
                   <div>
-                    <p class="coaching-paragraph" style="font-weight: 500; font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.5;">{{ block.settings.step_title }}</p>
-                    <p class="coaching-paragraph" style="font-size: 1rem; line-height: 1.6;">{{ block.settings.step_description }}</p>
+                    <p class="coaching-paragraph" style="font-weight: 500; font-size: 1.65rem; margin-bottom: 0.5rem; line-height: 1.5;">{{ block.settings.step_title }}</p>
+                    <p class="coaching-paragraph" style="font-size: 1.5rem; line-height: 1.6;">{{ block.settings.step_description }}</p>
                   </div>
                 </div>
               {% endif %}
