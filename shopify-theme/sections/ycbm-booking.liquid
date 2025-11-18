@@ -1,0 +1,194 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<style>
+  .ycbm-booking-container {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  .ycbm-booking-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .ycbm-booking-intro h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .ycbm-booking-intro p {
+    font-size: 1.125rem;
+    color: #374151;
+    line-height: 1.6;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .ycbm-embed-wrapper {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    min-height: 700px;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding">
+  <div class="ycbm-booking-container">
+
+    {% if section.settings.show_intro %}
+    <div class="ycbm-booking-intro">
+      <h2>{{ section.settings.intro_heading }}</h2>
+      <p>{{ section.settings.intro_text }}</p>
+    </div>
+    {% endif %}
+
+    <!-- YouCanBook.me inline widget begin -->
+    <div class="ycbm-embed-wrapper" id="ycbm-embed-{{ section.id }}">
+      <script
+        src="https://embed.youcanbook.me"
+        async="true"
+        data-domain="{{ section.settings.ycbm_subdomain }}"
+        data-type="inline"
+        data-content="all"
+        {% if section.settings.hide_title %}data-showtitle="false"{% endif %}
+        {% if section.settings.button_color != blank %}data-buttoncolor="{{ section.settings.button_color }}"{% endif %}
+        {% if section.settings.auto_scroll %}data-autoscroll="true"{% endif %}
+        {% if section.settings.copy_parameters %}data-copyparameters="true"{% endif %}
+        {% if section.settings.custom_selections != blank %}data-selections='{{ section.settings.custom_selections }}'{% endif %}>
+      </script>
+    </div>
+    <!-- YouCanBook.me inline widget end -->
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "YCBM Booking (Swedish)",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "YouCanBook.me Configuration"
+    },
+    {
+      "type": "text",
+      "id": "ycbm_subdomain",
+      "label": "YCBM Subdomain",
+      "default": "74929",
+      "info": "Your YouCanBook.me subdomain (e.g., 74929)"
+    },
+    {
+      "type": "header",
+      "content": "Intro Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_intro",
+      "label": "Show intro section",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "intro_heading",
+      "label": "Intro Heading",
+      "default": "Boka ditt samtal"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "Välj en tid som passar dig för ett 15-minuters samtal."
+    },
+    {
+      "type": "header",
+      "content": "Customization Options"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_title",
+      "label": "Hide booking page title",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color (hex)",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_scroll",
+      "label": "Enable auto-scroll",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "copy_parameters",
+      "label": "Copy URL parameters (for tracking)",
+      "default": true,
+      "info": "Pass UTM parameters and tracking codes through to YCBM"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_selections",
+      "label": "Custom Selections (JSON)",
+      "info": "Advanced: Pre-fill booking details with JSON. Example: {\"appointmentType\":\"consultation\",\"date\":\"2025-11-20\"}",
+      "placeholder": "{}"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "YCBM Booking (Swedish)",
+      "settings": {
+        "ycbm_subdomain": "74929",
+        "show_intro": false,
+        "hide_title": true,
+        "button_color": "#000000",
+        "auto_scroll": true,
+        "copy_parameters": true
+      }
+    }
+  ]
+}
+{% endschema %}
