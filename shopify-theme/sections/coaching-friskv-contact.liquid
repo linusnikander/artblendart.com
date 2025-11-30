@@ -1,0 +1,216 @@
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" id="contact" style="background-color: #e0d0f2;">
+  <div class="coaching-contact" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} CTA Section {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h3 class="coaching-heading">{{ section.settings.cta_heading }}</h3>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <div>
+        <p class="coaching-paragraph">{{ section.settings.cta_text }}</p>
+        <p class="coaching-paragraph">{{ section.settings.cta_text_2 }}</p>
+        <p class="coaching-paragraph" style="margin-bottom: 2rem;">{{ section.settings.cta_text_3 }}</p>
+      </div>
+    </div>
+
+    {%- comment -%} Creative Collage Image {%- endcomment -%}
+    <div style="padding: 0 1.5rem 2rem 1.5rem;">
+      <img
+        src="{{ 'coaching-creative-collage.jpg' | asset_url }}"
+        alt="Kreativ återhämtning"
+        style="width: 100%; height: auto;"
+        loading="lazy"
+      >
+    </div>
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
+        {{ section.settings.page_title }}
+      </h2>
+      <p class="coaching-paragraph">
+        {{ section.settings.page_subtitle }}
+      </p>
+    </div>
+
+    {%- comment -%} Two-column layout: Form on left, Info on right {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+
+        {%- comment -%} YCBM Booking Widget {%- endcomment -%}
+        <div>
+          <!-- YouCanBook.me inline widget begin -->
+          <div style="min-height:700px;border-radius:0.5rem;overflow:hidden;">
+            <script
+              src="https://embed.youcanbook.me"
+              async="true"
+              data-domain="74929"
+              data-type="inline"
+              data-content="all"
+              data-showtitle="false"
+              data-buttoncolor="#000000"
+              data-autoscroll="true"
+              data-copyparameters="true">
+            </script>
+          </div>
+          <!-- YouCanBook.me inline widget end -->
+
+          <div style="margin-top: 2rem; text-align: center; font-size: 1.425rem; color: #718096;">
+            <p>
+              Du kan också nå mig direkt på
+              <a href="mailto:{{ section.settings.contact_email }}" style="text-decoration: underline; color: #2d3748;">
+                {{ section.settings.contact_email }}
+              </a>
+            </p>
+          </div>
+        </div>
+
+        {%- comment -%} Info Section - "Vad händer sen?" {%- endcomment -%}
+        <div>
+          <h3 class="coaching-heading" style="font-size: 2.25rem; margin-bottom: 1.5rem;">
+            {{ section.settings.process_heading }}
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 1.75rem; color: #000;">
+            {% for block in section.blocks %}
+              {% if block.type == 'process_step' %}
+                <div style="display: flex; gap: 1rem;">
+                  <span style="flex-shrink: 0; width: 3.75rem; height: 3.75rem; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 500;">
+                    {{ forloop.index }}
+                  </span>
+                  <div>
+                    <p class="coaching-paragraph" style="font-weight: 500; font-size: 1.65rem; margin-bottom: 0.5rem; line-height: 1.5;">{{ block.settings.step_title }}</p>
+                    <p class="coaching-paragraph" style="font-size: 1.5rem; line-height: 1.6;">{{ block.settings.step_description }}</p>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Friskv Contact",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Heading",
+      "default": "Välkommen till ett rum för återhämtning och närvaro"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Den här coachingen är för dig som vill varva ner, hitta balans och ge dig själv en stund av kravlös närvaro."
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTA Text 2",
+      "default": "Du behöver inte ha några förkunskaper – bara en vilja att prova något nytt för ditt välbefinnande."
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text_3",
+      "label": "CTA Text 3",
+      "default": "Tillsammans utforskar vi hur kreativt skapande kan bli ett verktyg för stresshantering och mental återhämtning i din vardag."
+    },
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Boka ditt samtal"
+    },
+    {
+      "type": "text",
+      "id": "page_subtitle",
+      "label": "Page Subtitle",
+      "default": "Första steget är en gratis 15-minuters avstämning där vi känner av hur det känns att arbeta tillsammans."
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact Email",
+      "default": "coaching@artblendart.com"
+    },
+    {
+      "type": "text",
+      "id": "process_heading",
+      "label": "Process Heading",
+      "default": "Vad händer sen?"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "process_step",
+      "name": "Process Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Jag hör av mig inom 1-2 dagar"
+        },
+        {
+          "type": "text",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "Vi bokar in ett 15-minuters samtal på Teams eller telefon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Friskv Contact",
+      "blocks": [
+        {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Jag hör av mig inom 1-2 dagar",
+            "step_description": "Vi bokar in ett 15-minuters samtal på Teams eller telefon"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Vi pratar och känner av",
+            "step_description": "Ett kort samtal där du får berätta om dina behov"
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Om det känns rätt, bokar vi första session",
+            "step_description": "Ingen bindningstid – du bestämmer hur länge vi arbetar tillsammans"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

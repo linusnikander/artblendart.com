@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "hero": {
+      "type": "coaching-friskv-hero",
+      "settings": {
+        "heading": "Friskvård",
+        "subheading": "Stresshantering genom kreativt skapande – En stund av närvaro och avkoppling för dig som vill varva ner",
+        "question": "Behöver du en stund för dig själv?",
+        "content": "<p>Den här coachingen är utformad som en friskvårdsinsats med fokus på avkoppling och närvaro. Kreativt skapande används som metod – ett kravlöst sätt att ta en paus från vardagen där många upplever minskad stress och ökad balans.</p><p>Här finns inga krav på prestation eller förkunskaper. Skapandet blir en stund där du får koppla bort vardagens måsten och bara vara.</p><p>Coachingen sker i samtalsform och utgår från ett kravlöst, intuitivt skapande där fokus ligger på processen – inte på resultatet.</p>",
+        "cta_heading": "Välkommen till ett rum för återhämtning och närvaro",
+        "cta_text": "Den här coachingen är för dig som vill varva ner, hitta balans och ge dig själv en stund av kravlös närvaro.",
+        "cta_text_2": "Du behöver inte ha några förkunskaper – bara en vilja att prova något nytt för ditt välbefinnande."
+      }
+    },
+    "about": {
+      "type": "coaching-friskv-about",
+      "settings": {
+        "page_title": "Om mig",
+        "about_content": "<p>Jag heter Therese Parner och arbetar med kreativt skapande som verktyg för mental återhämtning och stresshantering. Med bakgrund som konstnär, kreativ coach och tidigare lärare inom konst har jag lång erfarenhet av att guida människor i skapande processer.</p><p>För mig är det kreativa skapandet ett kraftfullt verktyg för att koppla bort vardagens stress och hitta tillbaka till nuet. Det handlar inte om att prestera eller skapa något \"fint\" – utan om att ge sig själv en stund av närvaro och återhämtning.</p><p>I coachingen möts lekfull nyfikenhet och lugn guidning. Jag finns här som samtalspartner och stöd i din process mot bättre balans och välmående.</p>",
+        "location_note": "Coaching sker online, tillgängligt var du än är."
+      }
+    },
+    "who": {
+      "type": "coaching-friskv-who",
+      "blocks": {
+        "persona_1": {
+          "type": "persona",
+          "settings": {
+            "name": "Den stressade yrkesarbetaren",
+            "persona": "Anna, 42 år",
+            "description": "Du har ett krävande jobb och känner att du behöver hitta ett sätt att varva ner efter jobbet. Här får du en kravlös stund där du kan släppa prestation och bara vara i nuet."
+          }
+        },
+        "persona_2": {
+          "type": "persona",
+          "settings": {
+            "name": "Den som söker balans",
+            "persona": "Marcus, 35 år",
+            "description": "Vardagen är full av måsten och du känner att du behöver något som ger mental återhämtning. Här får du ett verktyg för att hantera stress och hitta tillbaka till dig själv."
+          }
+        },
+        "persona_3": {
+          "type": "persona",
+          "settings": {
+            "name": "Den som vill prova mindfulness",
+            "persona": "Eva, 55 år",
+            "description": "Du har hört om mindfulness och vill prova ett mer aktivt sätt att vara närvarande. Genom kreativt skapande får du en naturlig ingång till närvaro och avkoppling."
+          }
+        },
+        "theme_1": {
+          "type": "theme",
+          "settings": {
+            "theme": "Kreativitet som verktyg för återhämtning och stressreduktion"
+          }
+        },
+        "theme_2": {
+          "type": "theme",
+          "settings": {
+            "theme": "Skapa hållbara vanor som ger energi i vardagen"
+          }
+        },
+        "theme_3": {
+          "type": "theme",
+          "settings": {
+            "theme": "Stärka självkänsla och självmedkänsla"
+          }
+        },
+        "theme_4": {
+          "type": "theme",
+          "settings": {
+            "theme": "Hitta kreativa sätt att varva ned efter jobbet"
+          }
+        },
+        "theme_5": {
+          "type": "theme",
+          "settings": {
+            "theme": "Mindfulness genom intuitivt skapande"
+          }
+        }
+      },
+      "block_order": [
+        "persona_1",
+        "persona_2",
+        "persona_3",
+        "theme_1",
+        "theme_2",
+        "theme_3",
+        "theme_4",
+        "theme_5"
+      ],
+      "settings": {
+        "page_title": "Exempel på deltagare",
+        "personas_heading": "Exempel på deltagare",
+        "themes_heading": "Vad vi fokuserar på",
+        "closing_text": "Varje samtal anpassas helt efter dig – där du befinner dig i livet och vad du behöver just nu.",
+        "closing_text_bold": "Du behöver inte ha några förkunskaper – kom som du är.",
+        "cta_button_text": "Boka gratis konsultation",
+        "cta_link": "#contact"
+      }
+    },
+    "process": {
+      "type": "coaching-friskv-process",
+      "settings": {
+        "page_title": "Hur går det till?",
+        "process_content": "<p>Vi börjar med en <strong>15 minuters avstämning</strong> på Teams eller telefon. Det är ett kort samtal där du får berätta vad du söker och vi tillsammans känner av hur det känns att arbeta tillsammans.</p><p>Coachingen består sedan av samtal på 60 minuter. Fokus ligger på mental återhämtning och stresshantering – inte på konstnärlig prestation.</p>",
+        "first_session_heading": "Det första samtalet",
+        "first_session_content": "Vi utforskar hur kreativt skapande kan bli ett verktyg för din återhämtning. Du får prova på enkla övningar och vi hittar tillsammans vad som passar dig.",
+        "process_content_2": "<p>Coachingen är utformad som <strong>friskvård</strong> med fokus på mental återhämtning och stresshantering. Ingen utbildning, betyg eller diplom ingår.</p><p><em>Du behöver inte förbereda dig – kom som du är och låt dig guidas in i en stund av kravlös närvaro.</em></p>"
+      }
+    },
+    "info": {
+      "type": "coaching-friskv-info",
+      "blocks": {
+        "point_1": {
+          "type": "info_point",
+          "settings": {
+            "point": "Fokus ligger på avkoppling, närvaro och förebyggande välmående genom skapande"
+          }
+        },
+        "point_2": {
+          "type": "info_point",
+          "settings": {
+            "point": "Ingen utbildning, betyg eller diplom ingår"
+          }
+        },
+        "point_3": {
+          "type": "info_point",
+          "settings": {
+            "point": "Varje tillfälle är 60 minuter och kostar max 1 000 kr inklusive moms"
+          }
+        },
+        "point_4": {
+          "type": "info_point",
+          "settings": {
+            "point": "Coachingen är inte sjukvård eller terapi, utan en friskvårdsinriktad insats"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ],
+      "settings": {
+        "page_title": "Friskvårdsbidrag",
+        "intro_text": "<p>Den här tjänsten kan – beroende på din arbetsgivares riktlinjer – räknas som friskvård inom <strong>mental träning/stresshantering</strong>.</p>",
+        "disclaimer": "Coachingen är inte terapi eller medicinsk behandling. Upplevelsen av avkoppling varierar från person till person. Kontrollera alltid med din arbetsgivare vad som gäller hos er innan du bokar, då det är arbetsgivaren som slutligen avgör vilka aktiviteter som ersätts via friskvårdsbidraget.",
+        "pricing_heading": "Pris",
+        "pricing_content": "<p>Varje tillfälle är <strong>60 minuter</strong> och kostar <strong>1 000 kr inklusive moms</strong>.</p><p>Den första avstämningen på 15 minuter är kostnadsfri.</p>",
+        "note_heading": "Vad står på kvittot?",
+        "note_content": "På kvittot står \"Stresshantering genom kreativt skapande\" – en formulering som uppfyller Skatteverkets krav för friskvård."
+      }
+    },
+    "contact": {
+      "type": "coaching-friskv-contact",
+      "blocks": {
+        "step_1": {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Jag hör av mig inom 1-2 dagar",
+            "step_description": "Vi bokar in ett 15-minuters samtal på Teams eller telefon"
+          }
+        },
+        "step_2": {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Vi pratar och känner av",
+            "step_description": "Ett kort samtal där du får berätta om dina behov"
+          }
+        },
+        "step_3": {
+          "type": "process_step",
+          "settings": {
+            "step_title": "Om det känns rätt, bokar vi första session",
+            "step_description": "Ingen bindningstid – du bestämmer hur länge vi arbetar tillsammans"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "cta_heading": "Välkommen till ett rum för återhämtning och närvaro",
+        "cta_text": "Den här coachingen är för dig som vill varva ner, hitta balans och ge dig själv en stund av kravlös närvaro.",
+        "cta_text_2": "Du behöver inte ha några förkunskaper – bara en vilja att prova något nytt för ditt välbefinnande.",
+        "cta_text_3": "Tillsammans utforskar vi hur kreativt skapande kan bli ett verktyg för stresshantering och mental återhämtning i din vardag.",
+        "page_title": "Boka ditt samtal",
+        "page_subtitle": "Första steget är en gratis 15-minuters avstämning där vi känner av hur det känns att arbeta tillsammans.",
+        "contact_email": "coaching@artblendart.com",
+        "process_heading": "Vad händer sen?"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "about",
+    "who",
+    "process",
+    "info",
+    "contact"
+  ]
+}

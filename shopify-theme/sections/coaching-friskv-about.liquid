@@ -1,0 +1,90 @@
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-about" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
+        {{ section.settings.page_title }}
+      </h2>
+    </div>
+
+    {%- comment -%} About Section {%- endcomment -%}
+    <div style="padding: 2rem 0;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.75rem; align-items: start; padding: 0 1.5rem;">
+        <div>
+          <div class="coaching-paragraph">
+            {{ section.settings.about_content }}
+          </div>
+
+          <p class="coaching-paragraph" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem;">
+            <span style="color: #f56565;">📍</span>
+            {{ section.settings.location_note }}
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end;">
+          <img
+            src="{{ 'therese-portrait.jpg' | asset_url }}"
+            alt="Therese Parner"
+            style="width: 80%; height: auto; object-fit: contain;"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Friskv About",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Om mig"
+    },
+    {
+      "type": "richtext",
+      "id": "about_content",
+      "label": "About Content",
+      "default": "<p>Jag heter Therese Parner och arbetar med kreativt skapande som verktyg för mental återhämtning och stresshantering. Med bakgrund som konstnär, kreativ coach och tidigare lärare inom konst har jag lång erfarenhet av att guida människor i skapande processer.</p><p>För mig är det kreativa skapandet ett kraftfullt verktyg för att koppla bort vardagens stress och hitta tillbaka till nuet. Det handlar inte om att prestera eller skapa något \"fint\" – utan om att ge sig själv en stund av närvaro och återhämtning.</p><p>I coachingen möts lekfull nyfikenhet och lugn guidning. Jag finns här som samtalspartner och stöd i din process mot bättre balans och välmående.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "location_note",
+      "label": "Location Note",
+      "default": "Coaching sker online, tillgängligt var du än är."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Friskv About"
+    }
+  ]
+}
+{% endschema %}

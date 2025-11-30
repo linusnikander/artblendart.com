@@ -1,0 +1,123 @@
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+{%- comment -%} Hero section with background image {%- endcomment -%}
+<div style="position: relative; width: 100%; height: 65vh; min-height: 400px; max-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+  <img src="{{ 'coaching-hero-background.jpg' | asset_url }}"
+       alt="{{ section.settings.heading }}"
+       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.8) brightness(0.85);">
+
+  {%- comment -%} Purple color overlay using multiply blend mode for true color tone {%- endcomment -%}
+  <div style="position: absolute; inset: 0; background: rgba(100, 80, 120, 0.35); mix-blend-mode: multiply; display: block !important;"></div>
+
+  {%- comment -%} Darken overlay for depth {%- endcomment -%}
+  <div style="position: absolute; inset: 0; background: rgba(40, 30, 50, 0.25); display: block !important;"></div>
+
+  {%- comment -%} Hero heading {%- endcomment -%}
+  <h1 style="position: relative; z-index: 10; color: #fff; font-size: clamp(3rem, 8vw, 6rem); font-weight: 300; letter-spacing: 0.08em; text-align: center; padding: 0 1.5rem;">
+    {{ section.settings.heading }}
+  </h1>
+</div>
+
+{%- comment -%} Main content section with narrower width {%- endcomment -%}
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-hero" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
+        {{ section.settings.subheading }}
+      </h2>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <div>
+        <p class="coaching-paragraph">{{ section.settings.question }}</p>
+        <div class="coaching-paragraph">
+          {{ section.settings.content }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Friskv Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image",
+      "info": "Recommended size: 2000x1200px. If no image is selected, a gradient placeholder will be shown."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Hero Heading",
+      "default": "Friskvård"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Stresshantering genom kreativt skapande – Mental återhämtning för dig som vill varva ner och hitta balans"
+    },
+    {
+      "type": "text",
+      "id": "question",
+      "label": "Question Heading",
+      "default": "Behöver du en stund för dig själv?"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Main Content",
+      "default": "<p>Den här coachingen är utformad som en friskvårdsinsats med fokus på mental återhämtning, stressreduktion och ökat välbefinnande. Vi använder kreativt skapande som metod för att skapa balans mellan arbete och fritid, stärka din närvaro och ge dig verktyg för att hantera stress och krav i vardagen.</p><p>Här finns inga krav på prestation eller förkunskaper. Skapandet blir ett verktyg för att minska stressnivåer och öka närvaron (mindfulness) – en stund där du får koppla bort vardagens måsten och bara vara.</p><p>Coachingen sker i samtalsform och utgår från ett kravlöst, intuitivt skapande där fokus ligger på processen och din återhämtning – inte på resultatet.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Heading",
+      "default": "Välkommen till ett rum för återhämtning och närvaro"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Den här coachingen är för dig som vill varva ner, hitta balans och ge dig själv en stund av kravlös närvaro."
+    },
+    {
+      "type": "text",
+      "id": "cta_text_2",
+      "label": "CTA Text 2",
+      "default": "Du behöver inte ha några förkunskaper – bara en vilja att prova något nytt för ditt välbefinnande."
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text_3",
+      "label": "CTA Text 3",
+      "default": "Tillsammans utforskar vi hur kreativt skapande kan bli ett verktyg för stresshantering och mental återhämtning i din vardag."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Friskv Hero"
+    }
+  ]
+}
+{% endschema %}

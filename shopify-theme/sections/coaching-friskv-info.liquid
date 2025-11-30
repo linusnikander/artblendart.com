@@ -1,0 +1,196 @@
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+
+  .friskv-info-box {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin: 1rem 0;
+  }
+
+  .friskv-info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .friskv-info-box li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .friskv-info-box li::before {
+    content: "✓";
+    color: #48bb78;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-friskv-info" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
+        {{ section.settings.page_title }}
+      </h2>
+    </div>
+
+    {%- comment -%} Friskvård Info Box {%- endcomment -%}
+    <div style="padding: 1rem 1.5rem;">
+      <div class="friskv-info-box">
+        <div class="coaching-paragraph">
+          {{ section.settings.intro_text }}
+        </div>
+
+        <ul>
+          {% for block in section.blocks %}
+            {% if block.type == 'info_point' %}
+              <li>{{ block.settings.point }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
+        <p class="coaching-paragraph" style="font-style: italic; margin-top: 1.5rem; margin-bottom: 0;">
+          {{ section.settings.disclaimer }}
+        </p>
+      </div>
+    </div>
+
+    {%- comment -%} Pricing Section {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h3 class="coaching-heading" style="font-size: 2rem;">
+        {{ section.settings.pricing_heading }}
+      </h3>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <div class="coaching-paragraph">
+        {{ section.settings.pricing_content }}
+      </div>
+    </div>
+
+    {%- comment -%} Important Note {%- endcomment -%}
+    <div style="padding: 1rem 1.5rem 2rem 1.5rem;">
+      <p class="coaching-paragraph" style="font-weight: 500;">
+        {{ section.settings.note_heading }}
+      </p>
+      <p class="coaching-paragraph">
+        {{ section.settings.note_content }}
+      </p>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Friskv Info",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Friskvårdsbidrag"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "<p>Den här tjänsten kan – beroende på din arbetsgivares riktlinjer – räknas som friskvård inom <strong>mental träning/stresshantering</strong>.</p>"
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "Kontrollera alltid med din arbetsgivare vad som gäller hos er innan du bokar, då det är arbetsgivaren som slutligen avgör vilka aktiviteter som ersätts via friskvårdsbidraget."
+    },
+    {
+      "type": "text",
+      "id": "pricing_heading",
+      "label": "Pricing Heading",
+      "default": "Pris"
+    },
+    {
+      "type": "richtext",
+      "id": "pricing_content",
+      "label": "Pricing Content",
+      "default": "<p>Varje tillfälle är <strong>60 minuter</strong> och kostar <strong>1 000 kr inklusive moms</strong>.</p><p>Den första avstämningen på 15 minuter är kostnadsfri.</p>"
+    },
+    {
+      "type": "text",
+      "id": "note_heading",
+      "label": "Note Heading",
+      "default": "Vad står på kvittot?"
+    },
+    {
+      "type": "text",
+      "id": "note_content",
+      "label": "Note Content",
+      "default": "På kvittot står \"Stresshantering genom kreativt skapande\" – en formulering som uppfyller Skatteverkets krav för friskvård."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "info_point",
+      "name": "Info Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "point",
+          "label": "Point",
+          "default": "Fokus ligger på mental återhämtning, balans och förebyggande välmående"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Friskv Info",
+      "blocks": [
+        {
+          "type": "info_point",
+          "settings": {
+            "point": "Fokus ligger på mental återhämtning, balans och förebyggande välmående"
+          }
+        },
+        {
+          "type": "info_point",
+          "settings": {
+            "point": "Ingen utbildning, betyg eller diplom ingår"
+          }
+        },
+        {
+          "type": "info_point",
+          "settings": {
+            "point": "Varje tillfälle är 60 minuter och kostar max 1 000 kr inklusive moms"
+          }
+        },
+        {
+          "type": "info_point",
+          "settings": {
+            "point": "Coachingen är inte sjukvård eller terapi, utan en friskvårdsinriktad insats"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

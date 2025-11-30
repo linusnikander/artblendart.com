@@ -1,0 +1,92 @@
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-process" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
+        {{ section.settings.page_title }}
+      </h2>
+    </div>
+
+    {%- comment -%} Process Content {%- endcomment -%}
+    <div style="padding: 1rem 1.5rem;">
+      <div class="coaching-paragraph">
+        {{ section.settings.process_content }}
+      </div>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <p class="coaching-paragraph">{{ section.settings.first_session_heading }}</p>
+      <p class="coaching-paragraph">
+        {{ section.settings.first_session_content }}
+      </p>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <div class="coaching-paragraph">
+        {{ section.settings.process_content_2 }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Friskv Process",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Hur går det till?"
+    },
+    {
+      "type": "richtext",
+      "id": "process_content",
+      "label": "Process Content",
+      "default": "<p>Vi börjar med en <strong>15 minuters avstämning</strong> på Teams eller telefon. Det är ett kort samtal där du får berätta vad du söker och vi tillsammans känner av hur det känns att arbeta tillsammans.</p><p>Coachingen består sedan av samtal på 60 minuter. Fokus ligger på mental återhämtning och stresshantering – inte på konstnärlig prestation.</p>"
+    },
+    {
+      "type": "text",
+      "id": "first_session_heading",
+      "label": "First Session Heading",
+      "default": "Det första samtalet"
+    },
+    {
+      "type": "text",
+      "id": "first_session_content",
+      "label": "First Session Content",
+      "default": "Vi utforskar hur kreativt skapande kan bli ett verktyg för din återhämtning. Du får prova på enkla övningar och vi hittar tillsammans vad som passar dig."
+    },
+    {
+      "type": "richtext",
+      "id": "process_content_2",
+      "label": "Process Content Part 2",
+      "default": "<p>Coachingen är utformad som <strong>friskvård</strong> med fokus på mental återhämtning och stresshantering. Ingen utbildning, betyg eller diplom ingår.</p><p><em>Du behöver inte förbereda dig – kom som du är och låt dig guidas in i en stund av kravlös närvaro.</em></p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Friskv Process"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,226 @@
+<style>
+  .coaching-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  .coaching-paragraph {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    color: #000;
+  }
+</style>
+
+<div class="page-width section-{{ section.id }}-padding" style="background-color: #e0d0f2;">
+  <div class="coaching-who" style="max-width: 900px; margin: 0 auto; padding: 1.5rem;">
+
+    {%- comment -%} Page Header {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h2 class="coaching-heading">
+        {{ section.settings.page_title }}
+      </h2>
+    </div>
+
+    {%- comment -%} Client Personas {%- endcomment -%}
+    <div style="padding: 1rem 1.5rem;">
+      <div>
+        {% for block in section.blocks %}
+          {% if block.type == 'persona' %}
+            <p class="coaching-paragraph">
+              <strong>{{ block.settings.name }} – {{ block.settings.persona }}</strong><br>
+              {{ block.settings.description }}
+            </p>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {%- comment -%} Themes Section {%- endcomment -%}
+    <div style="padding: 2rem 1.5rem 1rem 1.5rem;">
+      <h3 class="coaching-heading">
+        {{ section.settings.themes_heading }}
+      </h3>
+    </div>
+
+    <div style="padding: 1rem 1.5rem;">
+      <ul style="list-style: disc; padding-left: 2rem;">
+        {% for block in section.blocks %}
+          {% if block.type == 'theme' %}
+            <li class="coaching-paragraph">
+              {{ block.settings.theme }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    {%- comment -%} Closing Text {%- endcomment -%}
+    <div style="padding: 1rem 1.5rem;">
+      <p class="coaching-paragraph">{{ section.settings.closing_text }}</p>
+      <p class="coaching-paragraph">{{ section.settings.closing_text_bold }}</p>
+    </div>
+
+    {%- comment -%} Exploration Image {%- endcomment -%}
+    <div style="padding: 0 1.5rem 2rem 1.5rem;">
+      <img
+        src="{{ 'coaching-exploration-image.jpg' | asset_url }}"
+        alt="Kreativ återhämtning"
+        style="width: 100%; height: auto;"
+        loading="lazy"
+      >
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Coaching Friskv Who",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Exempel på deltagare"
+    },
+    {
+      "type": "text",
+      "id": "personas_heading",
+      "label": "Personas Heading",
+      "default": "Exempel på deltagare"
+    },
+    {
+      "type": "text",
+      "id": "themes_heading",
+      "label": "Themes Heading",
+      "default": "Vad vi fokuserar på"
+    },
+    {
+      "type": "text",
+      "id": "closing_text",
+      "label": "Closing Text",
+      "default": "Varje samtal anpassas helt efter dig – där du befinner dig i livet och vad du behöver just nu."
+    },
+    {
+      "type": "text",
+      "id": "closing_text_bold",
+      "label": "Closing Text Bold",
+      "default": "Du behöver inte ha några förkunskaper – kom som du är."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Boka gratis konsultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "persona",
+      "name": "Participant Persona",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Den stressade yrkesarbetaren"
+        },
+        {
+          "type": "text",
+          "id": "persona",
+          "label": "Persona",
+          "default": "Anna, 42 år"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Du har ett krävande jobb och känner att du behöver hitta ett sätt att varva ner efter jobbet. Här får du en kravlös stund där du kan släppa prestation och bara vara."
+        }
+      ]
+    },
+    {
+      "type": "theme",
+      "name": "Coaching Theme",
+      "settings": [
+        {
+          "type": "text",
+          "id": "theme",
+          "label": "Theme",
+          "default": "Kreativitet som verktyg för återhämtning och stressreduktion"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Friskv Who",
+      "blocks": [
+        {
+          "type": "persona",
+          "settings": {
+            "name": "Den stressade yrkesarbetaren",
+            "persona": "Anna, 42 år",
+            "description": "Du har ett krävande jobb och känner att du behöver hitta ett sätt att varva ner efter jobbet. Här får du en kravlös stund där du kan släppa prestation och bara vara i nuet."
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "name": "Den som söker balans",
+            "persona": "Marcus, 35 år",
+            "description": "Vardagen är full av måsten och du känner att du behöver något som ger mental återhämtning. Här får du ett verktyg för att hantera stress och hitta tillbaka till dig själv."
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "name": "Den som vill prova mindfulness",
+            "persona": "Eva, 55 år",
+            "description": "Du har hört om mindfulness och vill prova ett mer aktivt sätt att vara närvarande. Genom kreativt skapande får du en naturlig ingång till närvaro och avkoppling."
+          }
+        },
+        {
+          "type": "theme",
+          "settings": {
+            "theme": "Kreativitet som verktyg för återhämtning och stressreduktion"
+          }
+        },
+        {
+          "type": "theme",
+          "settings": {
+            "theme": "Skapa hållbara vanor som ger energi i vardagen"
+          }
+        },
+        {
+          "type": "theme",
+          "settings": {
+            "theme": "Stärka självkänsla och självmedkänsla"
+          }
+        },
+        {
+          "type": "theme",
+          "settings": {
+            "theme": "Hitta kreativa sätt att varva ned efter jobbet"
+          }
+        },
+        {
+          "type": "theme",
+          "settings": {
+            "theme": "Mindfulness genom intuitivt skapande"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
