@@ -1,0 +1,381 @@
+{% comment %} Coaching2 Hero Section - Sales-oriented with stats {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+  .c2-hero {
+    background: #1a1a2e;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .c2-hero-bg {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.8) brightness(0.85);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .c2-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.6) 0%, rgba(124, 58, 237, 0.3) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .c2-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .c2-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease-out;
+    backdrop-filter: blur(4px);
+  }
+
+  .c2-hero-badge svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .c2-hero h1 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: clamp(32px, 4.5vw, 42px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.10;
+    letter-spacing: -0.4px;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .c2-hero h1 em,
+  .c2-hero h1 i {
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .c2-hero-subtitle {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+
+  .c2-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+  }
+
+  .c2-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  }
+
+  .c2-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: #fff;
+  }
+
+  .c2-btn-primary svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .c2-btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .c2-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .c2-btn-secondary:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .c2-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+  }
+
+  .c2-stat {
+    text-align: center;
+  }
+
+  .c2-stat-number {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .c2-stat-label {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .c2-hero {
+      padding: 4rem 1rem;
+      min-height: auto;
+    }
+
+    .c2-hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .c2-btn-primary,
+    .c2-btn-secondary {
+      width: 100%;
+      max-width: 300px;
+      justify-content: center;
+    }
+
+    .c2-hero-stats {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .c2-stat-number {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<section class="c2-hero" id="start">
+  {% if section.settings.background_image != blank %}
+    <div class="c2-hero-bg" style="background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}');"></div>
+  {% else %}
+    <div class="c2-hero-bg" style="background-image: url('{{ 'coaching-hero-background.jpg' | asset_url }}');"></div>
+  {% endif %}
+  <div class="c2-hero-content">
+    <div class="c2-hero-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>
+      {{ section.settings.badge_text }}
+    </div>
+
+    <h1>{{ section.settings.heading }}</h1>
+
+    <p class="c2-hero-subtitle">{{ section.settings.subtitle }}</p>
+
+    <div class="c2-hero-buttons">
+      <a href="{{ section.settings.cta_primary_link }}" class="c2-btn-primary">
+        {{ section.settings.cta_primary_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+      <a href="{{ section.settings.cta_secondary_link }}" class="c2-btn-secondary">
+        {{ section.settings.cta_secondary_text }}
+      </a>
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="c2-hero-stats">
+        {% for block in section.blocks %}
+          {% if block.type == 'stat' %}
+            <div class="c2-stat" {{ block.shopify_attributes }}>
+              <div class="c2-stat-number">{{ block.settings.number }}</div>
+              <div class="c2-stat-label">{{ block.settings.label }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coaching2 Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Online coaching – tillgänglig var du än är"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Kreativt skapande för dig som vill leva mer"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Upptäck din kreativitet, hitta ditt uttryck och låt skapandet bli en källa till mening, energi och närvaro i ditt liv."
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_text",
+      "label": "Primary CTA Text",
+      "default": "Boka gratis konsultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_link",
+      "label": "Primary CTA Link",
+      
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_text",
+      "label": "Secondary CTA Text",
+      "default": "Läs mer om coachingen"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_link",
+      "label": "Secondary CTA Link",
+      
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "10+"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "års erfarenhet"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching2 Hero",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "10+",
+            "label": "års erfarenhet"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "100+",
+            "label": "nöjda klienter"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "Online",
+            "label": "var du än är"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

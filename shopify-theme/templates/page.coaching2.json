@@ -1,0 +1,402 @@
+{
+  "sections": {
+    "hero": {
+      "type": "coaching2-hero",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "10+",
+            "label": "års erfarenhet"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "100+",
+            "label": "nöjda klienter"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "Online",
+            "label": "var du än är"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "settings": {
+        "badge_text": "Online coaching – tillgänglig var du än är",
+        "heading": "Kreativt skapande för dig som vill <em>leva mer</em>",
+        "subtitle": "Upptäck din kreativitet, hitta ditt uttryck och låt skapandet bli en källa till mening, energi och närvaro i ditt liv.",
+        "cta_primary_text": "Boka gratis konsultation",
+        "cta_primary_link": "#boka",
+        "cta_secondary_text": "Läs mer om coachingen",
+        "cta_secondary_link": "#om-mig"
+      }
+    },
+    "pain_points": {
+      "type": "coaching2-pain-points",
+      "blocks": {
+        "pain_1": {
+          "type": "pain_point",
+          "settings": {
+            "icon": "lightbulb",
+            "text": "Har du länge burit på idéer som väntat på att få liv?"
+          }
+        },
+        "pain_2": {
+          "type": "pain_point",
+          "settings": {
+            "icon": "block",
+            "text": "Fastnat i prestation, självkritik eller osäkerhet kring din riktning?"
+          }
+        },
+        "pain_3": {
+          "type": "pain_point",
+          "settings": {
+            "icon": "heart",
+            "text": "Längtar efter att ge plats åt din kreativitet – kanske för första gången på länge?"
+          }
+        },
+        "pain_4": {
+          "type": "pain_point",
+          "settings": {
+            "icon": "compass",
+            "text": "Söker inspiration och vägledning för att ta nästa steg?"
+          }
+        }
+      },
+      "block_order": ["pain_1", "pain_2", "pain_3", "pain_4"],
+      "settings": {
+        "heading": "Vad längtar du efter i ditt skapande?",
+        "subheading": "Känner du igen dig i något av detta?",
+        "cta_text": "Du behöver inte veta var du ska börja – vi utforskar det tillsammans.",
+        "cta_button_text": "Starta din resa idag",
+        "cta_link": "#boka"
+      }
+    },
+    "about": {
+      "type": "coaching2-about",
+      "blocks": {
+        "cred_1": {
+          "type": "credential",
+          "settings": {
+            "icon": "graduation",
+            "title": "Magisterexamen i fri konst",
+            "description": "Akademisk grund och djup konstnärlig kompetens"
+          }
+        },
+        "cred_2": {
+          "type": "credential",
+          "settings": {
+            "icon": "star",
+            "title": "10+ års erfarenhet",
+            "description": "Som yrkesverksam konstnär och kreativ coach"
+          }
+        },
+        "cred_3": {
+          "type": "credential",
+          "settings": {
+            "icon": "sparkles",
+            "title": "Holistiskt synsätt",
+            "description": "Skapande som del av personlig utveckling"
+          }
+        }
+      },
+      "block_order": ["cred_1", "cred_2", "cred_3"],
+      "settings": {
+        "image_alt": "Therese Parner - Kreativ coach",
+        "label": "Om mig",
+        "heading": "Jag heter Therese Parner",
+        "content": "<p>Jag är konstnär, kreativ coach, tidigare lärare inom konst och kulturarbetare inom offentlig sektor. Genom åren har jag arbetat med många olika uttryck och material – från trä och textil till lera, metall och andra oväntade kombinationer.</p><p>För mig är naturen och utomhus som ett magiskt rum där tid och fantasi möts. Här kan idéer ta form, tankarna rensas och skapandeprocessen får egna andetag.</p><p>I coachingen möts lekfull nyfikenhet och handfast guidning. Oavsett om du söker konstnärlig fördjupning, ny inspiration eller en trygg plats för skapandeprocessen, finns jag här som samtalspartner, handledare och påhejare.</p>",
+        "cta_text": "Boka gratis konsultation",
+        "cta_link": "#boka"
+      }
+    },
+    "personas": {
+      "type": "coaching2-personas",
+      "blocks": {
+        "persona_1": {
+          "type": "persona",
+          "settings": {
+            "name": "Den kreativa livsnjutaren",
+            "persona": "Eva, 59 år",
+            "description": "Du längtar efter att ge plats åt din kreativitet, kanske för första gången på länge, och vill fylla din fritid med något som ger extra mening. Här får du stöd att hitta ditt uttryck, skapa utan krav och låta processen bli en källa till glädje."
+          }
+        },
+        "persona_2": {
+          "type": "persona",
+          "settings": {
+            "name": "Den målmedvetna sökaren",
+            "persona": "Leo, 26 år",
+            "description": "Du vet att du har något att säga, men behöver hjälp att forma din konstnärliga idé. Tillsammans arbetar vi med uttryck, portfölj, ansökningar eller projekt och bygger tillit till din inre drivkraft."
+          }
+        },
+        "persona_3": {
+          "type": "persona",
+          "settings": {
+            "name": "Den nyfikna hantverkaren",
+            "persona": "Erik, 45 år",
+            "description": "Du skapar redan – i trä, färg, tyg eller ord – men vill förstå mer och utvecklas vidare. Här får du feedback, tips och nya perspektiv som hjälper dig att ta ditt skapande till nästa nivå."
+          }
+        },
+        "persona_4": {
+          "type": "persona",
+          "settings": {
+            "name": "Den uppvaknande kreatören",
+            "persona": "Sofia, 38 år",
+            "description": "Du har alltid haft fullt upp med jobb och vardag. Nu känner du allt starkare att du vill ge utrymme åt kreativiteten – som en egen plats utanför vardagens måsten."
+          }
+        }
+      },
+      "block_order": ["persona_1", "persona_2", "persona_3", "persona_4"],
+      "settings": {
+        "label": "För dig",
+        "heading": "Känner du igen dig?",
+        "subheading": "Jag möter människor i alla åldrar och faser av livet. Här är några exempel på klienter jag arbetar med.",
+        "cta_text": "Oavsett var du befinner dig i livet – jag finns här för dig.",
+        "cta_button_text": "Boka din plats nu",
+        "cta_link": "#boka"
+      }
+    },
+    "process": {
+      "type": "coaching2-process",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Gratis konsultation",
+            "duration": "15 min",
+            "description": "Ett kort samtal på Teams eller telefon där du berättar vad du vill få ut av coachningen, och vi känner av hur det känns att arbeta tillsammans.",
+            "badge": "Helt gratis – ingen förpliktelse"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Första samtalet",
+            "duration": "60 min",
+            "description": "Vi utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål och redan här verktyg för att komma igång.",
+            "badge": ""
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Skriftlig sammanfattning",
+            "duration": "",
+            "description": "Efter varje samtal får du en sammanfattning samt inspirerande hemuppgifter – praktiska, kreativa eller reflekterande.",
+            "badge": ""
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Fortsatt utveckling",
+            "duration": "",
+            "description": "Vi avslutar varje samtal med en plan för vad du vill fokusera på. Allt material skickas till dig som ett personligt verktyg att återvända till.",
+            "badge": ""
+          }
+        }
+      },
+      "block_order": ["step_1", "step_2", "step_3", "step_4"],
+      "settings": {
+        "label": "Hur det fungerar",
+        "heading": "Din resa till kreativt skapande",
+        "intro": "Min erfarenhet är att de flesta behöver minst tre tillfällen för att känna sig trygga i processen och få en rättvisande bild av vad coachningen kan ge.",
+        "image_alt": "Kreativ process",
+        "quote": "Du behöver inte förbereda dig – men om du reflekterar lite över vad du vill få ut av coachningen kan vi använda tiden ännu mer effektivt.",
+        "cta_text": "Börja med en gratis konsultation",
+        "cta_link": "#boka"
+      }
+    },
+    "themes": {
+      "type": "coaching2-themes",
+      "blocks": {
+        "theme_1": {
+          "type": "theme",
+          "settings": {
+            "icon": "chat",
+            "title": "Bollplank & feedback",
+            "description": "Få konstruktiv respons på ditt skapande och din process"
+          }
+        },
+        "theme_2": {
+          "type": "theme",
+          "settings": {
+            "icon": "sparkles",
+            "title": "Hitta ditt första steg",
+            "description": "Börja utforska kreativt skapande på ditt sätt"
+          }
+        },
+        "theme_3": {
+          "type": "theme",
+          "settings": {
+            "icon": "palette",
+            "title": "Teknik & formspråk",
+            "description": "Utveckla material, teknik och ditt personliga uttryck"
+          }
+        },
+        "theme_4": {
+          "type": "theme",
+          "settings": {
+            "icon": "calendar",
+            "title": "Kreativa vanor",
+            "description": "Integrera skapande i din vardag på ett hållbart sätt"
+          }
+        },
+        "theme_5": {
+          "type": "theme",
+          "settings": {
+            "icon": "heart",
+            "title": "Kreativitet som inre resa",
+            "description": "Självutforskande och personlig utveckling genom konst"
+          }
+        },
+        "theme_6": {
+          "type": "theme",
+          "settings": {
+            "icon": "academic",
+            "title": "Portfolio & konstskolor",
+            "description": "Förberedelse för ansökningar och konstnärliga utbildningar"
+          }
+        }
+      },
+      "block_order": ["theme_1", "theme_2", "theme_3", "theme_4", "theme_5", "theme_6"],
+      "settings": {
+        "label": "Vad vi kan utforska",
+        "heading": "Teman anpassade efter dig",
+        "subheading": "Varje samtal anpassas helt efter dig – där du befinner dig i livet och i ditt skapande.",
+        "cta_line1": "Vet du inte vart du ska börja?",
+        "cta_line2": "Det är helt okej. Vi utforskar det tillsammans under vår första konsultation.",
+        "cta_button_text": "Boka gratis konsultation",
+        "cta_link": "#boka"
+      }
+    },
+    "products": {
+      "type": "coaching2-products",
+      "blocks": {
+        "product_1": {
+          "type": "product",
+          "settings": {
+            "title": "Din kreativa plats",
+            "tagline": "En meningsfull fritid",
+            "badge": "",
+            "badge_type": "popular",
+            "featured": false,
+            "price": "1 750",
+            "price_period": "kr/mån",
+            "price_total": "5 250 kr totalt · 3 månader",
+            "description": "Vill du skapa men fastnat i \"hur\" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik, och gör första steget konkret och enkelt.",
+            "feature_1": "3 × coachingsamtal (1 per månad á 60 min) per video",
+            "feature_2": "Skriftlig sammanfattning efter varje samtal",
+            "feature_3": "Inspirerande hemuppgifter efter varje samtal",
+            "feature_4": "",
+            "feature_5": "",
+            "cta_link": "/products/din-kreativa-plats"
+          }
+        },
+        "product_2": {
+          "type": "product",
+          "settings": {
+            "title": "Idé till verklighet",
+            "tagline": "Gå från idé till genomförande",
+            "badge": "Populärast",
+            "badge_type": "popular",
+            "featured": true,
+            "price": "1 750",
+            "price_period": "kr/mån",
+            "price_total": "5 250 kr totalt · 3 månader",
+            "description": "Vet du vad du vill men inte hur du skall komma igång eller hur du skall göra - Jag hjälper dig genom hela processen.",
+            "feature_1": "3 × coachingsamtal (1 per månad á 60 min) per video",
+            "feature_2": "Skriftlig sammanfattning efter varje samtal",
+            "feature_3": "Inspirerande hemuppgifter efter varje samtal",
+            "feature_4": "",
+            "feature_5": "",
+            "cta_link": "/products/ide-till-verklighet"
+          }
+        },
+        "product_3": {
+          "type": "product",
+          "settings": {
+            "title": "Kickstart",
+            "tagline": "En kickstart för din kreativitet",
+            "badge": "Friskvårdsbidrag",
+            "badge_type": "wellness",
+            "featured": false,
+            "price": "2 500",
+            "price_period": "kr",
+            "price_total": "Engångskostnad · Ingen bindning",
+            "description": "För dig som vill använda friskvårdsbidraget till att öppna dörren till en mer kreativ fritid och som ger mening och balans i livet.",
+            "feature_1": "1 × coachingsamtal á 60 min per video",
+            "feature_2": "Skriftlig sammanfattning efter 60-minuterssessionen",
+            "feature_3": "Rekommendation för nästa steg efter sessionen",
+            "feature_4": "",
+            "feature_5": "",
+            "cta_link": "/products/kickstart-coaching"
+          }
+        }
+      },
+      "block_order": ["product_1", "product_2", "product_3"],
+      "settings": {
+        "label": "Coaching-paket",
+        "heading": "Välj det paket som passar dig",
+        "subheading": "Gratis 15-minuters konsultation kan bokas separat om du vill, men ingår inte i paketen."
+      }
+    },
+    "cta": {
+      "type": "coaching2-cta",
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "text": "15 minuters gratis konsultation"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Ingen förpliktelse"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Online – var du än befinner dig"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Personlig och trygg vägledning"
+          }
+        }
+      },
+      "block_order": ["benefit_1", "benefit_2", "benefit_3", "benefit_4"],
+      "settings": {
+        "urgency_text": "Begränsat antal platser",
+        "heading": "Redo att börja din kreativa resa?",
+        "subtitle": "Ta första steget mot ett mer kreativt liv. Boka en kostnadsfri 15-minuters konsultation där vi pratar om dina drömmar, mål och hur jag kan stötta dig.",
+        "cta_text": "Boka gratis konsultation nu",
+        "cta_link": "mailto:coaching@artblendart.com?subject=Boka%20kostnadsfri%20konsultation",
+        "note": "Coaching sker online via Teams – tillgängligt var du än är."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "pain_points",
+    "about",
+    "personas",
+    "process",
+    "themes",
+    "products",
+    "cta"
+  ]
+}

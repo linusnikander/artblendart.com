@@ -1,0 +1,560 @@
+{% comment %} Coaching2 Products Section - 3 Pricing Packages {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+  .c2-products {
+    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
+    padding: 5rem 1.5rem;
+  }
+
+  .c2-products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .c2-products-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .c2-products-label {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .c2-products h2 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: clamp(22px, 2.8vw, 26px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.2px;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  .c2-products-header > p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #6b6b8a;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .c2-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .c2-product-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .c2-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .c2-product-card.featured {
+    border-color: #7c3aed;
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.15);
+  }
+
+  .c2-product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #fff;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .c2-product-badge.wellness {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  }
+
+  .c2-product-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .c2-product-card h3 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: clamp(22px, 2.8vw, 26px);
+    font-weight: 600;
+    line-height: 1.22;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
+  }
+
+  .c2-product-tagline {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #6b6b8a;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .c2-product-pricing {
+    margin-bottom: 1.5rem;
+  }
+
+  .c2-product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .c2-product-price .amount {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .c2-product-price .period {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #6b6b8a;
+    font-size: 1rem;
+  }
+
+  .c2-product-total {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #6b6b8a;
+    font-size: 0.875rem;
+  }
+
+  .c2-product-description {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a68;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .c2-product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    flex: 1;
+  }
+
+  .c2-product-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #4a4a68;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .c2-product-features li svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #7c3aed;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .c2-product-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  }
+
+  .c2-product-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: #fff;
+  }
+
+  .c2-product-cta svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .c2-product-cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  .c2-products-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .c2-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #4a4a68;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .c2-benefit svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #7c3aed;
+  }
+
+  @media (max-width: 900px) {
+    .c2-products-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .c2-products-benefits {
+      gap: 1rem;
+    }
+
+    .c2-benefit {
+      flex: 1 1 45%;
+    }
+  }
+</style>
+
+<section class="c2-products" id="paket">
+  <div class="c2-products-container">
+    <div class="c2-products-header">
+      <div class="c2-products-label">{{ section.settings.label }}</div>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="c2-products-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'product' %}
+          <div class="c2-product-card{% if block.settings.featured %} featured{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.badge != blank %}
+              <span class="c2-product-badge{% if block.settings.badge_type == 'wellness' %} wellness{% endif %}">{{ block.settings.badge }}</span>
+            {% endif %}
+
+            <div class="c2-product-header">
+              <h3>{{ block.settings.title }}</h3>
+              <span class="c2-product-tagline">{{ block.settings.tagline }}</span>
+            </div>
+
+            <div class="c2-product-pricing">
+              <div class="c2-product-price">
+                <span class="amount">{{ block.settings.price }}</span>
+                <span class="period">{{ block.settings.price_period }}</span>
+              </div>
+              {% if block.settings.price_total != blank %}
+                <span class="c2-product-total">{{ block.settings.price_total }}</span>
+              {% endif %}
+            </div>
+
+            <p class="c2-product-description">{{ block.settings.description }}</p>
+
+            <ul class="c2-product-features">
+              {% if block.settings.feature_1 != blank %}
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{{ block.settings.feature_1 }}</span>
+                </li>
+              {% endif %}
+              {% if block.settings.feature_2 != blank %}
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{{ block.settings.feature_2 }}</span>
+                </li>
+              {% endif %}
+              {% if block.settings.feature_3 != blank %}
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{{ block.settings.feature_3 }}</span>
+                </li>
+              {% endif %}
+              {% if block.settings.feature_4 != blank %}
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{{ block.settings.feature_4 }}</span>
+                </li>
+              {% endif %}
+              {% if block.settings.feature_5 != blank %}
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{{ block.settings.feature_5 }}</span>
+                </li>
+              {% endif %}
+            </ul>
+
+            <a href="{{ block.settings.cta_link }}" class="c2-product-cta">
+              Köp {{ block.settings.title }} nu
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="c2-products-benefits">
+      <div class="c2-benefit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        <span>Alla samtal sker online via video</span>
+      </div>
+      <div class="c2-benefit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Flexibla tider</span>
+      </div>
+      <div class="c2-benefit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        <span>Skriftlig dokumentation</span>
+      </div>
+      <div class="c2-benefit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Personligt anpassat</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coaching2 Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "Coaching-paket"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Välj det paket som passar dig"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Gratis 15-minuters konsultation kan bokas separat om du vill, men ingår inte i paketen."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product Package",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Din kreativa plats"
+        },
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "default": "En meningsfull fritid"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (optional)"
+        },
+        {
+          "type": "select",
+          "id": "badge_type",
+          "label": "Badge Type",
+          "options": [
+            { "value": "popular", "label": "Popular (Purple)" },
+            { "value": "wellness", "label": "Wellness (Green)" }
+          ],
+          "default": "popular"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured Card",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "1 750"
+        },
+        {
+          "type": "text",
+          "id": "price_period",
+          "label": "Price Period",
+          "default": "kr/mån"
+        },
+        {
+          "type": "text",
+          "id": "price_total",
+          "label": "Total Price Info",
+          "default": "5 250 kr totalt · 3 månader"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Vill du skapa men fastnat i \"hur\" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik."
+        },
+        {
+          "type": "text",
+          "id": "feature_1",
+          "label": "Feature 1",
+          "default": "3 × coachingsamtal (1 per månad á 60 min) per video"
+        },
+        {
+          "type": "text",
+          "id": "feature_2",
+          "label": "Feature 2",
+          "default": "Skriftlig sammanfattning efter varje samtal"
+        },
+        {
+          "type": "text",
+          "id": "feature_3",
+          "label": "Feature 3",
+          "default": "Inspirerande hemuppgifter efter varje samtal"
+        },
+        {
+          "type": "text",
+          "id": "feature_4",
+          "label": "Feature 4 (optional)"
+        },
+        {
+          "type": "text",
+          "id": "feature_5",
+          "label": "Feature 5 (optional)"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA Link",
+          
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching2 Products",
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "title": "Din kreativa plats",
+            "tagline": "En meningsfull fritid",
+            "featured": false,
+            "price": "1 750",
+            "price_period": "kr/mån",
+            "price_total": "5 250 kr totalt · 3 månader",
+            "description": "Vill du skapa men fastnat i \"hur\" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik, och gör första steget konkret och enkelt.",
+            "feature_1": "3 × coachingsamtal (1 per månad á 60 min) per video",
+            "feature_2": "Skriftlig sammanfattning efter varje samtal",
+            "feature_3": "Inspirerande hemuppgifter efter varje samtal",
+            "feature_4": ""
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "Idé till verklighet",
+            "tagline": "Gå från idé till genomförande",
+            "badge": "Populärast",
+            "badge_type": "popular",
+            "featured": true,
+            "price": "1 750",
+            "price_period": "kr/mån",
+            "price_total": "5 250 kr totalt · 3 månader",
+            "description": "Vet du vad du vill men inte hur du skall komma igång eller hur du skall göra - Jag hjälper dig genom hela processen.",
+            "feature_1": "3 × coachingsamtal (1 per månad á 60 min) per video",
+            "feature_2": "Skriftlig sammanfattning efter varje samtal",
+            "feature_3": "Inspirerande hemuppgifter efter varje samtal",
+            "feature_4": ""
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "title": "Kickstart",
+            "tagline": "En kickstart för din kreativitet",
+            "badge": "Friskvårdsbidrag",
+            "badge_type": "wellness",
+            "featured": false,
+            "price": "2 500",
+            "price_period": "kr",
+            "price_total": "Engångskostnad · Ingen bindning",
+            "description": "För dig som vill använda friskvårdsbidraget till att öppna dörren till en mer kreativ fritid och som ger mening och balans i livet.",
+            "feature_1": "1 × coachingsamtal á 60 min per video",
+            "feature_2": "Skriftlig sammanfattning efter 60-minuterssessionen",
+            "feature_3": "Rekommendation för nästa steg efter sessionen",
+            "feature_4": "",
+            "feature_5": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

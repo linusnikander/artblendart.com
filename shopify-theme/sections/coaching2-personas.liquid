@@ -1,0 +1,336 @@
+{% comment %} Coaching2 Personas Section {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+  .c2-personas {
+    background: #fff;
+    padding: 5rem 1.5rem;
+  }
+
+  .c2-personas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .c2-personas-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .c2-personas-label {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .c2-personas h2 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: clamp(22px, 2.8vw, 26px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.2px;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  .c2-personas-header > p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #6b6b8a;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .c2-personas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .c2-personas-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .c2-persona-card {
+    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .c2-persona-card:nth-child(1) { animation-delay: 0.1s; }
+  .c2-persona-card:nth-child(2) { animation-delay: 0.2s; }
+  .c2-persona-card:nth-child(3) { animation-delay: 0.3s; }
+  .c2-persona-card:nth-child(4) { animation-delay: 0.4s; }
+
+  .c2-persona-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+
+  .c2-persona-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .c2-persona-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .c2-persona-avatar svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #fff;
+  }
+
+  .c2-persona-info strong {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    display: block;
+    color: #1a1a2e;
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .c2-persona-info span {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #7c3aed;
+    font-size: 0.875rem;
+  }
+
+  .c2-persona-card p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a68;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .c2-personas-cta {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f5ff 0%, #f0ebff 100%);
+    border-radius: 1rem;
+  }
+
+  .c2-personas-cta p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #4a4a68;
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .c2-personas-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  }
+
+  .c2-personas-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: #fff;
+  }
+
+  .c2-personas-cta a svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .c2-personas-cta a:hover svg {
+    transform: translateX(4px);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<section class="c2-personas">
+  <div class="c2-personas-container">
+    <div class="c2-personas-header">
+      <div class="c2-personas-label">{{ section.settings.label }}</div>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="c2-personas-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'persona' %}
+          <div class="c2-persona-card" {{ block.shopify_attributes }}>
+            <div class="c2-persona-header">
+              <div class="c2-persona-avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <div class="c2-persona-info">
+                <strong>{{ block.settings.name }}</strong>
+                <span>{{ block.settings.persona }}</span>
+              </div>
+            </div>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="c2-personas-cta">
+      <p>{{ section.settings.cta_text }}</p>
+      <a href="{{ section.settings.cta_link }}">
+        {{ section.settings.cta_button_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coaching2 Personas",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "För dig"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Känner du igen dig?"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Jag möter människor i alla åldrar och faser av livet. Här är några exempel på klienter jag arbetar med."
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Oavsett var du befinner dig i livet – jag finns här för dig."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Boka din plats nu"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      
+    }
+  ],
+  "blocks": [
+    {
+      "type": "persona",
+      "name": "Persona",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Persona Name",
+          "default": "Den kreativa livsnjutaren"
+        },
+        {
+          "type": "text",
+          "id": "persona",
+          "label": "Persona Details",
+          "default": "Eva, 59 år"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Du längtar efter att ge plats åt din kreativitet, kanske för första gången på länge, och vill fylla din fritid med något som ger extra mening. Här får du stöd att hitta ditt uttryck, skapa utan krav och låta processen bli en källa till glädje."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching2 Personas",
+      "blocks": [
+        {
+          "type": "persona",
+          "settings": {
+            "name": "Den kreativa livsnjutaren",
+            "persona": "Eva, 59 år",
+            "description": "Du längtar efter att ge plats åt din kreativitet, kanske för första gången på länge, och vill fylla din fritid med något som ger extra mening. Här får du stöd att hitta ditt uttryck, skapa utan krav och låta processen bli en källa till glädje."
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "name": "Den målmedvetna sökaren",
+            "persona": "Leo, 26 år",
+            "description": "Du vet att du har något att säga, men behöver hjälp att forma din konstnärliga idé. Tillsammans arbetar vi med uttryck, portfölj, ansökningar eller projekt och bygger tillit till din inre drivkraft."
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "name": "Den nyfikna hantverkaren",
+            "persona": "Erik, 45 år",
+            "description": "Du skapar redan – i trä, färg, tyg eller ord – men vill förstå mer och utvecklas vidare. Här får du feedback, tips och nya perspektiv som hjälper dig att ta ditt skapande till nästa nivå."
+          }
+        },
+        {
+          "type": "persona",
+          "settings": {
+            "name": "Den uppvaknande kreatören",
+            "persona": "Sofia, 38 år",
+            "description": "Du har alltid haft fullt upp med jobb och vardag. Nu känner du allt starkare att du vill ge utrymme åt kreativiteten – som en egen plats utanför vardagens måsten."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

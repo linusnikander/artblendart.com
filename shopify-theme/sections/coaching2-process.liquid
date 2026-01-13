@@ -1,0 +1,439 @@
+{% comment %} Coaching2 Process Section - 4 Steps {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+  .c2-process {
+    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
+    padding: 5rem 1.5rem;
+  }
+
+  .c2-process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .c2-process-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .c2-process-content {
+    padding: 1rem 0;
+  }
+
+  .c2-process-label {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .c2-process h2 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: clamp(22px, 2.8vw, 26px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.2px;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  .c2-process-intro {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a68;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .c2-process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .c2-step {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .c2-step:nth-child(1) { animation-delay: 0.1s; }
+  .c2-step:nth-child(2) { animation-delay: 0.2s; }
+  .c2-step:nth-child(3) { animation-delay: 0.3s; }
+  .c2-step:nth-child(4) { animation-delay: 0.4s; }
+
+  .c2-step:hover {
+    transform: translateX(8px);
+    box-shadow: 0 5px 25px rgba(139, 92, 246, 0.15);
+  }
+
+  .c2-step-number {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  .c2-step-content {
+    flex: 1;
+  }
+
+  .c2-step-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .c2-step h3 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0;
+  }
+
+  .c2-step-duration {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    background: rgba(139, 92, 246, 0.1);
+    color: #7c3aed;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .c2-step p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #6b6b8a;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .c2-step-badge {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: #059669;
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+
+  .c2-process-sidebar {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .c2-process-image-container {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .c2-process-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .c2-process-quote {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 3rem 1.5rem 1.5rem;
+    color: #fff;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .c2-process-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .c2-process-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  }
+
+  .c2-process-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: #fff;
+  }
+
+  .c2-process-cta a svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .c2-process-cta a:hover svg {
+    transform: translateX(4px);
+  }
+
+  @keyframes slideInLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .c2-process-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .c2-process-sidebar {
+      position: relative;
+      top: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+</style>
+
+<section class="c2-process" id="process">
+  <div class="c2-process-container">
+    <div class="c2-process-grid">
+      <div class="c2-process-content">
+        <div class="c2-process-label">{{ section.settings.label }}</div>
+        <h2>{{ section.settings.heading }}</h2>
+        <p class="c2-process-intro">{{ section.settings.intro }}</p>
+
+        <div class="c2-process-steps">
+          {% for block in section.blocks %}
+            {% if block.type == 'step' %}
+              <div class="c2-step" {{ block.shopify_attributes }}>
+                <div class="c2-step-number">{{ block.settings.number }}</div>
+                <div class="c2-step-content">
+                  <div class="c2-step-header">
+                    <h3>{{ block.settings.title }}</h3>
+                    {% if block.settings.duration != blank %}
+                      <span class="c2-step-duration">{{ block.settings.duration }}</span>
+                    {% endif %}
+                  </div>
+                  <p>{{ block.settings.description }}</p>
+                  {% if block.settings.badge != blank %}
+                    <span class="c2-step-badge">✓ {{ block.settings.badge }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="c2-process-sidebar">
+        <div class="c2-process-image-container">
+          {% if section.settings.image != blank %}
+            <img
+              src="{{ section.settings.image | image_url: width: 600 }}"
+              alt="{{ section.settings.image_alt }}"
+              loading="lazy"
+            >
+          {% else %}
+            <img
+              src="{{ 'coaching-creative-collage.jpg' | asset_url }}"
+              alt="Kreativ process"
+              loading="lazy"
+            >
+          {% endif %}
+          {% if section.settings.quote != blank %}
+            <div class="c2-process-quote">
+              "{{ section.settings.quote }}"
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="c2-process-cta">
+      <a href="{{ section.settings.cta_link }}">
+        {{ section.settings.cta_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coaching2 Process",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "Hur det fungerar"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Din resa till kreativt skapande"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro Text",
+      "default": "Min erfarenhet är att de flesta behöver minst tre tillfällen för att känna sig trygga i processen och få en rättvisande bild av vad coachningen kan ge."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Sidebar Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Kreativ process"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Image Quote",
+      "default": "Du behöver inte förbereda dig – men om du reflekterar lite över vad du vill få ut av coachningen kan vi använda tiden ännu mer effektivt."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Börja med en gratis konsultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Process Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Step Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Gratis konsultation"
+        },
+        {
+          "type": "text",
+          "id": "duration",
+          "label": "Duration (optional)",
+          "default": "15 min"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Ett kort samtal på Teams eller telefon där du berättar vad du vill få ut av coachningen, och vi känner av hur det känns att arbeta tillsammans."
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge Text (optional)",
+          "default": "Helt gratis – ingen förpliktelse"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching2 Process",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Gratis konsultation",
+            "duration": "15 min",
+            "description": "Ett kort samtal på Teams eller telefon där du berättar vad du vill få ut av coachningen, och vi känner av hur det känns att arbeta tillsammans.",
+            "badge": "Helt gratis – ingen förpliktelse"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Första samtalet",
+            "duration": "60 min",
+            "description": "Vi utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål och redan här verktyg för att komma igång."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Skriftlig sammanfattning",
+            "description": "Efter varje samtal får du en sammanfattning samt inspirerande hemuppgifter – praktiska, kreativa eller reflekterande."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "number": "04",
+            "title": "Fortsatt utveckling",
+            "description": "Vi avslutar varje samtal med en plan för vad du vill fokusera på. Allt material skickas till dig som ett personligt verktyg att återvända till."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

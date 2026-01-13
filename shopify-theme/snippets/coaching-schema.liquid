@@ -1,0 +1,55 @@
+{%- comment -%}
+  Service Schema (JSON-LD) for Coaching Page
+  Improves Google Search visibility and rich results
+{%- endcomment -%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Kreativ coachning online",
+  "description": "Personlig 1:1 coachning för kreativt skapande med struktur, feedback och hemuppgifter. Online-sessioner för dig som vill utforska, utvecklas och skapa på egna villkor.",
+  "serviceType": "Coaching",
+  "provider": {
+    "@type": "Organization",
+    "name": "ArtBlendArt",
+    "url": "https://artblendart.com",
+    "logo": "{{ 'Logotype_black.png' | file_url }}"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "SE"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://artblendart.com/pages/coaching",
+    "serviceType": "Online",
+    "availableLanguage": ["sv", "en"]
+  },
+  "offers": {
+    "@type": "Offer",
+    "description": "Gratis 15 min avstämning, sedan 60 min coachingsessioner",
+    "availability": "https://schema.org/InStock"
+  },
+  "termsOfService": "https://artblendart.com/policies/terms-of-service"
+}
+</script>
+
+{%- comment -%}
+  Person Schema for the Coach
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Therese Parner",
+  "jobTitle": "Konstnär och Kreativ Coach",
+  "description": "Konstnär, kreativ coach med magisterexamen i fri konst och över ett decenniums erfarenhet som yrkesverksam konstnär.",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "ArtBlendArt",
+    "url": "https://artblendart.com"
+  },
+  "knowsAbout": ["Kreativ coachning", "Konst", "Kreativt skapande", "Portfolio-utveckling"]
+}
+</script>

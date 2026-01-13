@@ -74,10 +74,50 @@ https://github.com/linusnikander/artblendart.com
 ### 📝 Future Improvements
 - [ ] Add proper menu management (replace hardcoded "Coaching" link)
 - [ ] Upload Therese's photo for coaching-about page
-- [ ] Consider adding pricing information
 - [ ] Set up email notifications for contact form submissions
 - [ ] Review content for any needed adjustments
 - [ ] Add Google Analytics tracking (if needed)
+
+---
+
+## Epics
+
+### Epic: Coaching Product Purchase Flow (`coaching-purchase`)
+**Status:** Draft | **Points:** 13 | **Stories:** 5
+
+Enable customers to purchase coaching packages via Shopify checkout with YCBM booking integration.
+
+**Key Decisions:**
+- Shopify products (3 packages) for native checkout & future gift cards
+- Products unlisted (URL-only access from coaching page)
+- Full upfront payment + Klarna for installment option
+- YouCanBook.me (free tier) for Swedish-language booking
+- Email-based handoff (order confirmation → YCBM link)
+- Free 15-min intro consultation separate from packages (optional, via YCBM)
+
+**Stories:**
+- [ ] 2.1: Create Shopify Products (2 pts)
+- [ ] 2.2: Update Product Cards with Purchase Links (2 pts)
+- [ ] 2.3: Configure Checkout & Order Emails (3 pts)
+- [ ] 2.4: Set Up YCBM Booking Page (3 pts)
+- [ ] 2.5: End-to-End Testing & Documentation (3 pts)
+
+**Epic File:** `docs/sprint-artifacts/epic-coaching-purchase-flow.md`
+
+---
+
+### Epic: Form Handling & Appointment Booking (`forms-booking`)
+**Status:** Draft | **Points:** 11 | **Stories:** 4
+
+Contact forms and free consultation booking (separate from paid purchase flow).
+
+**Stories:**
+- [ ] 1.1: Form Handling Research & Selection (2 pts)
+- [ ] 1.2: Contact Form Implementation (3 pts)
+- [ ] 1.3: Booking Calendar Research & Selection (2 pts)
+- [ ] 1.4: Booking Calendar Implementation (4 pts)
+
+**Epic File:** `docs/epics.md`
 
 ## 📚 Documentation
 

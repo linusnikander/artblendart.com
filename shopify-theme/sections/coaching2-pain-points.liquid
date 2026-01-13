@@ -1,0 +1,308 @@
+{% comment %} Coaching2 Pain Points Section {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+  .c2-pain {
+    background: #f3eef8;
+    padding: 5rem 1.5rem;
+  }
+
+  .c2-pain-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .c2-pain-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .c2-pain-header h2 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: clamp(22px, 2.8vw, 26px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.2px;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  .c2-pain-header p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #6b6b8a;
+  }
+
+  .c2-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .c2-pain-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .c2-pain-card {
+    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .c2-pain-card:nth-child(1) { animation-delay: 0.1s; }
+  .c2-pain-card:nth-child(2) { animation-delay: 0.2s; }
+  .c2-pain-card:nth-child(3) { animation-delay: 0.3s; }
+  .c2-pain-card:nth-child(4) { animation-delay: 0.4s; }
+
+  .c2-pain-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+
+  .c2-pain-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .c2-pain-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #7c3aed;
+  }
+
+  .c2-pain-card p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a68;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .c2-pain-cta {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f5ff 0%, #f0ebff 100%);
+    border-radius: 1rem;
+  }
+
+  .c2-pain-cta p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #4a4a68;
+    margin-bottom: 1.5rem;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .c2-pain-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  }
+
+  .c2-pain-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: #fff;
+  }
+
+  .c2-pain-cta a svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .c2-pain-cta a:hover svg {
+    transform: translateX(4px);
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<section class="c2-pain">
+  <div class="c2-pain-container">
+    <div class="c2-pain-header">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="c2-pain-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'pain_point' %}
+          <div class="c2-pain-card" {{ block.shopify_attributes }}>
+            <div class="c2-pain-icon">
+              {% case block.settings.icon %}
+                {% when 'lightbulb' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                {% when 'block' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                {% when 'heart' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                {% when 'compass' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+              {% endcase %}
+            </div>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="c2-pain-cta">
+      <p>{{ section.settings.cta_text }}</p>
+      <a href="{{ section.settings.cta_link }}">
+        {{ section.settings.cta_button_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coaching2 Pain Points",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Vad längtar du efter i ditt skapande?"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Känner du igen dig i något av detta?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Du behöver inte veta var du ska börja – vi utforskar det tillsammans."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Starta din resa idag"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pain_point",
+      "name": "Pain Point",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "lightbulb", "label": "Lightbulb (Ideas)" },
+            { "value": "block", "label": "Block (Stuck)" },
+            { "value": "heart", "label": "Heart (Longing)" },
+            { "value": "compass", "label": "Compass (Direction)" }
+          ],
+          "default": "lightbulb"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Har du länge burit på idéer som väntat på att få liv?"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching2 Pain Points",
+      "blocks": [
+        {
+          "type": "pain_point",
+          "settings": {
+            "icon": "lightbulb",
+            "text": "Har du länge burit på idéer som väntat på att få liv?"
+          }
+        },
+        {
+          "type": "pain_point",
+          "settings": {
+            "icon": "block",
+            "text": "Fastnat i prestation, självkritik eller osäkerhet kring din riktning?"
+          }
+        },
+        {
+          "type": "pain_point",
+          "settings": {
+            "icon": "heart",
+            "text": "Längtar efter att ge plats åt din kreativitet – kanske för första gången på länge?"
+          }
+        },
+        {
+          "type": "pain_point",
+          "settings": {
+            "icon": "compass",
+            "text": "Söker inspiration och vägledning för att ta nästa steg?"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

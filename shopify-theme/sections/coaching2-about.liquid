@@ -1,0 +1,360 @@
+{% comment %} Coaching2 About Section {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+  .c2-about {
+    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
+    padding: 5rem 1.5rem;
+  }
+
+  .c2-about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .c2-about-image {
+    position: relative;
+  }
+
+  .c2-about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  .c2-about-image::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: 1rem;
+    bottom: 1rem;
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 1.5rem;
+    z-index: -1;
+  }
+
+  .c2-about-content {
+    padding: 1rem 0;
+  }
+
+  .c2-about-label {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .c2-about h2 {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: clamp(22px, 2.8vw, 26px);
+    font-weight: 600;
+    line-height: 1.22;
+    letter-spacing: -0.2px;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+  }
+
+  .c2-about-text p {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a68;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .c2-about-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .c2-credential {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .c2-credential:hover {
+    transform: translateX(8px);
+  }
+
+  .c2-credential-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .c2-credential-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #7c3aed;
+  }
+
+  .c2-credential-text strong {
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    display: block;
+    color: #1a1a2e;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .c2-credential-text span {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    color: #6b6b8a;
+    font-size: 0.875rem;
+  }
+
+  .c2-about-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    margin-top: 1rem;
+  }
+
+  .c2-about-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: #fff;
+  }
+
+  .c2-about-cta svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .c2-about-cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 900px) {
+    .c2-about-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .c2-about-image {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .c2-about-image::before {
+      display: none;
+    }
+  }
+</style>
+
+<section class="c2-about" id="om-mig">
+  <div class="c2-about-container">
+    <div class="c2-about-image">
+      {% if section.settings.image %}
+        <img
+          src="{{ section.settings.image | image_url: width: 600 }}"
+          alt="{{ section.settings.image_alt }}"
+          loading="lazy"
+        >
+      {% else %}
+        <img
+          src="{{ 'therese-portrait.jpg' | asset_url }}"
+          alt="{{ section.settings.image_alt }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+
+    <div class="c2-about-content">
+      <div class="c2-about-label">{{ section.settings.label }}</div>
+      <h2>{{ section.settings.heading }}</h2>
+
+      <div class="c2-about-text">
+        {{ section.settings.content }}
+      </div>
+
+      <div class="c2-about-credentials">
+        {% for block in section.blocks %}
+          {% if block.type == 'credential' %}
+            <div class="c2-credential" {{ block.shopify_attributes }}>
+              <div class="c2-credential-icon">
+                {% case block.settings.icon %}
+                  {% when 'graduation' %}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                  {% when 'star' %}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  {% when 'sparkles' %}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                  {% else %}
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                {% endcase %}
+              </div>
+              <div class="c2-credential-text">
+                <strong>{{ block.settings.title }}</strong>
+                <span>{{ block.settings.description }}</span>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <a href="{{ section.settings.cta_link }}" class="c2-about-cta">
+        {{ section.settings.cta_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Coaching2 About",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Therese Parner - Kreativ coach"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "Om mig"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Jag heter Therese Parner"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Jag är konstnär, kreativ coach, tidigare lärare inom konst och kulturarbetare inom offentlig sektor. Genom åren har jag arbetat med många olika uttryck och material – från trä och textil till lera, metall och andra oväntade kombinationer.</p><p>För mig är naturen och utomhus som ett magiskt rum där tid och fantasi möts. Här kan idéer ta form, tankarna rensas och skapandeprocessen får egna andetag.</p><p>I coachingen möts lekfull nyfikenhet och handfast guidning. Oavsett om du söker konstnärlig fördjupning, ny inspiration eller en trygg plats för skapandeprocessen, finns jag här som samtalspartner, handledare och påhejare.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Boka gratis konsultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      
+    }
+  ],
+  "blocks": [
+    {
+      "type": "credential",
+      "name": "Credential",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "graduation", "label": "Graduation Cap" },
+            { "value": "star", "label": "Star" },
+            { "value": "sparkles", "label": "Sparkles" }
+          ],
+          "default": "graduation"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Magisterexamen i fri konst"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Akademisk grund och djup konstnärlig kompetens"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching2 About",
+      "blocks": [
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "graduation",
+            "title": "Magisterexamen i fri konst",
+            "description": "Akademisk grund och djup konstnärlig kompetens"
+          }
+        },
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "star",
+            "title": "10+ års erfarenhet",
+            "description": "Som yrkesverksam konstnär och kreativ coach"
+          }
+        },
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "sparkles",
+            "title": "Holistiskt synsätt",
+            "description": "Skapande som del av personlig utveckling"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
