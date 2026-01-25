@@ -117,12 +117,12 @@ Enable customers to purchase coaching packages via Shopify checkout with YCBM bo
 ---
 
 ### Epic: Purchase Flow UX Alignment (`ux-alignment`)
-**Status:** Draft | **Points:** 14 | **Stories:** 6
+**Status:** In Progress | **Points:** 14 | **Stories:** 6
 
 Align purchase flow UI/UX with reference design. Strategy: maximize pre-checkout and post-checkout (where we have full control) to compensate for checkout limitations.
 
 **Stories (priority order):**
-- [ ] 3.1: Redesign Coaching Product Page (5 pts) - **FULL** control
+- [x] 3.1: Redesign Coaching Product Page (5 pts) - **FULL** control ✅
 - [ ] 3.4: Custom Order Confirmation Email (3 pts) - **FULL** control (big win!)
 - [ ] 3.2: Enhance Cart Drawer (3 pts) - **FULL** control
 - [ ] 3.3: Apply Checkout Branding (1 pt) - partial (colors/logo only)
