@@ -71,6 +71,15 @@ https://github.com/linusnikander/artblendart.com
 3. `coaching-who.liquid` - Client personas & coaching themes
 4. `coaching-contact.liquid` - Contact form with 3-step process (has `id="contact"` anchor)
 
+### ✅ Completed - Design System
+- [x] Create comprehensive style guide (`docs/style-guide.md`)
+  - Complete color palette with hex codes and usage
+  - Typography system (Sora + Manrope, golden ratio scale)
+  - Spacing, shadows, and elevation tokens
+  - Button, card, badge component patterns
+  - Animation keyframes and utilities
+  - Shopify checkout customization guidance
+
 ### 📝 Future Improvements
 - [ ] Add proper menu management (replace hardcoded "Coaching" link)
 - [ ] Upload Therese's photo for coaching-about page
@@ -83,7 +92,7 @@ https://github.com/linusnikander/artblendart.com
 ## Epics
 
 ### Epic: Coaching Product Purchase Flow (`coaching-purchase`)
-**Status:** Draft | **Points:** 13 | **Stories:** 5
+**Status:** ✅ DONE | **Points:** 13 | **Stories:** 5
 
 Enable customers to purchase coaching packages via Shopify checkout with YCBM booking integration.
 
@@ -96,13 +105,34 @@ Enable customers to purchase coaching packages via Shopify checkout with YCBM bo
 - Free 15-min intro consultation separate from packages (optional, via YCBM)
 
 **Stories:**
-- [ ] 2.1: Create Shopify Products (2 pts)
-- [ ] 2.2: Update Product Cards with Purchase Links (2 pts)
-- [ ] 2.3: Configure Checkout & Order Emails (3 pts)
-- [ ] 2.4: Set Up YCBM Booking Page (3 pts)
-- [ ] 2.5: End-to-End Testing & Documentation (3 pts)
+- [x] 2.1: Create Shopify Products (2 pts)
+- [x] 2.2: Update Product Cards with Purchase Links (2 pts)
+- [x] 2.3: Configure Checkout & Order Emails (3 pts)
+- [x] 2.4: Set Up YCBM Booking Page (3 pts)
+- [x] 2.5: End-to-End Testing & Documentation (3 pts)
 
 **Epic File:** `docs/sprint-artifacts/epic-coaching-purchase-flow.md`
+**Workflow Review:** `workflow-review.html` (13 screenshots documenting full purchase flow)
+
+---
+
+### Epic: Purchase Flow UX Alignment (`ux-alignment`)
+**Status:** Draft | **Points:** 14 | **Stories:** 6
+
+Align purchase flow UI/UX with reference design. Strategy: maximize pre-checkout and post-checkout (where we have full control) to compensate for checkout limitations.
+
+**Stories (priority order):**
+- [ ] 3.1: Redesign Coaching Product Page (5 pts) - **FULL** control
+- [ ] 3.4: Custom Order Confirmation Email (3 pts) - **FULL** control (big win!)
+- [ ] 3.2: Enhance Cart Drawer (3 pts) - **FULL** control
+- [ ] 3.3: Apply Checkout Branding (1 pt) - partial (colors/logo only)
+- [ ] 3.5: Thank You Page Enhancement (1 pt) - partial (additional scripts)
+- [ ] 3.6: YCBM Booking Branding (1 pt) - partial (free tier settings)
+
+**Key Insight:** Can't customize checkout layout, but CAN fully customize the order confirmation email - this is where we add the "wow" factor with branded product card, "What's included" checklist, and prominent "Boka ditt samtal" CTA.
+
+**Epic File:** `docs/sprint-artifacts/epic-ux-alignment.md`
+**Reference Screenshots:** `.playwright-mcp/reference-*.png`
 
 ---
 
@@ -126,3 +156,4 @@ Contact forms and free consultation booking (separate from paid purchase flow).
 - **SHOPIFY_INTEGRATION.md** - Integration guide
 - **DEVELOPMENT_WORKFLOW.md** - ⭐ Complete workflow for creating new pages
 - **CLAUDE.md** - Project guidance for Claude Code
+- **docs/style-guide.md** - ⭐ Complete design system & style guide (colors, typography, components)

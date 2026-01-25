@@ -49,3 +49,13 @@ development_status:
   2-4-setup-ycbm-booking-page: done
   2-5-end-to-end-testing-documentation: done
   epic-2-retrospective: optional
+
+  # Epic 3: Purchase Flow UX Alignment (ux-alignment)
+  epic-3-ux-alignment: backlog
+  3-1-redesign-coaching-product-page: backlog      # 5pts, FULL control
+  3-2-enhance-cart-drawer: backlog                 # 3pts, FULL control
+  3-3-apply-checkout-branding: backlog             # 1pt, partial control
+  3-4-custom-order-confirmation-email: backlog     # 3pts, FULL control
+  3-5-thank-you-page-enhancement: backlog          # 1pt, partial control
+  3-6-ycbm-booking-branding: backlog               # 1pt, partial control
+  epic-3-retrospective: optional
