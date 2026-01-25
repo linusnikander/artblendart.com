@@ -1,0 +1,712 @@
+{% comment %}
+  Product Coaching Custom Section
+  Story 3.1: Redesign Coaching Product Page
+
+  Features:
+  - Custom purple hero with sparkle icon
+  - Friskvårdsbidrag badge
+  - Styled "Add to cart" button with gradient
+  - Feature list with checkmarks
+  - Trust badges
+{% endcomment %}
+
+<style>
+  /* ===== FONTS ===== */
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap');
+
+  /* ===== CSS VARIABLES ===== */
+  .product-coaching-custom {
+    --color-primary: #7c3aed;
+    --color-primary-dark: #6d28d9;
+    --color-primary-light: #8b5cf6;
+    --color-bg-dark: #1a1a2e;
+    --color-bg-dark-light: #2d2d4a;
+    --color-bg-light: #f8f5ff;
+    --color-text-dark: #1a1a2e;
+    --color-text-body: #4a4a68;
+    --color-text-muted: #6b6b8a;
+    --color-success: #059669;
+    --color-success-light: #d1fae5;
+    --color-border: #e5e5e5;
+    --color-badge-gold: #fbbf24;
+
+    --ff-display: "Sora", system-ui, -apple-system, sans-serif;
+    --ff-body: "Manrope", system-ui, -apple-system, sans-serif;
+
+    --shadow-purple: 0 4px 15px rgba(124, 58, 237, 0.3);
+    --shadow-purple-hover: 0 6px 20px rgba(124, 58, 237, 0.4);
+  }
+
+  /* ===== MAIN CONTAINER ===== */
+  .product-coaching-custom {
+    font-family: var(--ff-body);
+    background: #fff;
+  }
+
+  .product-coaching-custom * {
+    box-sizing: border-box;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .pcc-hero {
+    background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-light) 100%);
+    padding: clamp(60px, 10vh, 100px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pcc-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .pcc-hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pcc-badge-wellness {
+    display: inline-block;
+    background: var(--color-badge-gold);
+    color: var(--color-bg-dark);
+    font-family: var(--ff-body);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  }
+
+  .pcc-hero-icon {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+  }
+
+  .pcc-hero-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .pcc-hero-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--ff-body);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* ===== PRODUCT INFO SECTION ===== */
+  .pcc-product {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 2rem);
+  }
+
+  .pcc-vendor {
+    color: var(--color-primary);
+    font-family: var(--ff-body);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+
+  .pcc-title {
+    font-family: var(--ff-display);
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+
+  .pcc-price-wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .pcc-price {
+    font-family: var(--ff-display);
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 700;
+    color: var(--color-text-dark);
+  }
+
+  .pcc-price-currency {
+    font-size: 0.7em;
+  }
+
+  .pcc-price-note {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  /* ===== QUANTITY SELECTOR ===== */
+  .pcc-quantity {
+    margin-bottom: 1.5rem;
+  }
+
+  .pcc-quantity-label {
+    display: block;
+    font-size: 14px;
+    color: var(--color-text-body);
+    margin-bottom: 0.5rem;
+  }
+
+  .pcc-quantity-selector {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .pcc-quantity-btn {
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .pcc-quantity-btn:hover {
+    background: var(--color-bg-light);
+  }
+
+  .pcc-quantity-btn svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-text-body);
+  }
+
+  .pcc-quantity-input {
+    width: 50px;
+    height: 44px;
+    border: none;
+    text-align: center;
+    font-family: var(--ff-body);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+  }
+
+  .pcc-quantity-input:focus {
+    outline: none;
+  }
+
+  /* ===== BUTTONS ===== */
+  .pcc-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .pcc-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: #fff;
+    font-family: var(--ff-body);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 9999px;
+    box-shadow: var(--shadow-purple);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .pcc-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-purple-hover);
+  }
+
+  .pcc-btn-primary svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s;
+  }
+
+  .pcc-btn-primary:hover svg {
+    transform: translateX(4px);
+  }
+
+  .pcc-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.875rem 2rem;
+    background: #fff;
+    color: var(--color-text-dark);
+    font-family: var(--ff-body);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .pcc-btn-secondary:hover {
+    border-color: var(--color-text-body);
+    background: var(--color-bg-light);
+  }
+
+  .pcc-btn-link {
+    display: inline-block;
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .pcc-btn-link:hover {
+    text-decoration: none;
+  }
+
+  /* ===== DESCRIPTION SECTION ===== */
+  .pcc-description {
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+
+  .pcc-desc-title {
+    font-family: var(--ff-display);
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 1rem;
+    line-height: 1.4;
+  }
+
+  .pcc-desc-text {
+    color: var(--color-text-body);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+  }
+
+  /* ===== FEATURES LIST ===== */
+  .pcc-features-title {
+    font-family: var(--ff-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 1rem;
+  }
+
+  .pcc-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+  }
+
+  .pcc-features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    color: var(--color-text-body);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .pcc-check-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    margin-top: 2px;
+  }
+
+  /* ===== TRUST BADGES ===== */
+  .pcc-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 2rem;
+  }
+
+  .pcc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--color-success-light);
+    color: var(--color-success);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 9999px;
+  }
+
+  .pcc-badge--neutral {
+    background: var(--color-bg-light);
+    color: var(--color-text-body);
+  }
+
+  .pcc-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (min-width: 768px) {
+    .pcc-buttons {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .pcc-btn-primary,
+    .pcc-btn-secondary {
+      width: auto;
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .pcc-btn-link {
+      width: 100%;
+    }
+  }
+</style>
+
+<section class="product-coaching-custom">
+  <!-- Hero Section -->
+  <div class="pcc-hero">
+    <div class="pcc-hero-content">
+      <span class="pcc-badge-wellness">{{ section.settings.wellness_badge_text }}</span>
+
+      <div class="pcc-hero-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L14.09 8.26L20 9.27L15.55 14.14L16.91 20.02L12 16.77L7.09 20.02L8.45 14.14L4 9.27L9.91 8.26L12 2Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 6L12.76 8.35L15 8.65L13.23 10.42L13.76 12.65L12 11.35L10.24 12.65L10.77 10.42L9 8.65L11.24 8.35L12 6Z" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+      </div>
+
+      <p class="pcc-hero-label">{{ section.settings.hero_label }}</p>
+    </div>
+  </div>
+
+  <!-- Product Info Section -->
+  <div class="pcc-product">
+    <p class="pcc-vendor">{{ product.vendor }}</p>
+    <h1 class="pcc-title">{{ product.title }}</h1>
+
+    <div class="pcc-price-wrapper">
+      <span class="pcc-price">
+        {{ product.price | money }}
+        <span class="pcc-price-currency">{{ cart.currency.iso_code }}</span>
+      </span>
+      <span class="pcc-price-note">{{ section.settings.price_note }}</span>
+    </div>
+
+    <!-- Quantity Selector -->
+    <div class="pcc-quantity">
+      <label class="pcc-quantity-label">{{ 'products.product.quantity.label' | t }}</label>
+      <div class="pcc-quantity-selector">
+        <button type="button" class="pcc-quantity-btn" data-action="decrease" aria-label="Decrease quantity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+        <input type="number" class="pcc-quantity-input" value="1" min="1" max="10" name="quantity" id="Quantity-{{ section.id }}">
+        <button type="button" class="pcc-quantity-btn" data-action="increase" aria-label="Increase quantity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="pcc-buttons">
+      {%- form 'product', product, id: 'product-form-coaching', class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <input type="hidden" name="quantity" value="1" class="pcc-quantity-hidden">
+
+        <button type="submit" name="add" class="pcc-btn-primary" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
+          <span>{{ section.settings.add_to_cart_text }}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      {%- endform -%}
+
+      {{ form | payment_button }}
+    </div>
+
+    <a href="#" class="pcc-btn-link">{{ section.settings.more_options_text }}</a>
+
+    <!-- Description -->
+    <div class="pcc-description">
+      <h3 class="pcc-desc-title">{{ section.settings.description_title }}</h3>
+      <p class="pcc-desc-text">{{ section.settings.description_text }}</p>
+
+      <h4 class="pcc-features-title">{{ section.settings.features_title }}</h4>
+      <ul class="pcc-features-list">
+        {% for block in section.blocks %}
+          {% if block.type == 'feature' %}
+            <li {{ block.shopify_attributes }}>
+              <svg class="pcc-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>{{ block.settings.feature_text }}</span>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <!-- Trust Badges -->
+      <div class="pcc-badges">
+        {% for block in section.blocks %}
+          {% if block.type == 'badge' %}
+            <span class="pcc-badge {% if block.settings.badge_style == 'neutral' %}pcc-badge--neutral{% endif %}" {{ block.shopify_attributes }}>
+              {% if block.settings.badge_style == 'success' %}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              {% endif %}
+              {{ block.settings.badge_text }}
+            </span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Quantity selector functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('.product-coaching-custom');
+    if (!section) return;
+
+    const quantityInput = section.querySelector('.pcc-quantity-input');
+    const hiddenInput = section.querySelector('.pcc-quantity-hidden');
+    const decreaseBtn = section.querySelector('[data-action="decrease"]');
+    const increaseBtn = section.querySelector('[data-action="increase"]');
+
+    if (decreaseBtn) {
+      decreaseBtn.addEventListener('click', () => {
+        const current = parseInt(quantityInput.value) || 1;
+        if (current > 1) {
+          quantityInput.value = current - 1;
+          if (hiddenInput) hiddenInput.value = current - 1;
+        }
+      });
+    }
+
+    if (increaseBtn) {
+      increaseBtn.addEventListener('click', () => {
+        const current = parseInt(quantityInput.value) || 1;
+        const max = parseInt(quantityInput.max) || 10;
+        if (current < max) {
+          quantityInput.value = current + 1;
+          if (hiddenInput) hiddenInput.value = current + 1;
+        }
+      });
+    }
+
+    if (quantityInput) {
+      quantityInput.addEventListener('change', () => {
+        if (hiddenInput) hiddenInput.value = quantityInput.value;
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Coaching Product",
+  "tag": "section",
+  "class": "section-coaching-product",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Section"
+    },
+    {
+      "type": "text",
+      "id": "wellness_badge_text",
+      "label": "Wellness Badge Text",
+      "default": "FRISKVÅRDSBIDRAG"
+    },
+    {
+      "type": "text",
+      "id": "hero_label",
+      "label": "Hero Label",
+      "default": "Kreativ Coaching"
+    },
+    {
+      "type": "header",
+      "content": "Product Info"
+    },
+    {
+      "type": "text",
+      "id": "price_note",
+      "label": "Price Note",
+      "default": "Tax included."
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_text",
+      "label": "Add to Cart Button Text",
+      "default": "Add to cart"
+    },
+    {
+      "type": "text",
+      "id": "more_options_text",
+      "label": "More Options Link Text",
+      "default": "More payment options"
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "text",
+      "id": "description_title",
+      "label": "Description Title",
+      "default": "En kickstart för din kreativitet — Friskvårdsbidrag godkänd!"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Description Text",
+      "default": "För dig som vill använda friskvårdsbidraget till att öppna dörren till en mer kreativ fritid och som ger mening och balans i livet."
+    },
+    {
+      "type": "text",
+      "id": "features_title",
+      "label": "Features Title",
+      "default": "Paketet inkluderar:"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "1 × coachingsamtal á 60 min per video"
+        }
+      ]
+    },
+    {
+      "type": "badge",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "Friskvårdsbidrag godkänd"
+        },
+        {
+          "type": "select",
+          "id": "badge_style",
+          "label": "Badge Style",
+          "options": [
+            {
+              "value": "success",
+              "label": "Success (Green)"
+            },
+            {
+              "value": "neutral",
+              "label": "Neutral (Light)"
+            }
+          ],
+          "default": "success"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coaching Product",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "1 × coachingsamtal á 60 min per video"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Skriftlig sammanfattning efter 60-minuterssessionen"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Rekommendation för nästa steg efter sessionen"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Friskvårdsbidrag godkänd",
+            "badge_style": "success"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Ingen bindning",
+            "badge_style": "neutral"
+          }
+        },
+        {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Flexibla tider",
+            "badge_style": "neutral"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
