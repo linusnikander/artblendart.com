@@ -10,13 +10,6 @@
             "label": "års erfarenhet"
           }
         },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "100+",
-            "label": "nöjda klienter"
-          }
-        },
         "stat_3": {
           "type": "stat",
           "settings": {
@@ -25,13 +18,13 @@
           }
         }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "block_order": ["stat_1", "stat_3"],
       "settings": {
-        "badge_text": "Online coaching – tillgänglig var du än är",
+        "badge_text": "",
         "heading": "Kreativt skapande för dig som vill <em>leva mer</em>",
         "subtitle": "Upptäck din kreativitet, hitta ditt uttryck och låt skapandet bli en källa till mening, energi och närvaro i ditt liv.",
-        "cta_primary_text": "Boka gratis konsultation",
-        "cta_primary_link": "#boka",
+        "cta_primary_text": "Se våra paket",
+        "cta_primary_link": "#paket",
         "cta_secondary_text": "Läs mer om coachingen",
         "cta_secondary_link": "#om-mig"
       }
@@ -73,8 +66,8 @@
         "heading": "Vad längtar du efter i ditt skapande?",
         "subheading": "Känner du igen dig i något av detta?",
         "cta_text": "Du behöver inte veta var du ska börja – vi utforskar det tillsammans.",
-        "cta_button_text": "Starta din resa idag",
-        "cta_link": "#boka"
+        "cta_button_text": "Välj ditt paket",
+        "cta_link": "#paket"
       }
     },
     "about": {
@@ -111,8 +104,8 @@
         "label": "Om mig",
         "heading": "Jag heter Therese Parner",
         "content": "<p>Jag är konstnär, kreativ coach, tidigare lärare inom konst och kulturarbetare inom offentlig sektor. Genom åren har jag arbetat med många olika uttryck och material – från trä och textil till lera, metall och andra oväntade kombinationer.</p><p>För mig är naturen och utomhus som ett magiskt rum där tid och fantasi möts. Här kan idéer ta form, tankarna rensas och skapandeprocessen får egna andetag.</p><p>I coachingen möts lekfull nyfikenhet och handfast guidning. Oavsett om du söker konstnärlig fördjupning, ny inspiration eller en trygg plats för skapandeprocessen, finns jag här som samtalspartner, handledare och påhejare.</p>",
-        "cta_text": "Boka gratis konsultation",
-        "cta_link": "#boka"
+        "cta_text": "Se våra paket",
+        "cta_link": "#paket"
       }
     },
     "personas": {
@@ -157,8 +150,8 @@
         "heading": "Känner du igen dig?",
         "subheading": "Jag möter människor i alla åldrar och faser av livet. Här är några exempel på klienter jag arbetar med.",
         "cta_text": "Oavsett var du befinner dig i livet – jag finns här för dig.",
-        "cta_button_text": "Boka din plats nu",
-        "cta_link": "#boka"
+        "cta_button_text": "Se våra paket",
+        "cta_link": "#paket"
       }
     },
     "process": {
@@ -212,8 +205,8 @@
         "intro": "Min erfarenhet är att de flesta behöver minst tre tillfällen för att känna sig trygga i processen och få en rättvisande bild av vad coachningen kan ge.",
         "image_alt": "Kreativ process",
         "quote": "Du behöver inte förbereda dig – men om du reflekterar lite över vad du vill få ut av coachningen kan vi använda tiden ännu mer effektivt.",
-        "cta_text": "Börja med en gratis konsultation",
-        "cta_link": "#boka"
+        "cta_text": "Välj ditt paket",
+        "cta_link": "#paket"
       }
     },
     "themes": {
@@ -274,9 +267,9 @@
         "heading": "Teman anpassade efter dig",
         "subheading": "Varje samtal anpassas helt efter dig – där du befinner dig i livet och i ditt skapande.",
         "cta_line1": "Vet du inte vart du ska börja?",
-        "cta_line2": "Det är helt okej. Vi utforskar det tillsammans under vår första konsultation.",
-        "cta_button_text": "Boka gratis konsultation",
-        "cta_link": "#boka"
+        "cta_line2": "Det är helt okej. Vi utforskar det tillsammans.",
+        "cta_button_text": "Se våra paket",
+        "cta_link": "#paket"
       }
     },
     "products": {
@@ -391,12 +384,12 @@
   },
   "order": [
     "hero",
-    "pain_points",
     "about",
-    "personas",
+    "products",
     "process",
     "themes",
-    "products",
+    "personas",
+    "pain_points",
     "cta"
   ]
 }

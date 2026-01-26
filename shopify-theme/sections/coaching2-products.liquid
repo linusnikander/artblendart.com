@@ -47,6 +47,19 @@
     margin: 0 auto;
   }
 
+  .c2-products-consultation-link {
+    color: #7c3aed;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .c2-products-consultation-link:hover {
+    color: #6d28d9;
+    text-decoration: underline;
+  }
+
   .c2-products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -263,7 +276,7 @@
     <div class="c2-products-header">
       <div class="c2-products-label">{{ section.settings.label }}</div>
       <h2>{{ section.settings.heading }}</h2>
-      <p>{{ section.settings.subheading }}</p>
+      <p>{{ section.settings.subheading }} <a href="#boka" class="c2-products-consultation-link">Boka gratis konsultation →</a></p>
     </div>
 
     <div class="c2-products-grid">
@@ -335,7 +348,7 @@
             </ul>
 
             <a href="{{ block.settings.cta_link }}" class="c2-product-cta">
-              Köp {{ block.settings.title }} nu
+              Välj {{ block.settings.title }}
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

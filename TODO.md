@@ -136,6 +136,27 @@ Align purchase flow UI/UX with reference design. Strategy: maximize pre-checkout
 
 ---
 
+### Epic: Order Flow Updates (`order-flow-updates`)
+**Status:** In Progress | **Points:** 18 | **Stories:** 5
+
+Based on stakeholder review of `order-flow-documentation.pdf`. Updates to coaching page, product pages, cart, checkout, and booking.
+
+**Stories (priority order):**
+- [ ] 4.1: Main Coaching Page Updates (5 pts) - Priority 1 **IN PROGRESS** (12/14 tasks done)
+- [ ] 4.2: Product Page & Cart Updates (5 pts) - Priority 2
+- [ ] 4.3: Checkout & Branding (2 pts) - Priority 3
+- [ ] 4.4: Investigation & Discovery (3 pts) - Priority 4 (after 4.1-4.3)
+- [ ] 4.5: YCBM Booking Setup (3 pts) - Priority 5
+
+**Separate Tracks:**
+- Therese Content Tasks (7 items) - see `docs/sprint-artifacts/therese-content-tasks.md`
+- General/Admin Backlog (5 items) - see `docs/sprint-artifacts/backlog-general-tasks.md`
+
+**Epic Files:** `docs/sprint-artifacts/story-4.*.md`
+**Reference:** `order-flow-documentation.pdf`, `docs/order-flow-update.md`
+
+---
+
 ### Epic: Form Handling & Appointment Booking (`forms-booking`)
 **Status:** Draft | **Points:** 11 | **Stories:** 4
 

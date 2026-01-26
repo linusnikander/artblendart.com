@@ -59,3 +59,17 @@ development_status:
   3-5-thank-you-page-enhancement: backlog             # 1pt, partial control
   3-6-ycbm-booking-branding: backlog                  # 1pt, partial control
   epic-3-retrospective: optional
+
+  # Epic 4: Order Flow Updates (order-flow-updates)
+  # Based on stakeholder review of order-flow-documentation.pdf
+  epic-4-order-flow-updates: contexted
+  4-1-main-coaching-page-updates: in-progress         # 5pts, Priority 1, 12/14 done (waiting on Therese image)
+  4-2-product-page-cart-updates: drafted              # 5pts, Priority 2
+  4-3-checkout-branding: drafted                      # 2pts, Priority 3
+  4-4-investigation-discovery: drafted                # 3pts, Priority 4 (after 4.1-4.3)
+  4-5-ycbm-booking-setup: drafted                     # 3pts, Priority 5
+  epic-4-retrospective: optional
+
+  # Separate tracks
+  therese-content-tasks: waiting                      # 7 tasks, blocks 4.1/4.2 partially
+  backlog-general-tasks: backlog                      # 5 tasks + 1 future enhancement

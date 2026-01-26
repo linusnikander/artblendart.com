@@ -3,8 +3,6 @@
   Story 3.1: Redesign Coaching Product Page
 
   Features:
-  - Custom purple hero with sparkle icon
-  - Friskvårdsbidrag badge
   - Styled "Add to cart" button with gradient
   - Feature list with checkmarks
   - Trust badges
@@ -45,72 +43,6 @@
 
   .product-coaching-custom * {
     box-sizing: border-box;
-  }
-
-  /* ===== HERO SECTION ===== */
-  .pcc-hero {
-    background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-dark-light) 100%);
-    padding: clamp(60px, 10vh, 100px) 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .pcc-hero::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .pcc-hero-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .pcc-badge-wellness {
-    display: inline-block;
-    background: var(--color-badge-gold);
-    color: var(--color-bg-dark);
-    font-family: var(--ff-body);
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 6px 14px;
-    border-radius: 4px;
-    margin-bottom: 2rem;
-  }
-
-  .pcc-hero-icon {
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
-  }
-
-  .pcc-hero-icon svg {
-    width: 48px;
-    height: 48px;
-  }
-
-  .pcc-hero-label {
-    color: rgba(255, 255, 255, 0.9);
-    font-family: var(--ff-body);
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
   }
 
   /* ===== PRODUCT INFO SECTION ===== */
@@ -407,22 +339,6 @@
 </style>
 
 <section class="product-coaching-custom">
-  <!-- Hero Section -->
-  <div class="pcc-hero">
-    <div class="pcc-hero-content">
-      <span class="pcc-badge-wellness">{{ section.settings.wellness_badge_text }}</span>
-
-      <div class="pcc-hero-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L14.09 8.26L20 9.27L15.55 14.14L16.91 20.02L12 16.77L7.09 20.02L8.45 14.14L4 9.27L9.91 8.26L12 2Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 6L12.76 8.35L15 8.65L13.23 10.42L13.76 12.65L12 11.35L10.24 12.65L10.77 10.42L9 8.65L11.24 8.35L12 6Z" fill="rgba(255,255,255,0.3)"/>
-        </svg>
-      </div>
-
-      <p class="pcc-hero-label">{{ section.settings.hero_label }}</p>
-    </div>
-  </div>
-
   <!-- Product Info Section -->
   <div class="pcc-product">
     <p class="pcc-vendor">{{ product.vendor }}</p>
@@ -559,22 +475,6 @@
   "tag": "section",
   "class": "section-coaching-product",
   "settings": [
-    {
-      "type": "header",
-      "content": "Hero Section"
-    },
-    {
-      "type": "text",
-      "id": "wellness_badge_text",
-      "label": "Wellness Badge Text",
-      "default": "FRISKVÅRDSBIDRAG"
-    },
-    {
-      "type": "text",
-      "id": "hero_label",
-      "label": "Hero Label",
-      "default": "Kreativ Coaching"
-    },
     {
       "type": "header",
       "content": "Product Info"
