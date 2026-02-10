@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-vetenskap",
+      "settings": {
+        "heading": "Vetenskapen bakom kreativ coaching",
+        "body": "<p>Vi sammanställer forskning och vetenskapliga studier som visar hur kreativt skapande påverkar välmående, stresshantering och personlig utveckling. Innehållet publiceras snart.</p>",
+        "note": "Denna sida uppdateras snart med mer information.",
+        "cta_text": "Se våra coaching-paket",
+        "cta_link": "/pages/coaching2#paket"
+      }
+    }
+  },
+  "order": ["main"]
+}

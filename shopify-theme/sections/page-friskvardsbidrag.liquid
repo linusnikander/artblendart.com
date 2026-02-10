@@ -1,0 +1,475 @@
+{% comment %} Friskvårdsbidrag - Full Content Page {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+
+  .friskvard-page {
+    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .friskvard-container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* ── Hero ── */
+  .friskvard-hero {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .friskvard-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .friskvard-badge svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .friskvard-hero h1 {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+  }
+
+  .friskvard-hero .friskvard-meta {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 14px;
+    color: #6b6b8a;
+    margin-bottom: 1.5rem;
+  }
+
+  .friskvard-hero p {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 17px;
+    color: #4a4a68;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* ── Q&A Section ── */
+  .friskvard-qa {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .friskvard-qa-item {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.08);
+  }
+
+  .friskvard-qa-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: rgba(139, 92, 246, 0.1);
+    color: #7c3aed;
+    border-radius: 0.5rem;
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+
+  .friskvard-qa-item h2 {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: clamp(17px, 2.2vw, 20px);
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+  }
+
+  .friskvard-qa-item p {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4a4a68;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .friskvard-qa-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  .friskvard-qa-item strong {
+    color: #1a1a2e;
+    font-weight: 600;
+  }
+
+  /* ── Requirement list ── */
+  .friskvard-requirements {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .friskvard-requirements li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 15px;
+    color: #4a4a68;
+    line-height: 1.6;
+  }
+
+  .friskvard-requirements li .req-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 150, 105, 0.1);
+    border-radius: 50%;
+  }
+
+  .friskvard-requirements li .req-icon svg {
+    width: 0.875rem;
+    height: 0.875rem;
+    color: #059669;
+  }
+
+  /* ── Example box ── */
+  .friskvard-example {
+    background: #f8f5ff;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+    border-left: 3px solid;
+  }
+
+  .friskvard-example.bad {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+  }
+
+  .friskvard-example.good {
+    border-left-color: #059669;
+    background: #ecfdf5;
+  }
+
+  .friskvard-example-label {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  .friskvard-example.bad .friskvard-example-label {
+    color: #dc2626;
+  }
+
+  .friskvard-example.good .friskvard-example-label {
+    color: #059669;
+  }
+
+  .friskvard-example p {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .friskvard-example.bad p {
+    color: #7f1d1d;
+  }
+
+  .friskvard-example.good p {
+    color: #064e3b;
+  }
+
+  /* ── Receipt checklist ── */
+  .friskvard-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .friskvard-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 15px;
+    color: #4a4a68;
+    line-height: 1.6;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+  }
+
+  .friskvard-checklist li svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #7c3aed;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── Summary box ── */
+  .friskvard-summary {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  .friskvard-summary h2 {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: clamp(20px, 2.5vw, 24px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .friskvard-summary p {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .friskvard-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    color: #7c3aed;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  .friskvard-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: #6d28d9;
+  }
+
+  .friskvard-cta svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .friskvard-cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 640px) {
+    .friskvard-page {
+      padding: 3rem 1rem 4rem;
+    }
+
+    .friskvard-qa-item {
+      padding: 1.5rem;
+    }
+
+    .friskvard-summary {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+
+<section class="friskvard-page">
+  <div class="friskvard-container">
+
+    <!-- Hero -->
+    <div class="friskvard-hero">
+      <div class="friskvard-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+        Friskvårdsbidrag
+      </div>
+      <h1>{{ section.settings.heading }}</h1>
+      <p class="friskvard-meta">{{ section.settings.meta }}</p>
+      <p>{{ section.settings.intro }}</p>
+    </div>
+
+    <!-- Q&A Cards -->
+    <div class="friskvard-qa">
+
+      <!-- Q1 -->
+      <div class="friskvard-qa-item">
+        <div class="friskvard-qa-number">1</div>
+        <h2>Faller det nuvarande upplägget inom ramen för friskvårdsbidraget?</h2>
+        <p>I sitt nuvarande grundutförande, där fokus ligger på konstnärligt uttryck, måleri och coaching för kreativitet, är bedömningen att det <strong>inte godkänns</strong> som skattefri friskvård.</p>
+        <p>Skatteverket klassar generellt kurser i måleri, teckning och hantverk som "Hobbyverksamhet" eller "Kultur". Dessa omfattas inte av friskvårdsbidraget, som är avsett för motion och enklare friskvård.</p>
+      </div>
+
+      <!-- Q2 -->
+      <div class="friskvard-qa-item">
+        <div class="friskvard-qa-number">2</div>
+        <h2>Vilket undantag i reglerna kan göra tjänsten godkänd?</h2>
+        <p>Det finns ett utrymme i regelverket för <strong>stresshantering och avspänning</strong>. Om en aktivitet (även en skapande sådan) har som primärt syfte att förebygga stress, utbrändhet eller erbjuda mental återhämtning, kan den godkännas som friskvård.</p>
+        <p>Det avgörande är <strong>syftet med aktiviteten</strong>, inte tekniken som används.</p>
+      </div>
+
+      <!-- Q3 -->
+      <div class="friskvard-qa-item">
+        <div class="friskvard-qa-number">3</div>
+        <h2>Vilka konkreta ändringar krävs för att tjänsten ska uppfylla kraven?</h2>
+        <p>För att tjänsten ska godkännas krävs en ompaketering där fokus flyttas från prestation/konst till hälsa/återhämtning. Följande tre åtgärder rekommenderas:</p>
+        <ul class="friskvard-requirements">
+          <li>
+            <span class="req-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span>
+            <span><strong>Namnbyte på kvittot</strong> — Det bör stå "Stresshantering genom skapande", "Mindfulness" eller "Mental återhämtning" — inte "Målarkurs" eller "Konstcoaching".</span>
+          </li>
+          <li>
+            <span class="req-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span>
+            <span><strong>Tydligare syfte i beskrivningen</strong> — Ord som "teknik", "komposition" och "resultat" bör tonas ner. Ord som "kravlöst", "närvaro", "varva ner" och "återhämtning" bör lyftas fram.</span>
+          </li>
+          <li>
+            <span class="req-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg></span>
+            <span><strong>Koppling till hälsa</strong> — Tjänsten ska beskrivas som ett verktyg för att hantera vardagsstress, snarare än en utbildning i att bli konstnär.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Q4 -->
+      <div class="friskvard-qa-item">
+        <div class="friskvard-qa-number">4</div>
+        <h2>Hur bör tjänsten beskrivas på hemsidan eller i offert?</h2>
+        <p>Här är ett exempel på en godkänd respektive icke-godkänd formulering:</p>
+
+        <div class="friskvard-example bad">
+          <div class="friskvard-example-label">Ej godkänt — fokus på hobby/kultur</div>
+          <p>"Lär dig måla med akryl. Vi går igenom tekniker, färgval och hjälper dig hitta ditt konstnärliga uttryck."</p>
+        </div>
+
+        <div class="friskvard-example good">
+          <div class="friskvard-example-label">Godkänt — fokus på friskvård/stresshantering</div>
+          <p>"Stresshantering genom intuitivt skapande. En stund för mental återhämtning där vi använder färg och form för att minska stressnivåer och öka närvaron (mindfulness). Inga krav på prestation eller förkunskaper."</p>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="friskvard-qa-item">
+        <div class="friskvard-qa-number">5</div>
+        <h2>Vad måste stå på kvittot för att kunden ska få pengarna tillbaka?</h2>
+        <p>För att Skatteverket och arbetsgivaren ska godkänna utlägget måste kvittot innehålla:</p>
+        <ul class="friskvard-checklist">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Säljarens <strong>företagsnamn</strong> och <strong>organisationsnummer</strong></span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><strong>Köparens namn</strong> (den anställde)</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><strong>Datum och belopp</strong> (inkl. moms)</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span><strong>Tjänstens art</strong> — t.ex. "Stresshantering" eller "Mindfulness-målning"</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Summary CTA -->
+    <div class="friskvard-summary">
+      <h2>Sammanfattning</h2>
+      <p>Upplägget kan godkännas om ni tydligt definierar och säljer in tjänsten som stresshantering/mental friskvård istället för konstnärlig utbildning. Det är viktigt att kvitton och underlag speglar detta hälsosyfte.</p>
+      <a href="{{ section.settings.cta_link }}" class="friskvard-cta">
+        {{ section.settings.cta_text }}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Friskvårdsbidrag",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "ArtBlend Art Coaching & Friskvårdsbidraget"
+    },
+    {
+      "type": "text",
+      "id": "meta",
+      "label": "Meta line",
+      "default": "Bedömning av tjänsten i förhållande till Skatteverkets regler för friskvård"
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Intro text",
+      "default": "Här beskriver vi hur vår kreativa coaching kan användas med ditt friskvårdsbidrag, vilka krav som gäller och hur kvittot ska se ut."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Se våra coaching-paket"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Friskvårdsbidrag"
+    }
+  ]
+}
+{% endschema %}

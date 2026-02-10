@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ArtBlendArt – Typography Systems (1.618 scale)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Golden ratio scale */
+      --fs-normal: 16px;
+      --fs-focus: calc(var(--fs-normal) * 1.618); /* 25.888px */
+      --fs-cta:   calc(var(--fs-focus)  * 1.618); /* 41.887px */
+
+      /* Layout */
+      --bg: #0f1115;
+      --panel: #141824;
+      --panel-2: #101420;
+      --text: #e9edf5;
+      --muted: #aab3c2;
+      --line: rgba(255,255,255,0.10);
+      --radius: 16px;
+      --pad: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(255,255,255,0.08), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(255,255,255,0.06), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    header{
+      padding: 34px 20px 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header h1{
+      margin:0 0 8px;
+      font-size: 22px;
+      letter-spacing: 0.2px;
+    }
+    header p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .grid{
+      max-width: 1200px;
+      margin: 18px auto 40px;
+      padding: 0 20px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent 30%),
+                  var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      min-height: 520px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .card .top{
+      padding: var(--pad);
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size: 12px;
+      color: var(--muted);
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.02);
+      white-space:nowrap;
+    }
+
+    .meta{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      text-align:right;
+    }
+    .meta code{
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 11px;
+    }
+
+    .content{
+      padding: var(--pad);
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      flex:1;
+    }
+
+    .label{
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.25px;
+      text-transform: uppercase;
+    }
+
+    /* Size roles */
+    .cta{
+      font-size: var(--fs-cta);
+      line-height: 1.10;
+      margin: 2px 0 0;
+    }
+    .focus{
+      font-size: var(--fs-focus);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .body{
+      font-size: var(--fs-normal);
+      line-height: 1.6;
+      margin: 0;
+      color: rgba(233,237,245,0.92);
+    }
+
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 6px 0;
+    }
+
+    .cta-row{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      margin-top: 4px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 12px;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      transition: transform 120ms ease, background 120ms ease;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,0.09); }
+    .btn:active{ transform: translateY(0px); }
+
+    .btn small{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .role-table{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: var(--pad);
+      background: var(--panel-2);
+      border-top: 1px solid var(--line);
+    }
+    .row{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      align-items:baseline;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+    }
+    .row .k{
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.25px;
+    }
+    .row .v{
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* Font systems */
+    .sysA .cta{ font-family: "Fraunces", serif; font-weight: 700; }
+    .sysA .focus{ font-family: "Space Grotesk", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.2px; }
+    .sysA .body, .sysA .btn{ font-family: "Inter", system-ui, sans-serif; }
+
+    .sysB .cta{ font-family: "DM Serif Display", serif; font-weight: 400; }
+    .sysB .focus{ font-family: "Source Serif 4", serif; font-weight: 600; }
+    .sysB .body, .sysB .btn{ font-family: "DM Sans", system-ui, sans-serif; }
+
+    .sysC .cta{ font-family: "Sora", system-ui, sans-serif; font-weight: 700; letter-spacing: -0.4px; }
+    .sysC .focus{ font-family: "Sora", system-ui, sans-serif; font-weight: 600; letter-spacing: -0.2px; }
+    .sysC .body, .sysC .btn{ font-family: "Manrope", system-ui, sans-serif; }
+
+    /* Make CTA button typography match system intent */
+    .sysA .btn{ font-weight: 600; }
+    .sysB .btn{ font-weight: 600; }
+    .sysC .btn{ font-weight: 700; }
+
+    footer{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 28px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    footer code{
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 11px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Landing page typography preview — 3 systems with a 1.618 size scale</h1>
+    <p>
+      Size roles are consistent across all systems:
+      <code>Normal = 16px</code>,
+      <code>Focus = 25.888px (~26px)</code>,
+      <code>CTA = 41.887px (~42px)</code>.
+      Each card shows a realistic hero + section + body + CTA treatment.
+    </p>
+  </header>
+
+  <main class="grid">
+    <!-- System A -->
+    <section class="card sysA">
+      <div class="top">
+        <div class="badge">System A — Warm creative / high trust</div>
+        <div class="meta">
+          <div>Normal: <code>Inter</code></div>
+          <div>Focus: <code>Space Grotesk</code></div>
+          <div>CTA: <code>Fraunces</code></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div>
+          <div class="label">CTA / Hero headline (≈42px)</div>
+          <h2 class="cta">Vill du skapa men fastnat i “hur”?</h2>
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+          <div class="label">Focus / Section heading (≈26px)</div>
+          <p class="focus">Tillsammans gör vi första steget konkret och enkelt.</p>
+        </div>
+
+        <div>
+          <div class="label">Normal / Body (16px)</div>
+          <p class="body">
+            Saknar du skaparglädjen du hade förr? Hitta tillbaka utan krav, prestation eller självkritik.
+            Vi skapar trygghet, process och momentum — i din takt.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="#">
+            Boka konsultation <small>(CTA)</small>
+          </a>
+          <span class="body" style="color:var(--muted); font-size:14px;">
+            20 min • kostnadsfri introduktion
+          </span>
+        </div>
+      </div>
+
+      <div class="role-table">
+        <div class="row"><div class="k">Normal</div><div class="v">Inter — 16px</div></div>
+        <div class="row"><div class="k">Focus</div><div class="v">Space Grotesk — 25.888px</div></div>
+        <div class="row"><div class="k">CTA</div><div class="v">Fraunces — 41.887px</div></div>
+      </div>
+    </section>
+
+    <!-- System B -->
+    <section class="card sysB">
+      <div class="top">
+        <div class="badge">System B — Editorial premium / softer</div>
+        <div class="meta">
+          <div>Normal: <code>DM Sans</code></div>
+          <div>Focus: <code>Source Serif 4</code></div>
+          <div>CTA: <code>DM Serif Display</code></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div>
+          <div class="label">CTA / Hero headline (≈42px)</div>
+          <h2 class="cta">Hitta tillbaka till din skaparglädje.</h2>
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+          <div class="label">Focus / Section heading (≈26px)</div>
+          <p class="focus">Utan krav, prestation eller självkritik.</p>
+        </div>
+
+        <div>
+          <div class="label">Normal / Body (16px)</div>
+          <p class="body">
+            Det här upplägget passar dig som vill ha struktur och värme samtidigt.
+            Vi gör det otydliga tydligt, och hjälper dig att komma igång med en riktning som håller.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="#">
+            Läs mer om upplägget <small>(CTA)</small>
+          </a>
+          <span class="body" style="color:var(--muted); font-size:14px;">
+            Fokus på process och riktning
+          </span>
+        </div>
+      </div>
+
+      <div class="role-table">
+        <div class="row"><div class="k">Normal</div><div class="v">DM Sans — 16px</div></div>
+        <div class="row"><div class="k">Focus</div><div class="v">Source Serif 4 — 25.888px</div></div>
+        <div class="row"><div class="k">CTA</div><div class="v">DM Serif Display — 41.887px</div></div>
+      </div>
+    </section>
+
+    <!-- System C -->
+    <section class="card sysC">
+      <div class="top">
+        <div class="badge">System C — Contemporary / productized</div>
+        <div class="meta">
+          <div>Normal: <code>Manrope</code></div>
+          <div>Focus: <code>Sora</code></div>
+          <div>CTA: <code>Sora</code></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div>
+          <div class="label">CTA / Hero headline (≈42px)</div>
+          <h2 class="cta">Skapa momentum på 3 samtal.</h2>
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+          <div class="label">Focus / Section heading (≈26px)</div>
+          <p class="focus">Tydligt nästa steg — med trygghet och riktning.</p>
+        </div>
+
+        <div>
+          <div class="label">Normal / Body (16px)</div>
+          <p class="body">
+            För dig som vill ha en mer “paketerad” upplevelse: klar struktur, tydliga rubriker,
+            och en CTA som känns modern och handlingsdrivande.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="#">
+            Se paket & priser <small>(CTA)</small>
+          </a>
+          <span class="body" style="color:var(--muted); font-size:14px;">
+            Passar bra för kort + tydligt innehåll
+          </span>
+        </div>
+      </div>
+
+      <div class="role-table">
+        <div class="row"><div class="k">Normal</div><div class="v">Manrope — 16px</div></div>
+        <div class="row"><div class="k">Focus</div><div class="v">Sora — 25.888px</div></div>
+        <div class="row"><div class="k">CTA</div><div class="v">Sora — 41.887px</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Tip: if your theme uses rems, keep <code>16px = 1rem</code>, then the scale becomes
+    <code>1rem</code>, <code>1.618rem</code>, <code>2.618rem</code>.
+    You can also round to 26px / 42px without visually breaking the ratio.
+  </footer>
+</body>
+</html>

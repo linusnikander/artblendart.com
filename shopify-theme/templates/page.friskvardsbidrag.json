@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-friskvardsbidrag",
+      "settings": {
+        "heading": "ArtBlend Art Coaching & Friskvårdsbidraget",
+        "meta": "Bedömning av tjänsten i förhållande till Skatteverkets regler för friskvård",
+        "intro": "Här beskriver vi hur vår kreativa coaching kan användas med ditt friskvårdsbidrag, vilka krav som gäller och hur kvittot ska se ut.",
+        "cta_text": "Se våra coaching-paket",
+        "cta_link": "/pages/coaching2#paket"
+      }
+    }
+  },
+  "order": ["main"]
+}

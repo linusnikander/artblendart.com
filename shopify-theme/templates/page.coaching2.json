@@ -292,7 +292,10 @@
             "feature_3": "Inspirerande hemuppgifter efter varje samtal",
             "feature_4": "",
             "feature_5": "",
-            "cta_link": "/products/din-kreativa-plats"
+            "cta_link": "/products/din-kreativa-plats",
+            "modal_body": "<p>Mer information kommer snart.</p>",
+            "secondary_link": "/pages/vetenskap",
+            "secondary_link_text": "Läs om vetenskapen bakom →"
           }
         },
         "product_2": {
@@ -312,7 +315,10 @@
             "feature_3": "Inspirerande hemuppgifter efter varje samtal",
             "feature_4": "",
             "feature_5": "",
-            "cta_link": "/products/ide-till-verklighet"
+            "cta_link": "/products/ide-till-verklighet",
+            "modal_body": "<p>Mer information kommer snart.</p>",
+            "secondary_link": "/pages/vetenskap",
+            "secondary_link_text": "Läs om vetenskapen bakom →"
           }
         },
         "product_3": {
@@ -332,7 +338,10 @@
             "feature_3": "Rekommendation för nästa steg efter sessionen",
             "feature_4": "",
             "feature_5": "",
-            "cta_link": "/products/kickstart-coaching"
+            "cta_link": "/products/kickstart-coaching",
+            "modal_body": "<p>Mer information kommer snart.</p>",
+            "secondary_link": "/pages/friskvardsbidrag",
+            "secondary_link_text": "Läs om friskvårdsbidrag →"
           }
         }
       },

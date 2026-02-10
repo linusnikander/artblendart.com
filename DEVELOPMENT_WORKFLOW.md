@@ -86,16 +86,16 @@ Push your new sections and templates to the live theme:
 cd shopify-theme
 
 # Push specific files to live theme (safer)
-shopify theme push --theme=149756051720 \
+shopify theme push --theme=189302341896 \
   --only='templates/page.your-page.json' \
   --only='sections/your-section.liquid' \
   --allow-live
 
 # Or push all changes (use with caution on live theme)
-shopify theme push --theme=149756051720 --allow-live
+shopify theme push --theme=189302341896 --allow-live
 ```
 
-**⚠️ Important:** Templates must be pushed to the **live theme** (ID: 149756051720) for them to appear in the Shopify admin page creation form.
+**⚠️ Important:** Templates must be pushed to the **live theme** (ID: 189302341896) for them to appear in the Shopify admin page creation form.
 
 ### Step 4: Create Pages in Shopify Admin
 
@@ -164,7 +164,7 @@ shopify theme dev --store=82e997-6e.myshopify.com
 
 **Solution:**
 ```bash
-shopify theme push --theme=149756051720 \
+shopify theme push --theme=189302341896 \
   --only='templates/page.your-template.json' \
   --allow-live
 ```
@@ -237,16 +237,16 @@ shopify theme list
 shopify theme dev --store=82e997-6e.myshopify.com
 
 # Push all changes to live theme
-shopify theme push --theme=149756051720 --allow-live
+shopify theme push --theme=189302341896 --allow-live
 
 # Push specific files only
-shopify theme push --theme=149756051720 \
+shopify theme push --theme=189302341896 \
   --only='templates/page.*.json' \
   --only='sections/coaching-*.liquid' \
   --allow-live
 
 # Pull theme from Shopify
-shopify theme pull --theme=149756051720
+shopify theme pull --theme=189302341896
 
 # Check Shopify CLI version
 shopify version
