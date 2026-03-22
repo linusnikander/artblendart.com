@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card Text Preview — Current vs Proposed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Manrope', system-ui, sans-serif; background: #f4f1fa; padding: 2rem; }
+    h1 { font-family: 'Sora', sans-serif; text-align: center; margin-bottom: 0.5rem; color: #1a1a2e; }
+    .subtitle { text-align: center; color: #6b6b8a; margin-bottom: 3rem; }
+    .comparison { margin-bottom: 4rem; }
+    .comparison h2 { font-family: 'Sora', sans-serif; color: #1a1a2e; margin-bottom: 1.5rem; text-align: center; font-size: 1.1rem; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .card.featured { border-color: #7c3aed; box-shadow: 0 10px 40px rgba(124, 58, 237, 0.15); }
+    .badge {
+      position: absolute; top: 1rem; right: 1rem;
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      color: #fff; padding: 0.375rem 0.875rem; border-radius: 9999px;
+      font-size: 0.75rem; font-weight: 600;
+    }
+    .badge.wellness { background: linear-gradient(135deg, #059669, #047857); }
+    .card h3 { font-family: 'Sora', sans-serif; font-size: 1.5rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.25rem; }
+    .tagline { color: #6b6b8a; font-size: 1rem; margin-bottom: 1rem; }
+    .price { display: flex; align-items: baseline; gap: 0.25rem; margin-bottom: 0.25rem; }
+    .price .amount { font-family: 'Sora', sans-serif; font-size: 2.5rem; font-weight: 700; color: #1a1a2e; }
+    .price .period { color: #6b6b8a; }
+    .total { color: #6b6b8a; font-size: 0.875rem; margin-bottom: 1.5rem; }
+    .description { color: #4a4a68; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1rem; }
+    .features { list-style: none; flex: 1; margin-bottom: 2rem; }
+    .features li { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.5rem 0; color: #4a4a68; line-height: 1.5; }
+    .features li .check { color: #7c3aed; font-weight: 600; flex-shrink: 0; }
+    .cta {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      color: #fff; padding: 1rem 1.5rem; border-radius: 9999px;
+      font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700;
+      text-decoration: none;
+    }
+    .links { text-align: center; margin-top: 1rem; }
+    .links a { font-size: 0.875rem; font-weight: 600; color: #7c3aed; text-decoration: none; }
+    .diff { background: #fef9c3; padding: 0 0.15rem; border-radius: 2px; }
+    .label-current { background: #fee2e2; color: #991b1b; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+    .label-proposed { background: #dcfce7; color: #166534; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+    @media (max-width: 900px) { .cards { grid-template-columns: 1fr; max-width: 400px; } }
+  </style>
+</head>
+<body>
+  <h1>Förslag: Uppdaterade korttexter</h1>
+  <p class="subtitle">Jämför nuvarande vs föreslagna beskrivningar och features</p>
+
+  <!-- CURRENT -->
+  <div class="comparison">
+    <h2><span class="label-current">NUVARANDE</span></h2>
+    <div class="cards">
+      <!-- Din kreativa plats — CURRENT -->
+      <div class="card">
+        <h3>Din kreativa plats</h3>
+        <span class="tagline">En meningsfull fritid</span>
+        <div class="price"><span class="amount">1 750</span><span class="period">kr/mån</span></div>
+        <span class="total">5 250 kr totalt · 3 månader</span>
+        <p class="description">Vill du skapa men fastnat i "hur" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik, och gör första steget konkret och enkelt.</p>
+        <ul class="features">
+          <li><span class="check">✓</span> 3 × coachingsamtal (1 per månad á 60 min) per video</li>
+          <li><span class="check">✓</span> Skriftlig sammanfattning efter varje samtal</li>
+          <li><span class="check">✓</span> Inspirerande hemuppgifter efter varje samtal</li>
+        </ul>
+        <a href="#" class="cta">Välj Din kreativa plats →</a>
+        <div class="links"><a href="#">Läs mer →</a></div>
+      </div>
+
+      <!-- Idé till verklighet — CURRENT -->
+      <div class="card featured">
+        <span class="badge">Populärast</span>
+        <h3>Idé till verklighet</h3>
+        <span class="tagline">Gå från idé till genomförande</span>
+        <div class="price"><span class="amount">1 750</span><span class="period">kr/mån</span></div>
+        <span class="total">5 250 kr totalt · 3 månader</span>
+        <p class="description">Vet du vad du vill men inte hur du skall komma igång eller hur du skall göra - Jag hjälper dig genom hela processen.</p>
+        <ul class="features">
+          <li><span class="check">✓</span> 3 × coachingsamtal (1 per månad á 60 min) per video</li>
+          <li><span class="check">✓</span> Skriftlig sammanfattning efter varje samtal</li>
+          <li><span class="check">✓</span> Inspirerande hemuppgifter efter varje samtal</li>
+        </ul>
+        <a href="#" class="cta">Välj Idé till verklighet →</a>
+        <div class="links"><a href="#">Läs mer →</a></div>
+      </div>
+
+      <!-- Kickstart — CURRENT -->
+      <div class="card">
+        <span class="badge wellness">Friskvårdsbidrag</span>
+        <h3>Kickstart</h3>
+        <span class="tagline">En kickstart för din kreativitet</span>
+        <div class="price"><span class="amount">2 500</span><span class="period">kr</span></div>
+        <span class="total">Engångskostnad · Ingen bindning</span>
+        <p class="description">För dig som vill använda friskvårdsbidraget till att öppna dörren till en mer kreativ fritid och som ger mening och balans i livet.</p>
+        <ul class="features">
+          <li><span class="check">✓</span> 1 × coachingsamtal á 60 min per video</li>
+          <li><span class="check">✓</span> Skriftlig sammanfattning efter 60-minuterssessionen</li>
+          <li><span class="check">✓</span> Rekommendation för nästa steg efter sessionen</li>
+        </ul>
+        <a href="#" class="cta">Välj Kickstart →</a>
+        <div class="links"><a href="#">Läs mer →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPOSED -->
+  <div class="comparison">
+    <h2><span class="label-proposed">FÖRSLAG</span></h2>
+    <div class="cards">
+      <!-- Din kreativa plats — PROPOSED -->
+      <div class="card">
+        <h3>Din kreativa plats</h3>
+        <span class="tagline">En meningsfull fritid</span>
+        <div class="price"><span class="amount">1 750</span><span class="period">kr/mån</span></div>
+        <span class="total">5 250 kr totalt · 3 månader</span>
+        <p class="description"><span class="diff">Vill du skapa, men fastnar i hur du ska börja? Eller saknar du skaparglädjen du en gång hade? Här får du ett tryggt utrymme där skapandet handlar om nyfikenhet, närvaro och lust.</span></p>
+        <ul class="features">
+          <li><span class="check">✓</span> 3 × coachingsamtal (1 per månad á 60 min) per video</li>
+          <li><span class="check">✓</span> Skriftlig sammanfattning efter varje samtal</li>
+          <li><span class="check">✓</span> Inspirerande hemuppgifter efter varje samtal</li>
+        </ul>
+        <a href="#" class="cta">Välj Din kreativa plats →</a>
+        <div class="links"><a href="#">Läs mer →</a></div>
+      </div>
+
+      <!-- Idé till verklighet — PROPOSED -->
+      <div class="card featured">
+        <span class="badge">Populärast</span>
+        <h3>Idé till verklighet</h3>
+        <span class="tagline">Gå från idé till genomförande</span>
+        <div class="price"><span class="amount">1 750</span><span class="period">kr/mån</span></div>
+        <span class="total">5 250 kr totalt · 3 månader</span>
+        <p class="description"><span class="diff">Har du en idé som vill ta form, men vet inte hur du ska börja? Här får du stöd i hela processen: från konstnärlig vägledning till handfasta råd om material och tekniker.</span></p>
+        <ul class="features">
+          <li><span class="check">✓</span> 3 × coachingsamtal (1 per månad á 60 min) per video</li>
+          <li><span class="check">✓</span> Skriftlig sammanfattning efter varje samtal</li>
+          <li><span class="check">✓</span> Inspirerande hemuppgifter efter varje samtal</li>
+        </ul>
+        <a href="#" class="cta">Välj Idé till verklighet →</a>
+        <div class="links"><a href="#">Läs mer →</a></div>
+      </div>
+
+      <!-- Kickstart — PROPOSED -->
+      <div class="card">
+        <span class="badge wellness">Friskvårdsbidrag</span>
+        <h3>Kickstart</h3>
+        <span class="tagline">En kickstart för din kreativitet</span>
+        <div class="price"><span class="amount">2 500</span><span class="period">kr</span></div>
+        <span class="total">Engångskostnad · Ingen bindning</span>
+        <p class="description"><span class="diff">Ta ett första steg mot ett mer kreativt liv. Ett 60-minuters samtal följt av inspirerande hemuppgifter varje månad under 12 månader som håller kreativiteten levande.</span></p>
+        <ul class="features">
+          <li><span class="check">✓</span> 1 × coachingsamtal á 60 min per video</li>
+          <li><span class="check">✓</span> <span class="diff">Skriftlig sammanfattning av samtalet</span></li>
+          <li><span class="check">✓</span> <span class="diff">Inspirerande hemuppgifter varje månad i 12 månader</span></li>
+        </ul>
+        <a href="#" class="cta">Välj Kickstart →</a>
+        <div class="links"><a href="#">Läs mer →</a></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

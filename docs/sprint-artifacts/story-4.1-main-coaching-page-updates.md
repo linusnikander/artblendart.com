@@ -3,7 +3,7 @@
 **Epic:** UX Alignment
 **Points:** 5
 **Priority:** 1 (First)
-**Status:** In Progress (12/14 tasks complete - waiting on image from Therese)
+**Status:** DONE
 
 ---
 
@@ -18,13 +18,13 @@ As a potential coaching customer visiting the main coaching page, I want a clear
 | ID | Task | Status |
 |----|------|--------|
 | S1-1 | Remove "online coaching available" text | [x] |
-| S1-2 | Move text down from eye level | [ ] |
+| S1-2 | Move text down from eye level | [x] |
 | S1-3 | Move "Do you recognize yourself?" section lower (was 2nd, now 7th) | [x] |
 | S1-4 | Change booking button to link to packages | [x] |
 | S1-5 | Remove "100 satisfied customers" | [x] |
-| S1-6 | Fix Therese image resolution (photo by tree) | [ ] (T) |
+| S1-6 | Fix Therese image resolution (photo by tree) | [x] |
 | S1-7 | Add "book package" button near Therese section | [x] |
-| S1-8 | Fix "Your creative journey" section — adjust image/text alignment, fix text on image | [ ] |
+| S1-8 | Fix "Your creative journey" section — adjust image/text alignment, fix text on image | [x] |
 | S1-9 | Move free consultation to bottom (final CTA only links to booking) | [x] |
 | S1-10 | Align "How it works" section with package sales flow (CTAs → #paket) | [x] |
 | S1-11 | Move "Don't know where to start" - simplified text in themes section | [x] |
@@ -37,11 +37,11 @@ As a potential coaching customer visiting the main coaching page, I want a clear
 ## Acceptance Criteria
 
 - [x] All specified text elements removed (badge, 100+ stat)
-- [ ] Therese image displays at proper resolution (waiting on new image)
+- [x] Therese image displays at proper resolution
 - [x] Booking buttons link to package section (all CTAs → #paket)
 - [x] Free consultation is less prominent, at bottom (only final CTA)
 - [x] Page flow guides users toward packages (products now 3rd section)
-- [ ] Visual review completed with stakeholder
+- [x] Visual review completed with stakeholder
 
 ---
 

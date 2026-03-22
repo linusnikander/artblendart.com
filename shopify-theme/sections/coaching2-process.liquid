@@ -1,7 +1,7 @@
 {% comment %} Coaching2 Process Section - 4 Steps {% endcomment %}
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
   .c2-process {
     background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);
@@ -14,18 +14,19 @@
   }
 
   .c2-process-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: block;
+    max-width: 700px;
+    margin: 0 auto;
     align-items: start;
   }
 
   .c2-process-content {
     padding: 1rem 0;
+    text-align: center;
   }
 
   .c2-process-label {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     color: #7c3aed;
     font-weight: 600;
     font-size: 12px;
@@ -35,7 +36,7 @@
   }
 
   .c2-process h2 {
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: clamp(22px, 2.8vw, 26px);
     font-weight: 600;
     line-height: 1.22;
@@ -45,7 +46,7 @@
   }
 
   .c2-process-intro {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: #4a4a68;
@@ -57,6 +58,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    text-align: left;
   }
 
   .c2-step {
@@ -92,7 +94,7 @@
     justify-content: center;
     flex-shrink: 0;
     color: #fff;
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-weight: 700;
     font-size: 1.125rem;
   }
@@ -109,7 +111,7 @@
   }
 
   .c2-step h3 {
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 1.125rem;
     font-weight: 600;
     color: #1a1a2e;
@@ -117,7 +119,7 @@
   }
 
   .c2-step-duration {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     background: rgba(139, 92, 246, 0.1);
     color: #7c3aed;
     padding: 0.25rem 0.75rem;
@@ -127,7 +129,7 @@
   }
 
   .c2-step p {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     color: #6b6b8a;
     line-height: 1.6;
     margin: 0;
@@ -136,7 +138,7 @@
   }
 
   .c2-step-badge {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     display: inline-block;
     margin-top: 0.75rem;
     color: #059669;
@@ -151,7 +153,7 @@
 
   .c2-process-image-container {
     position: relative;
-    border-radius: 1.5rem;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   }
@@ -163,7 +165,7 @@
   }
 
   .c2-process-quote {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -190,7 +192,7 @@
     color: #fff;
     padding: 1rem 2rem;
     border-radius: 9999px;
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.1;
@@ -268,28 +270,6 @@
         </div>
       </div>
 
-      <div class="c2-process-sidebar">
-        <div class="c2-process-image-container">
-          {% if section.settings.image != blank %}
-            <img
-              src="{{ section.settings.image | image_url: width: 600 }}"
-              alt="{{ section.settings.image_alt }}"
-              loading="lazy"
-            >
-          {% else %}
-            <img
-              src="{{ 'coaching-creative-collage.jpg' | asset_url }}"
-              alt="Kreativ process"
-              loading="lazy"
-            >
-          {% endif %}
-          {% if section.settings.quote != blank %}
-            <div class="c2-process-quote">
-              "{{ section.settings.quote }}"
-            </div>
-          {% endif %}
-        </div>
-      </div>
     </div>
 
     <div class="c2-process-cta">

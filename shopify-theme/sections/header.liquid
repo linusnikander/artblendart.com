@@ -37,6 +37,10 @@
     }
   {%- endif -%}
 
+  .shopify-section-header-sticky .header__heading-logo-wrapper {
+    display: none;
+  }
+
   {%- if section.settings.menu_type_desktop != "drawer" -%}
     @media screen and (min-width: 990px) {
       header-drawer {

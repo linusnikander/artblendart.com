@@ -13,7 +13,7 @@ https://github.com/linusnikander/artblendart.com
 Based on stakeholder review of `order-flow-documentation.pdf`. Updates to coaching page, product pages, cart, checkout, and booking.
 
 **Stories (priority order):**
-- [ ] 4.1: Main Coaching Page Updates (5 pts) - **IN PROGRESS** (12/14 tasks done)
+- [x] 4.1: Main Coaching Page Updates (5 pts) - DONE
 - [ ] 4.2: Product Page & Cart Updates (5 pts) - Priority 2
 - [ ] 4.3: Checkout & Branding (2 pts) - Priority 3
 - [ ] 4.4: Investigation & Discovery (3 pts) - Priority 4 (after 4.1-4.3)
@@ -67,6 +67,12 @@ Contact forms and free consultation booking (separate from paid purchase flow). 
 - [ ] Add proper menu management (replace hardcoded "Coaching" link)
 - [ ] Set up email notifications for contact form submissions
 - [ ] Add Google Analytics tracking (if needed)
+- [ ] Find placement for "Min utgångspunkt" quotes on coaching page (from product detail texts)
+- [ ] Explore adding background images to the product cards (short descriptions)
+- [ ] Decide where to link to the "vetenskap" page (removed from product cards, page still exists at /pages/vetenskap)
+- [ ] Review look and feel for "Vad vi kan utforska" (themes) section
+- [ ] Review "Om mig" section layout — image/text disposition and balance
+- [ ] Align product card CTA buttons horizontally across all three cards (varying text lengths push buttons out of line)
 
 ---
 

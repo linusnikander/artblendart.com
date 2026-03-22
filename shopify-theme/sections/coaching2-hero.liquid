@@ -1,7 +1,7 @@
 {% comment %} Coaching2 Hero Section - Sales-oriented with stats {% endcomment %}
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Sora:wght@600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
   .c2-hero {
     background: #1a1a2e;
@@ -55,7 +55,7 @@
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 0.875rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
@@ -69,7 +69,7 @@
   }
 
   .c2-hero h1 {
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: clamp(32px, 4.5vw, 42px);
     font-weight: 700;
     color: #fff;
@@ -87,7 +87,7 @@
   }
 
   .c2-hero-subtitle {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.9);
@@ -115,7 +115,7 @@
     color: #fff;
     padding: 1rem 2rem;
     border-radius: 9999px;
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.1;
@@ -149,7 +149,7 @@
     padding: 1rem 2rem;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 9999px;
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.1;
@@ -187,7 +187,7 @@
   }
 
   .c2-stat-number {
-    font-family: 'Sora', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: #fff;
@@ -195,7 +195,7 @@
   }
 
   .c2-stat-label {
-    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-family: 'Lora', system-ui, -apple-system, sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
@@ -238,12 +238,14 @@
     <div class="c2-hero-bg" style="background-image: url('{{ 'coaching-hero-background.jpg' | asset_url }}');"></div>
   {% endif %}
   <div class="c2-hero-content">
-    <div class="c2-hero-badge">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-      {{ section.settings.badge_text }}
-    </div>
+    {% if section.settings.badge_text != blank %}
+      <div class="c2-hero-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        {{ section.settings.badge_text }}
+      </div>
+    {% endif %}
 
     <h1>{{ section.settings.heading }}</h1>
 
