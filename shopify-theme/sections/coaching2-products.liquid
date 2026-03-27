@@ -293,7 +293,7 @@
     text-decoration: underline;
   }
 
-  /* Modal overlay & container */
+  /* Modal overlay & container — Version C Magazine */
   .c2-product-modal {
     display: none;
     position: fixed;
@@ -304,40 +304,40 @@
     z-index: 1000;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 16px;
     background: rgba(10, 8, 28, 0.75);
   }
 
   .c2-product-modal-content {
     position: relative;
     background: #fff;
-    border-radius: 1.5rem;
-    max-width: 560px;
+    max-width: 640px;
     width: 100%;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
-    padding: 2.5rem;
+    padding: 0;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
     outline: none;
   }
 
   .c2-product-modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 9999px;
-    border: 1px solid #e5e5e5;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
     background: #fff;
     color: #6b6b8a;
-    font-size: 1rem;
+    font-size: 18px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
     line-height: 1;
+    z-index: 10;
   }
 
   .c2-product-modal-close:hover {
@@ -345,58 +345,178 @@
     color: #7c3aed;
   }
 
-  .c2-product-modal-image {
-    width: 100%;
-    border-radius: 0;
-    margin-bottom: 1.5rem;
+  /* Header: label + title + tagline + divider */
+  .c2-product-modal-header {
+    padding: 40px 40px 0;
+    text-align: center;
+  }
+
+  .c2-product-modal-label {
+    color: #7c3aed;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
   }
 
   .c2-product-modal-title {
-    font-family: 'Lora', system-ui, -apple-system, sans-serif;
-    font-size: clamp(20px, 2.5vw, 24px);
-    font-weight: 600;
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 700;
     color: #1a1a2e;
-    margin-bottom: 1rem;
+    margin-bottom: 4px;
   }
 
+  .c2-product-modal-tagline {
+    font-family: 'Lora', serif;
+    color: #6b6b8a;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .c2-product-modal-divider {
+    width: 60px;
+    height: 3px;
+    background: #7c3aed;
+    margin: 0 auto;
+  }
+
+  /* Image */
+  .c2-product-modal-image-wrap {
+    margin: 32px 40px;
+    height: 220px;
+    overflow: hidden;
+  }
+
+  .c2-product-modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .c2-product-modal-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8dff5, #d4c4ed, #c4b0e6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* Body content */
   .c2-product-modal-body {
-    font-family: 'Lora', system-ui, -apple-system, sans-serif;
-    font-size: 15px;
+    font-family: 'Lora', serif;
+    font-size: 16px;
     font-weight: 400;
     color: #4a4a68;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    line-height: 1.75;
+    padding: 0 40px;
+    margin-bottom: 0;
   }
 
   .c2-product-modal-body p {
-    margin: 0 0 1rem 0;
+    margin: 0 0 16px 0;
   }
 
   .c2-product-modal-body p:last-child {
     margin-bottom: 0;
   }
 
-  .c2-product-modal-body strong {
+  /* First paragraph with strong = pull quote */
+  .c2-product-modal-body > p:first-child {
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 500;
     color: #1a1a2e;
-    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+    padding: 24px 16px;
+    margin-bottom: 24px;
+  }
+
+  .c2-product-modal-body > p:first-child::before {
+    content: '\201C';
+    color: #7c3aed;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-right: 2px;
+  }
+
+  .c2-product-modal-body > p:first-child::after {
+    content: '\201D';
+    color: #7c3aed;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 0;
+    vertical-align: -0.3em;
+    margin-left: 2px;
+  }
+
+  .c2-product-modal-body > p:first-child strong {
+    font-weight: 500;
+  }
+
+  .c2-product-modal-body strong {
+    color: #7c3aed;
+    font-weight: 700;
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 24px;
+  }
+
+  /* Paragraphs that contain only a strong = section headings */
+  .c2-product-modal-body p:has(> strong:only-child) {
+    margin-bottom: 8px;
   }
 
   .c2-product-modal-body em {
     font-style: italic;
-    color: #6b6b8a;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* Paragraphs containing em = philosophy band */
+  .c2-product-modal-body p:has(> em:only-child) {
+    background: #1a1a2e;
+    text-align: center;
+    padding: 24px 40px;
+    margin-left: -40px;
+    margin-right: -40px;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  /* Consecutive philosophy paragraphs */
+  .c2-product-modal-body p:has(> em:only-child) + p:has(> em:only-child) {
+    padding-top: 0;
+    margin-top: -8px;
+    padding-bottom: 32px;
   }
 
   .c2-product-modal-body ul {
     list-style: none;
-    padding: 0;
-    margin: 0 0 1rem 0;
+    padding: 20px;
+    margin: 0 0 24px 0;
+    background: #f8f5ff;
   }
 
   .c2-product-modal-body ul li {
     position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.4rem;
+    padding-left: 24px;
+    margin-bottom: 6px;
     line-height: 1.6;
+    font-size: 15px;
   }
 
   .c2-product-modal-body ul li::before {
@@ -407,16 +527,48 @@
     font-weight: 600;
   }
 
+  /* Hide the inline price paragraph (shown in footer instead) */
+  .c2-product-modal-body > p:last-child:has(strong) {
+    display: none;
+  }
+
+  /* Price + CTA area */
+  .c2-product-modal-footer {
+    text-align: center;
+    padding: 32px 40px 40px;
+  }
+
+  .c2-product-modal-price {
+    font-family: 'Lora', serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+
+  .c2-product-modal-price-period {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6b6b8a;
+  }
+
+  .c2-product-modal-price-total {
+    font-family: 'Lora', serif;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 4px 0 20px;
+  }
+
   .c2-product-modal-cta {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
     color: #fff;
-    padding: 0.75rem 1.5rem;
+    padding: 14px 28px;
     border-radius: 9999px;
-    font-family: 'Lora', system-ui, -apple-system, sans-serif;
-    font-size: 14px;
+    font-family: 'Lora', serif;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -427,6 +579,14 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
     color: #fff;
+  }
+
+  @media (max-width: 600px) {
+    .c2-product-modal-header { padding: 32px 24px 0; }
+    .c2-product-modal-image-wrap { margin: 24px; }
+    .c2-product-modal-body { padding: 0 24px; }
+    .c2-product-modal-body p:has(> em:only-child) { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
+    .c2-product-modal-footer { padding: 24px; }
   }
 
   @media (max-width: 900px) {
@@ -579,23 +739,38 @@
       <div class="c2-product-modal" id="c2-modal-{{ block.id }}" aria-hidden="true" data-c2-modal-id="{{ block.id }}">
         <div class="c2-product-modal-content" role="dialog" aria-modal="true" tabindex="-1">
           <button type="button" class="c2-product-modal-close" data-c2-modal-close="{{ block.id }}" aria-label="Stäng">✕</button>
-          {% if block.settings.modal_image != blank %}
-            <img
-              src="{{ block.settings.modal_image | image_url: width: 560 }}"
-              alt="{{ block.settings.modal_title | default: block.settings.title }}"
-              class="c2-product-modal-image"
-              loading="lazy"
-              width="560"
-            >
-          {% endif %}
-          <h3 class="c2-product-modal-title">{{ block.settings.modal_title | default: block.settings.title }}</h3>
+
+          <div class="c2-product-modal-header">
+            <div class="c2-product-modal-label">Coaching-paket</div>
+            <h3 class="c2-product-modal-title">{{ block.settings.modal_title | default: block.settings.title }}</h3>
+            <div class="c2-product-modal-tagline">{{ block.settings.tagline }}</div>
+            <div class="c2-product-modal-divider"></div>
+          </div>
+
+          <div class="c2-product-modal-image-wrap">
+            {% if block.settings.modal_image != blank %}
+              <img
+                src="{{ block.settings.modal_image | image_url: width: 640 }}"
+                alt="{{ block.settings.modal_title | default: block.settings.title }}"
+                class="c2-product-modal-image"
+                loading="lazy"
+              >
+            {% else %}
+              <div class="c2-product-modal-image-placeholder">Bild</div>
+            {% endif %}
+          </div>
+
           <div class="c2-product-modal-body">{{ block.settings.modal_body }}</div>
-          <a href="{{ block.settings.cta_link }}" class="c2-product-modal-cta">
-            Välj {{ block.settings.title }}
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+
+          <div class="c2-product-modal-footer">
+            <div class="c2-product-modal-price">{{ block.settings.price }}<span class="c2-product-modal-price-period"> {{ block.settings.price_period }}</span></div>
+            {% if block.settings.price_total != blank %}
+              <div class="c2-product-modal-price-total">{{ block.settings.price_total }}</div>
+            {% endif %}
+            <a href="{{ block.settings.cta_link }}" class="c2-product-modal-cta">
+              Välj {{ block.settings.title }} →
+            </a>
+          </div>
         </div>
       </div>
     {% endif %}

@@ -1,0 +1,252 @@
+{% comment %} Modal Preview - unlisted page for reviewing modal design versions {% endcomment %}
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+  .mp-wrap { font-family: 'Lora', serif; padding: 3rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+  .mp-wrap .page-title { text-align: center; font-size: 1.8rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem; }
+  .mp-wrap .page-sub { text-align: center; color: #6b6b8a; margin-bottom: 3rem; font-size: 1rem; }
+  .mp-wrap .buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  .mp-wrap .open-btn { padding: 1rem 2rem; border-radius: 9999px; border: none; cursor: pointer; font-family: 'Lora', serif; font-size: 1rem; font-weight: 700; transition: all 0.3s; }
+  .mp-wrap .open-btn-a { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; box-shadow: 0 4px 15px rgba(124,58,237,0.3); }
+  .mp-wrap .open-btn-b { background: #fff; color: #7c3aed; border: 2px solid #7c3aed; }
+  .mp-wrap .open-btn-c { background: #1a1a2e; color: #fff; }
+  .mp-wrap .open-btn:hover { transform: translateY(-2px); }
+
+  .mp-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background: rgba(10,8,28,0.75); align-items: center; justify-content: center; padding: 1rem; }
+  .mp-overlay.active { display: flex; }
+  .mp-close { position: absolute; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); background: #fff; color: #6b6b8a; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 10; }
+  .mp-close:hover { border-color: #7c3aed; color: #7c3aed; }
+  .mp-cta { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff !important; padding: 0.875rem 1.75rem; border-radius: 9999px; font-family: 'Lora', serif; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(124,58,237,0.3); }
+  .mp-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124,58,237,0.4); color: #fff !important; }
+  .mp-img { background: linear-gradient(135deg, #e8dff5, #d4c4ed, #c4b0e6); display: flex; align-items: center; justify-content: center; color: #7c3aed; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; min-height: 200px; }
+  .mp-chk { color: #7c3aed; font-weight: 600; margin-right: 0.5rem; }
+
+  /* VERSION A */
+  .ma { position: relative; background: #fff; max-width: 640px; width: 100%; max-height: 90vh; overflow-y: auto; }
+  .ma .ma-hero { width: 100%; height: 280px; position: relative; overflow: hidden; }
+  .ma .ma-hero .mp-img { width: 100%; height: 100%; }
+  .ma .ma-hero-ov { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 2.5rem 1.5rem; background: linear-gradient(transparent, rgba(26,26,46,0.85)); }
+  .ma .ma-hero-ov h3 { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+  .ma .ma-hero-ov .tg { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+  .ma .ma-body { padding: 2rem 2.5rem 1rem; }
+  .ma .ma-hook { font-size: 1.15rem; font-weight: 600; color: #1a1a2e; line-height: 1.6; margin-bottom: 1.5rem; border-left: 3px solid #7c3aed; padding-left: 1rem; }
+  .ma .ma-desc { color: #4a4a68; line-height: 1.75; margin-bottom: 1rem; font-size: 0.95rem; }
+  .ma .ma-st { font-size: 1.05rem; font-weight: 700; color: #1a1a2e; margin: 2rem 0 0.75rem; }
+  .ma .ma-fl { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+  .ma .ma-fl li { padding: 0.4rem 0; color: #4a4a68; font-size: 0.95rem; line-height: 1.5; }
+  .ma .ma-qb { background: #f8f5ff; padding: 1.5rem; margin: 1.5rem 0; border-left: 3px solid #7c3aed; }
+  .ma .ma-qb p { font-style: italic; color: #6b6b8a; line-height: 1.7; font-size: 0.95rem; }
+  .ma .ma-ig { display: grid; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .ma .ma-ii { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: #f8f5ff; border-radius: 0.5rem; }
+  .ma .ma-ic { width: 2rem; height: 2rem; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8rem; flex-shrink: 0; }
+  .ma .ma-it { color: #4a4a68; font-size: 0.9rem; line-height: 1.5; }
+  .ma .ma-pb { text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f8f5ff, #ede7f9); margin: 1.5rem 0; }
+  .ma .ma-pa { font-size: 2rem; font-weight: 700; color: #1a1a2e; }
+  .ma .ma-pt { color: #7c3aed; font-weight: 600; font-size: 0.9rem; margin-top: 0.25rem; }
+  .ma .ma-sticky { position: sticky; bottom: 0; background: #fff; padding: 1rem 2.5rem; border-top: 1px solid #e5e5e5; text-align: center; z-index: 5; }
+
+  /* VERSION B */
+  .mb { position: relative; background: #fff; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; }
+  .mb .mb-top { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid #f0edf5; }
+  .mb .mb-top h3 { font-size: 1.3rem; font-weight: 700; color: #1a1a2e; }
+  .mb .mb-badge { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 700; white-space: nowrap; }
+  .mb .mb-split { display: grid; grid-template-columns: 280px 1fr; }
+  .mb .mb-left { background: #f8f5ff; padding: 2rem 1.5rem; }
+  .mb .mb-left .mb-it { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .mb .mb-left .mb-ii { display: flex; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1); color: #4a4a68; font-size: 0.85rem; line-height: 1.5; }
+  .mb .mb-left .mb-ii:last-of-type { border-bottom: none; }
+  .mb .mb-left .mb-qx { margin-top: 1.5rem; padding: 1rem; border: 1px solid rgba(124,58,237,0.2); }
+  .mb .mb-left .mb-qx p { font-style: italic; color: #6b6b8a; font-size: 0.85rem; line-height: 1.6; }
+  .mb .mb-right { padding: 2rem; }
+  .mb .mb-right .mb-tg { color: #7c3aed; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .mb .mb-right .mb-hk { font-size: 1.1rem; font-weight: 600; color: #1a1a2e; line-height: 1.5; margin-bottom: 1.25rem; }
+  .mb .mb-right .mb-desc { color: #4a4a68; line-height: 1.7; font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .mb .mb-right .mb-st { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin: 1.5rem 0 0.5rem; }
+  .mb .mb-right .mb-fl { list-style: none; padding: 0; columns: 2; column-gap: 1rem; margin-bottom: 1rem; }
+  .mb .mb-right .mb-fl li { padding: 0.3rem 0; color: #4a4a68; font-size: 0.85rem; break-inside: avoid; }
+  .mb .mb-right .mb-ps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .mb .mb-right .mb-step { padding: 0.75rem; background: #f8f5ff; border-radius: 0.5rem; }
+  .mb .mb-right .mb-sn { font-size: 0.75rem; font-weight: 700; color: #7c3aed; margin-bottom: 0.25rem; }
+  .mb .mb-right .mb-stt { font-weight: 600; color: #1a1a2e; font-size: 0.85rem; margin-bottom: 0.25rem; }
+  .mb .mb-right .mb-sd { color: #6b6b8a; font-size: 0.8rem; line-height: 1.5; }
+  .mb .mb-bot { padding: 1.25rem 2rem; border-top: 1px solid #f0edf5; display: flex; align-items: center; justify-content: space-between; position: sticky; bottom: 0; background: #fff; }
+  .mb .mb-bot .mb-am { font-size: 1.3rem; font-weight: 700; color: #1a1a2e; }
+  .mb .mb-bot .mb-tl { color: #6b6b8a; font-size: 0.8rem; }
+  @media (max-width: 700px) { .mb .mb-split { grid-template-columns: 1fr; } .mb .mb-right .mb-fl { columns: 1; } .mb .mb-right .mb-ps { grid-template-columns: 1fr; } }
+
+  /* VERSION C */
+  .mc { position: relative; background: #fff; max-width: 640px; width: 100%; max-height: 90vh; overflow-y: auto; }
+  .mc .mc-hd { padding: 2.5rem 2.5rem 0; text-align: center; }
+  .mc .mc-hd .mc-lb { color: #7c3aed; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .mc .mc-hd h3 { font-size: 1.75rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.25rem; }
+  .mc .mc-hd .mc-tg { color: #6b6b8a; font-size: 1rem; margin-bottom: 1.5rem; }
+  .mc .mc-hd .mc-div { width: 60px; height: 3px; background: #7c3aed; margin: 0 auto; }
+  .mc .mc-is { margin: 2rem 2.5rem; height: 220px; }
+  .mc .mc-is .mp-img { height: 100%; width: 100%; }
+  .mc .mc-cnt { padding: 0 2.5rem; }
+  .mc .mc-pq { font-size: 1.2rem; font-style: italic; font-weight: 500; color: #1a1a2e; line-height: 1.6; text-align: center; padding: 1.5rem 1rem; margin-bottom: 1.5rem; }
+  .mc .mc-pq::before { content: '\201C'; color: #7c3aed; font-size: 2rem; font-weight: 700; line-height: 0; vertical-align: -0.3em; margin-right: 0.15em; }
+  .mc .mc-pq::after { content: '\201D'; color: #7c3aed; font-size: 2rem; font-weight: 700; line-height: 0; vertical-align: -0.3em; margin-left: 0.15em; }
+  .mc .mc-desc { color: #4a4a68; line-height: 1.75; margin-bottom: 1rem; font-size: 0.95rem; }
+  .mc .mc-2c { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+  .mc .mc-cb { padding: 1.25rem; background: #f8f5ff; }
+  .mc .mc-cb .mc-ct { font-size: 0.85rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+  .mc .mc-cb .mc-fl { list-style: none; padding: 0; }
+  .mc .mc-cb .mc-fl li { padding: 0.35rem 0; color: #4a4a68; font-size: 0.85rem; line-height: 1.5; }
+  .mc .mc-cb .mc-ii { display: flex; gap: 0.5rem; padding: 0.4rem 0; color: #4a4a68; font-size: 0.85rem; line-height: 1.5; }
+  .mc .mc-phil { text-align: center; padding: 2rem 2.5rem; margin: 1.5rem 0; background: #1a1a2e; color: rgba(255,255,255,0.9); }
+  .mc .mc-phil p { font-style: italic; line-height: 1.8; font-size: 0.95rem; }
+  .mc .mc-proc { padding: 0 2.5rem; margin-bottom: 1.5rem; }
+  .mc .mc-proc .mc-st { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 1rem; text-align: center; }
+  .mc .mc-proc .mc-desc { text-align: center; }
+  .mc .mc-pc { text-align: center; padding: 2rem 2.5rem 2.5rem; }
+  .mc .mc-pc .mc-pa { font-size: 2.2rem; font-weight: 700; color: #1a1a2e; }
+  .mc .mc-pc .mc-ptl { color: #7c3aed; font-weight: 600; font-size: 0.9rem; margin: 0.25rem 0 1.25rem; }
+  @media (max-width: 600px) { .mc .mc-2c { grid-template-columns: 1fr; } }
+</style>
+
+<div class="mp-wrap">
+  <h1 class="page-title">Modal Redesign — 3 versioner</h1>
+  <p class="page-sub">Klicka en knapp för att se respektive version som overlay</p>
+  <div class="buttons">
+    <button class="open-btn open-btn-a" data-mp-open="mp-a">Version A — Hero + Sticky CTA</button>
+    <button class="open-btn open-btn-b" data-mp-open="mp-b">Version B — Side-by-side</button>
+    <button class="open-btn open-btn-c" data-mp-open="mp-c">Version C — Magazine</button>
+  </div>
+</div>
+
+<!-- VERSION A -->
+<div class="mp-overlay" id="mp-a">
+<div class="ma">
+  <button class="mp-close" data-mp-close="mp-a">&#10005;</button>
+  <div class="ma-hero"><div class="mp-img" style="width:100%;height:280px">Bild</div><div class="ma-hero-ov"><h3>Din kreativa plats</h3><span class="tg">En meningsfull fritid</span></div></div>
+  <div class="ma-body">
+    <div class="ma-hook">Vill du skapa, men fastnar i hur du ska börja? Eller saknar du skaparglädjen du en gång hade?</div>
+    <p class="ma-desc">Din kreativa plats är ett coachingpaket för dig som längtar efter att återknyta kontakten med ditt skapande i ett tryggt och prestationsfritt sammanhang.</p>
+    <p class="ma-desc">Kanske har kreativiteten fått stå tillbaka i ett liv fullt av ansvar. Här får du ett lugnt utrymme där skapandet handlar om nyfikenhet, närvaro och lust.</p>
+    <p class="ma-desc">Tillsammans utforskar vi vad som väcker din kreativitet just nu. Du får stöd att hitta ditt eget uttryck och låta skapandet bli en naturlig del av vardagen.</p>
+    <p class="ma-desc">Jag fungerar som bollplank, mentor och påhejare i din process.</p>
+    <div class="ma-st">Det här paketet passar dig som</div>
+    <ul class="ma-fl">
+      <li><span class="mp-chk">✓</span> vill komma igång med skapande men inte vet hur du ska börja</li>
+      <li><span class="mp-chk">✓</span> längtar efter mer kreativitet i livet</li>
+      <li><span class="mp-chk">✓</span> vill hitta tillbaka till skaparglädjen</li>
+      <li><span class="mp-chk">✓</span> söker ett tryggt sammanhang för att utforska ditt uttryck</li>
+      <li><span class="mp-chk">✓</span> vill ge kreativiteten en tydlig plats i din vardag</li>
+      <li><span class="mp-chk">✓</span> befinner dig i en fas där det finns lite mer utrymme för dig själv</li>
+      <li><span class="mp-chk">✓</span> vill använda din tid till något meningsfullt och kreativt</li>
+    </ul>
+    <div class="ma-st">Hur går det till?</div>
+    <p class="ma-desc">Min coachning består av samtal. De flesta behöver minst tre tillfällen för att få en rättvisande bild av vad coachningen kan ge. Samtalen är 60 minuter långa.</p>
+    <p class="ma-desc">Efter varje samtal får du en skriftlig sammanfattning samt inspirerande hemuppgifter.</p>
+    <div class="ma-qb"><p>Jag tror på skapande som en mänsklig nödvändighet, inte en prestation. Jag tror på händerna som tänkande organ. Och på kraften i att arbeta med material, tid och nyfikenhet.</p></div>
+    <div class="ma-st">Under tre månader får du</div>
+    <div class="ma-ig">
+      <div class="ma-ii"><div class="ma-ic">1</div><div class="ma-it">3 coachingsamtal (1 per månad, 60 min) via video</div></div>
+      <div class="ma-ii"><div class="ma-ic">2</div><div class="ma-it">Skriftlig sammanfattning efter varje samtal</div></div>
+      <div class="ma-ii"><div class="ma-ic">3</div><div class="ma-it">Inspirerande hemuppgifter som håller skapandet levande</div></div>
+    </div>
+    <div class="ma-pb"><div class="ma-pa">1 750 kr<span style="font-size:0.9rem;font-weight:400;color:#6b6b8a"> / månad</span></div><div class="ma-pt">3 månader — totalt 5 250 kr</div></div>
+  </div>
+  <div class="ma-sticky"><a href="#" class="mp-cta">Välj Din kreativa plats →</a></div>
+</div>
+</div>
+
+<!-- VERSION B -->
+<div class="mp-overlay" id="mp-b">
+<div class="mb">
+  <button class="mp-close" data-mp-close="mp-b">&#10005;</button>
+  <div class="mb-top"><h3>Din kreativa plats</h3><span class="mb-badge">1 750 kr/mån</span></div>
+  <div class="mb-split">
+    <div class="mb-left">
+      <div class="mp-img" style="height:200px;margin-bottom:1.5rem">Bild</div>
+      <div class="mb-it">Du får</div>
+      <div class="mb-ii"><span class="mp-chk">✓</span> 3 coachingsamtal (60 min) via video</div>
+      <div class="mb-ii"><span class="mp-chk">✓</span> Skriftlig sammanfattning efter varje samtal</div>
+      <div class="mb-ii"><span class="mp-chk">✓</span> Inspirerande hemuppgifter</div>
+      <div class="mb-qx"><p>"Jag tror på skapande som en mänsklig nödvändighet, inte en prestation."</p></div>
+    </div>
+    <div class="mb-right">
+      <div class="mb-tg">En meningsfull fritid</div>
+      <div class="mb-hk">Vill du skapa, men fastnar i hur du ska börja? Eller saknar du skaparglädjen du en gång hade?</div>
+      <p class="mb-desc">Din kreativa plats är ett coachingpaket för dig som längtar efter att återknyta kontakten med ditt skapande i ett tryggt och prestationsfritt sammanhang.</p>
+      <p class="mb-desc">Här får du ett lugnt utrymme där skapandet handlar om nyfikenhet, närvaro och lust.</p>
+      <p class="mb-desc">Jag fungerar som bollplank, mentor och påhejare i din process.</p>
+      <div class="mb-st">Passar dig som</div>
+      <ul class="mb-fl">
+        <li><span class="mp-chk">✓</span> vill komma igång med skapande</li>
+        <li><span class="mp-chk">✓</span> längtar efter mer kreativitet</li>
+        <li><span class="mp-chk">✓</span> vill hitta tillbaka till skaparglädjen</li>
+        <li><span class="mp-chk">✓</span> söker ett tryggt sammanhang</li>
+        <li><span class="mp-chk">✓</span> vill ge kreativiteten en tydlig plats</li>
+        <li><span class="mp-chk">✓</span> har lite mer utrymme för dig själv</li>
+      </ul>
+      <div class="mb-st">Så här går det till</div>
+      <div class="mb-ps">
+        <div class="mb-step"><div class="mb-sn">01</div><div class="mb-stt">Första samtalet</div><div class="mb-sd">Vi utforskar din situation och sätter mål. 60 min via video.</div></div>
+        <div class="mb-step"><div class="mb-sn">02</div><div class="mb-stt">Sammanfattning</div><div class="mb-sd">Skriftlig sammanfattning + hemuppgifter efter varje samtal.</div></div>
+        <div class="mb-step"><div class="mb-sn">03</div><div class="mb-stt">Fortsatt utveckling</div><div class="mb-sd">Plan för nästa steg. Allt material skickas till dig.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-bot">
+    <div><div class="mb-am">1 750 kr<span style="font-weight:400;font-size:0.85rem;color:#6b6b8a"> /mån</span></div><div class="mb-tl">3 månader — totalt 5 250 kr</div></div>
+    <a href="#" class="mp-cta">Välj Din kreativa plats →</a>
+  </div>
+</div>
+</div>
+
+<!-- VERSION C -->
+<div class="mp-overlay" id="mp-c">
+<div class="mc">
+  <button class="mp-close" data-mp-close="mp-c">&#10005;</button>
+  <div class="mc-hd"><div class="mc-lb">Coaching-paket</div><h3>Din kreativa plats</h3><div class="mc-tg">En meningsfull fritid</div><div class="mc-div"></div></div>
+  <div class="mc-is"><div class="mp-img" style="height:100%;width:100%">Bild</div></div>
+  <div class="mc-cnt">
+    <div class="mc-pq">Vill du skapa, men fastnar i hur du ska börja? Eller saknar du skaparglädjen du en gång hade?</div>
+    <p class="mc-desc">Din kreativa plats är ett coachingpaket för dig som längtar efter att återknyta kontakten med ditt skapande i ett tryggt och prestationsfritt sammanhang.</p>
+    <p class="mc-desc">Här får du ett lugnt utrymme där skapandet handlar om nyfikenhet, närvaro och lust.</p>
+    <p class="mc-desc">Jag fungerar som bollplank, mentor och påhejare i din process.</p>
+    <div class="mc-2c">
+      <div class="mc-cb"><div class="mc-ct">Passar dig som</div><ul class="mc-fl">
+        <li><span class="mp-chk">✓</span> vill komma igång med skapande</li>
+        <li><span class="mp-chk">✓</span> längtar efter mer kreativitet</li>
+        <li><span class="mp-chk">✓</span> vill hitta tillbaka till skaparglädjen</li>
+        <li><span class="mp-chk">✓</span> söker ett tryggt sammanhang</li>
+        <li><span class="mp-chk">✓</span> vill ge kreativiteten plats i vardagen</li>
+      </ul></div>
+      <div class="mc-cb"><div class="mc-ct">Du får</div>
+        <div class="mc-ii"><span class="mp-chk">✓</span> 3 coachingsamtal (60 min) via video</div>
+        <div class="mc-ii"><span class="mp-chk">✓</span> Skriftlig sammanfattning efter varje samtal</div>
+        <div class="mc-ii"><span class="mp-chk">✓</span> Inspirerande hemuppgifter mellan träffarna</div>
+      </div>
+    </div>
+  </div>
+  <div class="mc-phil"><p>"Jag tror på skapande som en mänsklig nödvändighet, inte en prestation.<br>Jag tror på händerna som tänkande organ.<br>Och på kraften i att arbeta med material, tid och nyfikenhet."</p></div>
+  <div class="mc-proc"><div class="mc-st">Hur går det till?</div><p class="mc-desc">Min coachning består av samtal. De flesta behöver minst tre tillfällen för att känna sig trygga. Samtalen är 60 minuter, och efter varje samtal får du en sammanfattning med hemuppgifter.</p></div>
+  <div class="mc-pc"><div class="mc-pa">1 750 kr<span style="font-size:0.9rem;font-weight:400;color:#6b6b8a"> / månad</span></div><div class="mc-ptl">3 månader — totalt 5 250 kr</div><a href="#" class="mp-cta">Välj Din kreativa plats →</a></div>
+</div>
+</div>
+
+<script>
+(function(){
+  document.addEventListener('click', function(e) {
+    var ob = e.target.closest('[data-mp-open]');
+    if (ob) { var m = document.getElementById(ob.getAttribute('data-mp-open')); if(m) m.classList.add('active'); return; }
+    var cb = e.target.closest('[data-mp-close]');
+    if (cb) { var m = document.getElementById(cb.getAttribute('data-mp-close')); if(m) m.classList.remove('active'); return; }
+    var ov = e.target.closest('.mp-overlay');
+    if (ov && e.target === ov) { ov.classList.remove('active'); }
+  });
+  document.addEventListener('keydown', function(e) { if(e.key==='Escape') document.querySelectorAll('.mp-overlay').forEach(function(o){o.classList.remove('active')}); });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Modal Preview",
+  "settings": [],
+  "presets": [{ "name": "Modal Preview" }]
+}
+{% endschema %}

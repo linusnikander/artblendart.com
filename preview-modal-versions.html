@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modal Redesign — 3 versioner</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Lora', serif; background: #f4f1fa; padding: 3rem 1.5rem; }
+.page-title { text-align: center; font-size: 1.8rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.5rem; }
+.page-sub { text-align: center; color: #6b6b8a; margin-bottom: 3rem; font-size: 1rem; }
+.buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.open-btn { padding: 1rem 2rem; border-radius: 9999px; border: none; cursor: pointer; font-family: 'Lora', serif; font-size: 1rem; font-weight: 700; transition: all 0.3s; }
+.open-btn-a { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; box-shadow: 0 4px 15px rgba(124,58,237,0.3); }
+.open-btn-b { background: #fff; color: #7c3aed; border: 2px solid #7c3aed; }
+.open-btn-c { background: #1a1a2e; color: #fff; }
+.open-btn:hover { transform: translateY(-2px); }
+
+.overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; background: rgba(10, 8, 28, 0.75); align-items: center; justify-content: center; padding: 1rem; }
+.overlay.active { display: flex; }
+.modal-close { position: absolute; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); background: #fff; color: #6b6b8a; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; z-index: 10; }
+.modal-close:hover { border-color: #7c3aed; color: #7c3aed; }
+.modal-cta { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; padding: 0.875rem 1.75rem; border-radius: 9999px; font-family: 'Lora', serif; font-size: 1rem; font-weight: 700; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 15px rgba(124,58,237,0.3); }
+.modal-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124,58,237,0.4); color: #fff; }
+.img-placeholder { background: linear-gradient(135deg, #e8dff5 0%, #d4c4ed 50%, #c4b0e6 100%); display: flex; align-items: center; justify-content: center; color: #7c3aed; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase; min-height: 200px; }
+.chk { color: #7c3aed; font-weight: 600; margin-right: 0.5rem; }
+
+/* ===== VERSION A: Hero image + flowing content + sticky CTA ===== */
+.modal-a { position: relative; background: #fff; max-width: 640px; width: 100%; max-height: 90vh; overflow-y: auto; }
+.modal-a .hero-img { width: 100%; height: 280px; position: relative; overflow: hidden; }
+.modal-a .hero-img .img-placeholder { width: 100%; height: 100%; }
+.modal-a .hero-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 2.5rem 1.5rem; background: linear-gradient(transparent, rgba(26,26,46,0.85)); }
+.modal-a .hero-overlay h3 { font-size: 1.75rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+.modal-a .hero-overlay .tagline { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+.modal-a .body { padding: 2rem 2.5rem 1rem; }
+.modal-a .hook { font-size: 1.15rem; font-weight: 600; color: #1a1a2e; line-height: 1.6; margin-bottom: 1.5rem; border-left: 3px solid #7c3aed; padding-left: 1rem; }
+.modal-a .desc { color: #4a4a68; line-height: 1.75; margin-bottom: 1rem; font-size: 0.95rem; }
+.modal-a .section-title { font-size: 1.05rem; font-weight: 700; color: #1a1a2e; margin: 2rem 0 0.75rem; }
+.modal-a .fit-list { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+.modal-a .fit-list li { padding: 0.4rem 0; color: #4a4a68; font-size: 0.95rem; line-height: 1.5; }
+.modal-a .quote-block { background: #f8f5ff; padding: 1.5rem; margin: 1.5rem 0; border-left: 3px solid #7c3aed; }
+.modal-a .quote-block p { font-style: italic; color: #6b6b8a; line-height: 1.7; font-size: 0.95rem; }
+.modal-a .includes-grid { display: grid; gap: 0.75rem; margin-bottom: 1.5rem; }
+.modal-a .include-item { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: #f8f5ff; border-radius: 0.5rem; }
+.modal-a .include-icon { width: 2rem; height: 2rem; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.8rem; flex-shrink: 0; }
+.modal-a .include-text { color: #4a4a68; font-size: 0.9rem; line-height: 1.5; }
+.modal-a .price-block { text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #f8f5ff, #ede7f9); margin: 1.5rem 0; }
+.modal-a .price-amount { font-size: 2rem; font-weight: 700; color: #1a1a2e; }
+.modal-a .price-total { color: #7c3aed; font-weight: 600; font-size: 0.9rem; margin-top: 0.25rem; }
+.modal-a .sticky-cta { position: sticky; bottom: 0; background: #fff; padding: 1rem 2.5rem; border-top: 1px solid #e5e5e5; text-align: center; z-index: 5; }
+
+/* ===== VERSION B: Side-by-side with floating price ===== */
+.modal-b { position: relative; background: #fff; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; }
+.modal-b .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem; border-bottom: 1px solid #f0edf5; }
+.modal-b .top-bar h3 { font-size: 1.3rem; font-weight: 700; color: #1a1a2e; }
+.modal-b .top-bar .price-badge { background: linear-gradient(135deg, #7c3aed, #6d28d9); color: #fff; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 700; white-space: nowrap; }
+.modal-b .split { display: grid; grid-template-columns: 280px 1fr; }
+.modal-b .left-col { background: #f8f5ff; padding: 2rem 1.5rem; }
+.modal-b .left-col .img-placeholder { height: 200px; margin-bottom: 1.5rem; }
+.modal-b .left-col .includes-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+.modal-b .left-col .include-item { display: flex; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(124,58,237,0.1); color: #4a4a68; font-size: 0.85rem; line-height: 1.5; }
+.modal-b .left-col .include-item:last-child { border-bottom: none; }
+.modal-b .left-col .quote-box { margin-top: 1.5rem; padding: 1rem; border: 1px solid rgba(124,58,237,0.2); }
+.modal-b .left-col .quote-box p { font-style: italic; color: #6b6b8a; font-size: 0.85rem; line-height: 1.6; }
+.modal-b .right-col { padding: 2rem; }
+.modal-b .right-col .tagline { color: #7c3aed; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+.modal-b .right-col .hook { font-size: 1.1rem; font-weight: 600; color: #1a1a2e; line-height: 1.5; margin-bottom: 1.25rem; }
+.modal-b .right-col .desc { color: #4a4a68; line-height: 1.7; font-size: 0.9rem; margin-bottom: 0.75rem; }
+.modal-b .right-col .section-title { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; margin: 1.5rem 0 0.5rem; }
+.modal-b .right-col .fit-list { list-style: none; padding: 0; columns: 2; column-gap: 1rem; margin-bottom: 1rem; }
+.modal-b .right-col .fit-list li { padding: 0.3rem 0; color: #4a4a68; font-size: 0.85rem; break-inside: avoid; }
+.modal-b .right-col .process-steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+.modal-b .right-col .step { padding: 0.75rem; background: #f8f5ff; border-radius: 0.5rem; }
+.modal-b .right-col .step-num { font-size: 0.75rem; font-weight: 700; color: #7c3aed; margin-bottom: 0.25rem; }
+.modal-b .right-col .step-title { font-weight: 600; color: #1a1a2e; font-size: 0.85rem; margin-bottom: 0.25rem; }
+.modal-b .right-col .step-desc { color: #6b6b8a; font-size: 0.8rem; line-height: 1.5; }
+.modal-b .bottom-bar { padding: 1.25rem 2rem; border-top: 1px solid #f0edf5; display: flex; align-items: center; justify-content: space-between; position: sticky; bottom: 0; background: #fff; }
+.modal-b .bottom-bar .price-info .amount { font-size: 1.3rem; font-weight: 700; color: #1a1a2e; }
+.modal-b .bottom-bar .price-info .total { color: #6b6b8a; font-size: 0.8rem; }
+@media (max-width: 700px) { .modal-b .split { grid-template-columns: 1fr; } .modal-b .right-col .fit-list { columns: 1; } .modal-b .right-col .process-steps { grid-template-columns: 1fr; } }
+
+/* ===== VERSION C: Magazine style with dark philosophy band ===== */
+.modal-c { position: relative; background: #fff; max-width: 640px; width: 100%; max-height: 90vh; overflow-y: auto; }
+.modal-c .header { padding: 2.5rem 2.5rem 0; text-align: center; }
+.modal-c .header .label { color: #7c3aed; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.modal-c .header h3 { font-size: 1.75rem; font-weight: 700; color: #1a1a2e; margin-bottom: 0.25rem; }
+.modal-c .header .tagline { color: #6b6b8a; font-size: 1rem; margin-bottom: 1.5rem; }
+.modal-c .header .divider { width: 60px; height: 3px; background: #7c3aed; margin: 0 auto; }
+.modal-c .img-section { margin: 2rem 2.5rem; height: 220px; }
+.modal-c .img-section .img-placeholder { height: 100%; width: 100%; }
+.modal-c .content { padding: 0 2.5rem; }
+.modal-c .pull-quote { font-size: 1.2rem; font-style: italic; font-weight: 500; color: #1a1a2e; line-height: 1.6; text-align: center; padding: 1.5rem 1rem; margin-bottom: 1.5rem; }
+.modal-c .pull-quote::before { content: '\201C'; color: #7c3aed; font-size: 2rem; font-weight: 700; line-height: 0; vertical-align: -0.3em; margin-right: 0.15em; }
+.modal-c .pull-quote::after { content: '\201D'; color: #7c3aed; font-size: 2rem; font-weight: 700; line-height: 0; vertical-align: -0.3em; margin-left: 0.15em; }
+.modal-c .desc { color: #4a4a68; line-height: 1.75; margin-bottom: 1rem; font-size: 0.95rem; }
+.modal-c .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+.modal-c .col-block { padding: 1.25rem; background: #f8f5ff; }
+.modal-c .col-block .col-title { font-size: 0.85rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem; }
+.modal-c .col-block .fit-list { list-style: none; padding: 0; }
+.modal-c .col-block .fit-list li { padding: 0.35rem 0; color: #4a4a68; font-size: 0.85rem; line-height: 1.5; }
+.modal-c .col-block .include-item { display: flex; gap: 0.5rem; padding: 0.4rem 0; color: #4a4a68; font-size: 0.85rem; line-height: 1.5; }
+.modal-c .philosophy { text-align: center; padding: 2rem 2.5rem; margin: 1.5rem 0; background: #1a1a2e; color: rgba(255,255,255,0.9); }
+.modal-c .philosophy p { font-style: italic; line-height: 1.8; font-size: 0.95rem; }
+.modal-c .process-section { padding: 0 2.5rem; margin-bottom: 1.5rem; }
+.modal-c .process-section .section-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 1rem; text-align: center; }
+.modal-c .process-section .desc { text-align: center; }
+.modal-c .price-cta { text-align: center; padding: 2rem 2.5rem 2.5rem; }
+.modal-c .price-cta .price-amount { font-size: 2.2rem; font-weight: 700; color: #1a1a2e; }
+.modal-c .price-cta .price-total { color: #7c3aed; font-weight: 600; font-size: 0.9rem; margin: 0.25rem 0 1.25rem; }
+@media (max-width: 600px) { .modal-c .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">Modal Redesign — 3 versioner</h1>
+<p class="page-sub">Klicka en knapp for att se respektive version som overlay</p>
+
+<div class="buttons">
+  <button class="open-btn open-btn-a" onclick="document.getElementById('modal-a').classList.add('active')">Version A — Hero + Sticky CTA</button>
+  <button class="open-btn open-btn-b" onclick="document.getElementById('modal-b').classList.add('active')">Version B — Side-by-side</button>
+  <button class="open-btn open-btn-c" onclick="document.getElementById('modal-c').classList.add('active')">Version C — Magazine</button>
+</div>
+
+<!-- VERSION A -->
+<div class="overlay" id="modal-a" onclick="if(event.target===this)this.classList.remove('active')">
+<div class="modal-a">
+  <button class="modal-close" onclick="document.getElementById('modal-a').classList.remove('active')">&#10005;</button>
+  <div class="hero-img">
+    <div class="img-placeholder">Bild</div>
+    <div class="hero-overlay">
+      <h3>Din kreativa plats</h3>
+      <span class="tagline">En meningsfull fritid</span>
+    </div>
+  </div>
+  <div class="body">
+    <div class="hook">Vill du skapa, men fastnar i hur du ska börja? Eller saknar du skaparglädjen du en gång hade?</div>
+    <p class="desc">Din kreativa plats är ett coachingpaket för dig som längtar efter att återknyta kontakten med ditt skapande i ett tryggt och prestationsfritt sammanhang.</p>
+    <p class="desc">Kanske har kreativiteten fått stå tillbaka i ett liv fullt av ansvar. Kanske finns längtan där, men självkritiken eller osäkerheten tar över. Här får du ett lugnt utrymme där skapandet inte handlar om prestation, utan om nyfikenhet, närvaro och lust.</p>
+    <p class="desc">Tillsammans utforskar vi vad som väcker din kreativitet just nu. Du får stöd att hitta ditt eget uttryck, komma igång med konkreta steg och låta skapandet bli en naturlig och meningsfull del av vardagen.</p>
+    <p class="desc">Jag fungerar som bollplank, mentor och påhejare i din process.</p>
+    <div class="section-title">Det här paketet passar dig som</div>
+    <ul class="fit-list">
+      <li><span class="chk">&#10003;</span> vill komma igång med skapande men inte vet hur du ska börja</li>
+      <li><span class="chk">&#10003;</span> längtar efter mer kreativitet i livet</li>
+      <li><span class="chk">&#10003;</span> vill hitta tillbaka till skaparglädjen</li>
+      <li><span class="chk">&#10003;</span> söker ett tryggt sammanhang för att utforska ditt uttryck</li>
+      <li><span class="chk">&#10003;</span> vill ge kreativiteten en tydlig plats i din vardag</li>
+      <li><span class="chk">&#10003;</span> befinner dig i en fas i livet där det finns lite mer utrymme för dig själv</li>
+      <li><span class="chk">&#10003;</span> vill använda din tid till något som känns meningsfullt och kreativt</li>
+    </ul>
+    <div class="section-title">Hur går det till?</div>
+    <p class="desc">Min coachning består av samtal, och min erfarenhet är att de flesta behöver minst tre tillfällen för att få en rättvisande bild av vad coachningen kan ge. Samtalen är 60 minuter långa.</p>
+    <p class="desc">Vi utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål och redan här verktyg för att komma igång.</p>
+    <p class="desc">Efter varje samtal får du en skriftlig sammanfattning samt inspirerande hemuppgifter, praktiska, kreativa eller reflekterande.</p>
+    <div class="quote-block">
+      <p>Jag tror på skapande som en mänsklig nödvändighet, inte en prestation. Jag tror på händerna som tänkande organ. Och på kraften i att arbeta med material, tid och nyfikenhet.</p>
+    </div>
+    <div class="section-title">Under tre månader får du</div>
+    <div class="includes-grid">
+      <div class="include-item"><div class="include-icon">1</div><div class="include-text">3 coachingsamtal (1 per månad, 60 minuter) via video</div></div>
+      <div class="include-item"><div class="include-icon">2</div><div class="include-text">Skriftlig sammanfattning efter varje samtal</div></div>
+      <div class="include-item"><div class="include-icon">3</div><div class="include-text">Inspirerande hemuppgifter som hjälper dig att hålla skapandet levande</div></div>
+    </div>
+    <div class="price-block">
+      <div class="price-amount">1 750 kr<span style="font-size:0.9rem;font-weight:400;color:#6b6b8a"> / månad</span></div>
+      <div class="price-total">3 månader — totalt 5 250 kr</div>
+    </div>
+  </div>
+  <div class="sticky-cta"><a href="#" class="modal-cta">Välj Din kreativa plats &rarr;</a></div>
+</div>
+</div>
+
+<!-- VERSION B -->
+<div class="overlay" id="modal-b" onclick="if(event.target===this)this.classList.remove('active')">
+<div class="modal-b">
+  <button class="modal-close" onclick="document.getElementById('modal-b').classList.remove('active')">&#10005;</button>
+  <div class="top-bar">
+    <h3>Din kreativa plats</h3>
+    <span class="price-badge">1 750 kr/mån</span>
+  </div>
+  <div class="split">
+    <div class="left-col">
+      <div class="img-placeholder" style="height:200px">Bild</div>
+      <div class="includes-title">Du får</div>
+      <div class="include-item"><span class="chk">&#10003;</span> 3 coachingsamtal (60 min) via video</div>
+      <div class="include-item"><span class="chk">&#10003;</span> Skriftlig sammanfattning efter varje samtal</div>
+      <div class="include-item"><span class="chk">&#10003;</span> Inspirerande hemuppgifter</div>
+      <div class="quote-box">
+        <p>&ldquo;Jag tror på skapande som en mänsklig nödvändighet, inte en prestation.&rdquo;</p>
+      </div>
+    </div>
+    <div class="right-col">
+      <div class="tagline">En meningsfull fritid</div>
+      <div class="hook">Vill du skapa, men fastnar i hur du ska börja? Eller saknar du skaparglädjen du en gång hade?</div>
+      <p class="desc">Din kreativa plats är ett coachingpaket för dig som längtar efter att återknyta kontakten med ditt skapande i ett tryggt och prestationsfritt sammanhang.</p>
+      <p class="desc">Kanske har kreativiteten fått stå tillbaka i ett liv fullt av ansvar. Här får du ett lugnt utrymme där skapandet handlar om nyfikenhet, närvaro och lust.</p>
+      <p class="desc">Jag fungerar som bollplank, mentor och påhejare i din process.</p>
+      <div class="section-title">Passar dig som</div>
+      <ul class="fit-list">
+        <li><span class="chk">&#10003;</span> vill komma igång med skapande</li>
+        <li><span class="chk">&#10003;</span> längtar efter mer kreativitet</li>
+        <li><span class="chk">&#10003;</span> vill hitta tillbaka till skaparglädjen</li>
+        <li><span class="chk">&#10003;</span> söker ett tryggt sammanhang</li>
+        <li><span class="chk">&#10003;</span> vill ge kreativiteten en tydlig plats</li>
+        <li><span class="chk">&#10003;</span> har lite mer utrymme för dig själv</li>
+      </ul>
+      <div class="section-title">Så här går det till</div>
+      <div class="process-steps">
+        <div class="step"><div class="step-num">01</div><div class="step-title">Första samtalet</div><div class="step-desc">Vi utforskar din situation och sätter mål. 60 min via video.</div></div>
+        <div class="step"><div class="step-num">02</div><div class="step-title">Sammanfattning</div><div class="step-desc">Skriftlig sammanfattning + hemuppgifter efter varje samtal.</div></div>
+        <div class="step"><div class="step-num">03</div><div class="step-title">Fortsatt utveckling</div><div class="step-desc">Plan för nästa steg. Allt material skickas till dig.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="price-info">
+      <div class="amount">1 750 kr<span style="font-weight:400;font-size:0.85rem;color:#6b6b8a"> /mån</span></div>
+      <div class="total">3 månader — totalt 5 250 kr</div>
+    </div>
+    <a href="#" class="modal-cta">Välj Din kreativa plats &rarr;</a>
+  </div>
+</div>
+</div>
+
+<!-- VERSION C -->
+<div class="overlay" id="modal-c" onclick="if(event.target===this)this.classList.remove('active')">
+<div class="modal-c">
+  <button class="modal-close" onclick="document.getElementById('modal-c').classList.remove('active')">&#10005;</button>
+  <div class="header">
+    <div class="label">Coaching-paket</div>
+    <h3>Din kreativa plats</h3>
+    <div class="tagline">En meningsfull fritid</div>
+    <div class="divider"></div>
+  </div>
+  <div class="img-section"><div class="img-placeholder">Bild</div></div>
+  <div class="content">
+    <div class="pull-quote">Vill du skapa, men fastnar i hur du ska börja? Eller saknar du skaparglädjen du en gång hade?</div>
+    <p class="desc">Din kreativa plats är ett coachingpaket för dig som längtar efter att återknyta kontakten med ditt skapande i ett tryggt och prestationsfritt sammanhang.</p>
+    <p class="desc">Kanske har kreativiteten fått stå tillbaka i ett liv fullt av ansvar. Här får du ett lugnt utrymme där skapandet handlar om nyfikenhet, närvaro och lust.</p>
+    <p class="desc">Tillsammans utforskar vi vad som väcker din kreativitet just nu. Jag fungerar som bollplank, mentor och påhejare i din process.</p>
+    <div class="two-col">
+      <div class="col-block">
+        <div class="col-title">Passar dig som</div>
+        <ul class="fit-list">
+          <li><span class="chk">&#10003;</span> vill komma igång med skapande</li>
+          <li><span class="chk">&#10003;</span> längtar efter mer kreativitet</li>
+          <li><span class="chk">&#10003;</span> vill hitta tillbaka till skaparglädjen</li>
+          <li><span class="chk">&#10003;</span> söker ett tryggt sammanhang</li>
+          <li><span class="chk">&#10003;</span> vill ge kreativiteten plats i vardagen</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <div class="col-title">Du får</div>
+        <div class="include-item"><span class="chk">&#10003;</span> 3 coachingsamtal (60 min) via video</div>
+        <div class="include-item"><span class="chk">&#10003;</span> Skriftlig sammanfattning efter varje samtal</div>
+        <div class="include-item"><span class="chk">&#10003;</span> Inspirerande hemuppgifter mellan träffarna</div>
+      </div>
+    </div>
+  </div>
+  <div class="philosophy">
+    <p>&ldquo;Jag tror på skapande som en mänsklig nödvändighet, inte en prestation.<br>Jag tror på händerna som tänkande organ.<br>Och på kraften i att arbeta med material, tid och nyfikenhet.&rdquo;</p>
+  </div>
+  <div class="process-section">
+    <div class="section-title">Hur går det till?</div>
+    <p class="desc">Min coachning består av samtal. De flesta behöver minst tre tillfällen för att känna sig trygga i processen. Samtalen är 60 minuter, och efter varje samtal får du en sammanfattning med inspirerande hemuppgifter.</p>
+  </div>
+  <div class="price-cta">
+    <div class="price-amount">1 750 kr<span style="font-size:0.9rem;font-weight:400;color:#6b6b8a"> / månad</span></div>
+    <div class="price-total">3 månader — totalt 5 250 kr</div>
+    <a href="#" class="modal-cta">Välj Din kreativa plats &rarr;</a>
+  </div>
+</div>
+</div>
+
+<script>
+document.addEventListener('keydown', e => { if(e.key==='Escape') document.querySelectorAll('.overlay').forEach(o=>o.classList.remove('active')); });
+</script>
+</body>
+</html>
