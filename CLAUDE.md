@@ -84,6 +84,16 @@ These guides contain:
 - Theme update process
 - Version control best practices
 
+
+## Implementation Workflow
+
+**This project uses BMAD agents for process + Claude agent teams for parallel execution. Always follow this flow:**
+
+1. **Sprint Planning** — `bmad-agent-sm` selects stories from `_bmad-output/planning-artifacts/epics.md`
+2. **Story Preparation** — `bmad-create-story` creates dedicated story files (run sequentially, one at a time)
+3. **Parallel Implementation** — Spawn Claude agent team, each teammate runs `bmad-dev-story` on their assigned story file. Respect file ownership boundaries per epic.
+4. **QA Review** — `bmad-agent-qa` reviews completed work
+5. **Commit & Deploy**
 ## Key Considerations
 
 - Design with Shopify's constraints in mind (e.g., section-based layouts)
