@@ -324,7 +324,7 @@
       "settings": {
         "label": "Coaching-paket",
         "heading": "Välj det paket som passar dig",
-        "subheading": ""
+        "subheading": "Gratis 15-minuters konsultation kan bokas separat om du vill, men ingår inte i paketen."
       }
     },
     "cta": {
@@ -375,12 +375,12 @@
   },
   "order": [
     "hero",
-    "personas",
     "testimonial",
     "about",
     "products",
-    "themes",
     "process",
+    "themes",
+    "personas",
     "pain_points",
     "cta"
   ]

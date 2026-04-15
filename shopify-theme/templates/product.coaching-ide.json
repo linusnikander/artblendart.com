@@ -6,25 +6,25 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "feature_text": "1 × coachingsamtal á 60 min per video"
+            "feature_text": "3 × coachingsamtal (1 per månad á 60 min) per video"
           }
         },
         "feature_2": {
           "type": "feature",
           "settings": {
-            "feature_text": "Skriftlig sammanfattning efter 60-minuterssessionen"
+            "feature_text": "Skriftlig sammanfattning efter varje samtal"
           }
         },
         "feature_3": {
           "type": "feature",
           "settings": {
-            "feature_text": "Rekommendation för nästa steg efter sessionen"
+            "feature_text": "Inspirerande hemuppgifter efter varje samtal"
           }
         },
         "badge_1": {
           "type": "badge",
           "settings": {
-            "badge_text": "Friskvårdsbidrag godkänd",
+            "badge_text": "Populärast",
             "badge_style": "success"
           }
         },
@@ -44,13 +44,12 @@
         "badge_2"
       ],
       "settings": {
-        "wellness_badge_text": "FRISKVÅRDSBIDRAG",
         "hero_label": "Kreativ Coaching",
         "price_note": "Moms ingår.",
         "add_to_cart_text": "Lägg i varukorgen",
         "more_options_text": "Fler betalningsalternativ",
-        "description_title": "En kickstart för din kreativitet — Friskvårdsbidrag godkänd!",
-        "description_text": "För dig som vill använda friskvårdsbidraget till att öppna dörren till en mer kreativ fritid och som ger mening och balans i livet.",
+        "description_title": "Gå från idé till genomförande",
+        "description_text": "Har du en idé som vill ta form, men vet inte hur du ska börja? Här får du stöd i hela processen: från konstnärlig vägledning till handfasta råd om material och tekniker.",
         "features_title": "Paketet inkluderar:"
       }
     }

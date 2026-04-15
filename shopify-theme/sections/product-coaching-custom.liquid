@@ -352,25 +352,6 @@
       <span class="pcc-price-note">{{ section.settings.price_note }}</span>
     </div>
 
-    <!-- Quantity Selector -->
-    <div class="pcc-quantity">
-      <label class="pcc-quantity-label">{{ 'products.product.quantity.label' | t }}</label>
-      <div class="pcc-quantity-selector">
-        <button type="button" class="pcc-quantity-btn" data-action="decrease" aria-label="Decrease quantity">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-        </button>
-        <input type="number" class="pcc-quantity-input" value="1" min="1" max="10" name="quantity" id="Quantity-{{ section.id }}">
-        <button type="button" class="pcc-quantity-btn" data-action="increase" aria-label="Increase quantity">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-
     <!-- Buttons -->
     <div class="pcc-buttons">
       {%- form 'product', product, id: 'product-form-coaching', class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
@@ -388,8 +369,6 @@
 
       {{ form | payment_button }}
     </div>
-
-    <a href="#" class="pcc-btn-link">{{ section.settings.more_options_text }}</a>
 
     <!-- Description -->
     <div class="pcc-description">
