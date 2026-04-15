@@ -315,7 +315,8 @@
       }
     },
     "footer": {
-      "payment": "Payment methods"
+      "payment": "Payment methods",
+      "newsletter_heading": "Subscribe to our newsletter!"
     },
     "featured_blog": {
       "view_all": "View all",
