@@ -63,11 +63,14 @@ development_status:
   # Epic 4: Order Flow Updates (order-flow-updates)
   # Based on stakeholder review of order-flow-documentation.pdf
   epic-4-order-flow-updates: contexted
-  4-1-main-coaching-page-updates: in-progress         # 5pts, Priority 1, 12/14 done (waiting on Therese image)
-  4-2-product-page-cart-updates: drafted              # 5pts, Priority 2
-  4-3-checkout-branding: drafted                      # 2pts, Priority 3
-  4-4-investigation-discovery: drafted                # 3pts, Priority 4 (after 4.1-4.3)
-  4-5-ycbm-booking-setup: drafted                     # 3pts, Priority 5
+  4-1-main-coaching-page-updates: done                 # 5pts, COMPLETED
+  4-2-product-page-cart-updates: done                 # 5pts, COMPLETED
+  4-3-checkout-branding: done                         # 2pts, COMPLETED
+  4-4-investigation-discovery: done                   # 3pts, COMPLETED
+  4-5-ycbm-booking-setup: in-progress                 # 3pts, PARTIAL (Teams pending)
+  4-6-i18n-content-backup: backlog                    # 1pt, NEW - Sprint Change
+  4-7-convert-templates-english-base: backlog         # 3pts, NEW - Sprint Change
+  4-8-register-swedish-translations: backlog          # 2pts, NEW - Sprint Change
   epic-4-retrospective: optional
 
   # Separate tracks
