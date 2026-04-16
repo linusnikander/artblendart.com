@@ -6,25 +6,25 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "feature_text": "3 × coachingsamtal (1 per månad á 60 min) per video"
+            "feature_text": "3 × coaching sessions (1 per month, 60 min) via video"
           }
         },
         "feature_2": {
           "type": "feature",
           "settings": {
-            "feature_text": "Skriftlig sammanfattning efter varje samtal"
+            "feature_text": "Written summary after each session"
           }
         },
         "feature_3": {
           "type": "feature",
           "settings": {
-            "feature_text": "Inspirerande hemuppgifter efter varje samtal"
+            "feature_text": "Inspiring homework after each session"
           }
         },
         "badge_1": {
           "type": "badge",
           "settings": {
-            "badge_text": "Flexibla tider",
+            "badge_text": "Flexible times",
             "badge_style": "neutral"
           }
         }
@@ -37,12 +37,12 @@
       ],
       "settings": {
         "hero_label": "Kreativ Coaching",
-        "price_note": "Moms ingår.",
-        "add_to_cart_text": "Lägg i varukorgen",
-        "more_options_text": "Fler betalningsalternativ",
-        "description_title": "Hitta tillbaka till skaparglädjen",
-        "description_text": "Vill du skapa men fastnat i \"hur\" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik, och gör första steget konkret och enkelt.",
-        "features_title": "Paketet inkluderar:"
+        "price_note": "Tax included.",
+        "add_to_cart_text": "Add to cart",
+        "more_options_text": "More payment options",
+        "description_title": "Find your way back to the joy of creating",
+        "description_text": "Do you want to create but are stuck on \"how\" – or do you miss the joy of creating you once had? Together we'll find a way forward without demands or self-criticism, and make the first step concrete and simple.",
+        "features_title": "The package includes:"
       }
     }
   },

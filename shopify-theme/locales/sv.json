@@ -307,8 +307,7 @@
       "new_estimated_total": "Nytt beräknat totalbelopp"
     },
     "footer": {
-      "payment": "Betalningsmetoder",
-      "newsletter_heading": "Prenumerera på vårt nyhetsbrev!"
+      "payment": "Betalningsmetoder"
     },
     "featured_blog": {
       "view_all": "Visa alla",

@@ -68,8 +68,8 @@ development_status:
   4-3-checkout-branding: done                         # 2pts, COMPLETED
   4-4-investigation-discovery: done                   # 3pts, COMPLETED
   4-5-ycbm-booking-setup: in-progress                 # 3pts, PARTIAL (Teams pending)
-  4-6-i18n-content-backup: in-progress                 # 1pt, NEW - Sprint Change
-  4-7-convert-templates-english-base: backlog         # 3pts, NEW - Sprint Change
+  4-6-i18n-content-backup: done                        # 1pt, COMPLETED
+  4-7-convert-templates-english-base: in-progress      # 3pts, NEW - Sprint Change
   4-8-register-swedish-translations: backlog          # 2pts, NEW - Sprint Change
   epic-4-retrospective: optional
 

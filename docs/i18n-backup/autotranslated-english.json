@@ -1,0 +1,603 @@
+{
+  "sectionCount": 9,
+  "sections": {
+    "shopify-section-template--28002204745992__hero": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-hero {\n    background: #1a1a2e;\n    min-height: 90vh;\n    display: flex;\n    align-items: center;\n    padding: 6rem 1.5rem;\n    position: relative;\n    overflow"
+      },
+      {
+        "tag": "H1",
+        "class": "",
+        "text": "Do you want to create but are stuck on \"how\" – or do you miss the joy of creating you once had?"
+      },
+      {
+        "tag": "P",
+        "class": "c2-hero-subtitle",
+        "text": "Discover your creativity, find your expression and let creation be a source of meaning, energy and presence in your life."
+      },
+      {
+        "tag": "A",
+        "class": "c2-btn-primary",
+        "text": "View our packages"
+      },
+      {
+        "tag": "A",
+        "class": "c2-btn-secondary",
+        "text": "Read more about the coaching"
+      }
+    ],
+    "shopify-section-template--28002204745992__testimonial": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-testimonial {\n    padding: 3rem 1.5rem;\n    background: #fff;\n  }\n\n  .c2-testimonial-container {\n    max-width: 700px;\n    margin: 0 auto;\n    text-align: cente"
+      },
+      {
+        "tag": "P",
+        "class": "c2-testimonial-quote",
+        "text": "I have faith in Therese's artistic and creative competence; it's reassuring to be able to lean on her in discussions and bounce ideas off her and get advice."
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-testimonial-author",
+        "text": "— Kim"
+      }
+    ],
+    "shopify-section-template--28002204745992__about": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-about {\n    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);\n    padding: 5rem 1.5rem;\n  }\n\n  .c2-about-container {\n    max-width: 1200px;\n    margin"
+      },
+      {
+        "tag": "DIV",
+        "class": "c2-about-label",
+        "text": "About me"
+      },
+      {
+        "tag": "H2",
+        "class": "",
+        "text": "My name is Therese Parner"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "I am an artist, creative coach, former art teacher and cultural worker in the public sector. Throughout the years, I have worked with many different expressions and materials – from wood and textile to clay, metal and other unexpected combinations."
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "For me, nature and the outdoors are like a magical space where time and imagination meet. Here, ideas can take shape, thoughts can be cleared, and the creative process can breathe on its own."
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "In coaching, playful curiosity and hands-on guidance meet. Whether you are looking for artistic immersion, new inspiration or a safe place for the creative process, I am here as a conversation partner, mentor and cheerleader."
+      },
+      {
+        "tag": "STRONG",
+        "class": "",
+        "text": "Master of Fine Arts"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Academic background and profound artistic competence"
+      },
+      {
+        "tag": "STRONG",
+        "class": "",
+        "text": "10+ years' experience"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "As a working artist and creative coach"
+      },
+      {
+        "tag": "STRONG",
+        "class": "",
+        "text": "Holistic approach"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Creativity as part of personal development"
+      },
+      {
+        "tag": "A",
+        "class": "c2-about-cta",
+        "text": "See our packages"
+      }
+    ],
+    "shopify-section-template--28002204745992__products": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-products {\n    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);\n    padding: 5rem 1.5rem;\n  }\n\n  .c2-products-container {\n    max-width: 1200px;\n    "
+      },
+      {
+        "tag": "DIV",
+        "class": "c2-products-label",
+        "text": "Coachingpaket"
+      },
+      {
+        "tag": "H2",
+        "class": "",
+        "text": "Choose the package that suits you"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "A complimentary 15-minute consultation can be booked separately if you wish, but is not included in the packages."
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Your creative space"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-product-tagline",
+        "text": "A meaningful leisure time"
+      },
+      {
+        "tag": "SPAN",
+        "class": "amount",
+        "text": "1 750"
+      },
+      {
+        "tag": "SPAN",
+        "class": "period",
+        "text": "kr/mån"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-product-total",
+        "text": "5 250 SEK totalt · 3 månader"
+      },
+      {
+        "tag": "P",
+        "class": "c2-product-description",
+        "text": "Do you want to create but are stuck on the \"how\" – or do you miss the joy of creating you once had? Together we'll find a way forward without demands or self-criticism, and make the first step concrete and simple."
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "3 x coaching sessions (1 per month à 60 min) via video"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Written summary after each conversation"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Inspiring homework after each session"
+      },
+      {
+        "tag": "A",
+        "class": "c2-product-cta",
+        "text": "Välj Your creative space"
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c2-product-read-more",
+        "text": "Läs mer →"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-product-badge",
+        "text": "Mest populär"
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "From Idea to Reality"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-product-tagline",
+        "text": "Go from idea to execution"
+      },
+      {
+        "tag": "SPAN",
+        "class": "amount",
+        "text": "1 750"
+      },
+      {
+        "tag": "SPAN",
+        "class": "period",
+        "text": "kr/månad"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-product-total",
+        "text": "SEK 5,250 totalt · 3 månader"
+      },
+      {
+        "tag": "P",
+        "class": "c2-product-description",
+        "text": "Do you have an idea that you want to bring to life, but don't know how to start? Here you'll get support throughout the entire process: from artistic guidance to practical advice on materials and techniques."
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "3 x coaching sessions (1 per month à 60 min) via video"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Written summary after each conversation"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Inspiring homework after each session"
+      },
+      {
+        "tag": "A",
+        "class": "c2-product-cta",
+        "text": "Välj From Idea to Reality"
+      },
+      {
+        "tag": "BUTTON",
+        "class": "c2-product-read-more",
+        "text": "Läs mer →"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-product-badge wellness",
+        "text": "Wellness allowance"
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Kickstarta"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-product-tagline",
+        "text": "En kickstart för din kreativitet"
+      }
+    ],
+    "shopify-section-template--28002204745992__process": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-process {\n    background: linear-gradient(135deg, #f8f5ff 0%, #fff 100%);\n    padding: 5rem 1.5rem;\n  }\n\n  .c2-process-container {\n    max-width: 1200px;\n    ma"
+      },
+      {
+        "tag": "DIV",
+        "class": "c2-process-label",
+        "text": "How it works"
+      },
+      {
+        "tag": "H2",
+        "class": "",
+        "text": "Your journey to creative production"
+      },
+      {
+        "tag": "P",
+        "class": "c2-process-intro",
+        "text": "My experience is that most people need at least three sessions to feel confident in the process and get an accurate picture of what the coaching can offer."
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "First Call"
+      },
+      {
+        "tag": "SPAN",
+        "class": "c2-step-duration",
+        "text": "60 min"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "We explore your current situation, your aspirations, and how I can support you further. You will receive help in formulating goals and, already at this stage, tools to get started."
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Written summary"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "After each session you will receive a summary and inspiring homework assignments – practical, creative or reflective."
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Continued development"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "We end every conversation with a plan for what you want to focus on. All material is sent to you as a personal tool to return to."
+      },
+      {
+        "tag": "A",
+        "class": "",
+        "text": "Choose your package"
+      }
+    ],
+    "shopify-section-template--28002204745992__themes": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-themes {\n    background: #fff;\n    padding: 5rem 1.5rem;\n  }\n\n  .c2-themes-container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n\n  .c2-themes-header {\n   "
+      },
+      {
+        "tag": "DIV",
+        "class": "c2-themes-label",
+        "text": "What we can explore"
+      },
+      {
+        "tag": "H2",
+        "class": "",
+        "text": "Themes tailored for you"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Every conversation is fully customized to you - where you are in life and in your creative endeavors."
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Bollplank och feedback"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Get constructive feedback on your creation and process"
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Find Your First Step"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Start exploring creative making your way"
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Technology & design language"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Develop materials, techniques and your personal expression"
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Creative Habits"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Integrate creation into your daily life in a sustainable way"
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Creativity as an Inner Journey"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Self-exploration and personal development through art"
+      },
+      {
+        "tag": "H3",
+        "class": "",
+        "text": "Portfolio och konstskolor"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Preparing for Applications and Art Programs"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Don't know where to start?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "That's totally fine. We'll explore it together."
+      },
+      {
+        "tag": "A",
+        "class": "",
+        "text": "View our packages"
+      }
+    ],
+    "shopify-section-template--28002204745992__personas": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-personas {\n    background: #fff;\n    padding: 5rem 1.5rem;\n  }\n\n  .c2-personas-container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n\n  .c2-personas-header"
+      },
+      {
+        "tag": "DIV",
+        "class": "c2-personas-label",
+        "text": "For you"
+      },
+      {
+        "tag": "H2",
+        "class": "",
+        "text": "Do you recognize yourself?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "I meet people of all ages and stages of life. Here are some examples of clients I work with."
+      },
+      {
+        "tag": "STRONG",
+        "class": "",
+        "text": "The Creative Hedonist"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Eva, 59 år"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "You're longing to make room for your creativity, perhaps for the first time in a long while, and want to fill your free time with something that brings extra meaning. Here, you'll find support to discover your expression, create without pressure, and let the process become a source of joy."
+      },
+      {
+        "tag": "STRONG",
+        "class": "",
+        "text": "The Purposeful Seeker"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Leo, 26 år gammal"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "You know you have something to say, but need help shaping your artistic idea. Together, we work on expression, portfolio, applications, or projects and build trust in your inner drive."
+      },
+      {
+        "tag": "STRONG",
+        "class": "",
+        "text": "The Curious Craftsman"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Erik, 45 år"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "You are already creating – in wood, paint, fabric, or words – but want to understand more and develop further. Here, you will receive feedback, tips, and new perspectives that will help you take your creativity to the next level."
+      },
+      {
+        "tag": "STRONG",
+        "class": "",
+        "text": "The awakening creator"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Sofia, 38 år gammal"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "You've always been busy with work and everyday life. Now you feel a stronger urge to make space for creativity – as a place of your own, separate from daily obligations."
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "No matter where you are in life – I'm here for you."
+      },
+      {
+        "tag": "A",
+        "class": "",
+        "text": "View our packages"
+      }
+    ],
+    "shopify-section-template--28002204745992__pain_points": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-pain {\n    background: #f3eef8;\n    padding: 5rem 1.5rem;\n  }\n\n  .c2-pain-container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n\n  .c2-pain-header {\n    te"
+      },
+      {
+        "tag": "H2",
+        "class": "",
+        "text": "What do you long for in your creative work?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Do you recognize yourself in any of this?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Har du länge burit på idéer som väntat på att få liv?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Står du stilla på grund av prestation, självkritik eller osäkerhet kring din riktning?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Longing to make space for your creativity - perhaps for the first time in a long time?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "Seeking inspiration and guidance to take the next step?"
+      },
+      {
+        "tag": "P",
+        "class": "",
+        "text": "You don't need to know where to begin – we'll explore it together."
+      },
+      {
+        "tag": "A",
+        "class": "",
+        "text": "Choose your package"
+      }
+    ],
+    "shopify-section-template--28002204745992__cta": [
+      {
+        "tag": "STYLE",
+        "class": "",
+        "text": "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');\n\n  .c2-cta {\n    background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4a 100%);\n    padding: 5rem 1.5rem;\n    position: relative;\n    overflow: hidden;\n  }\n\n  .c2-cta:"
+      },
+      {
+        "tag": "H2",
+        "class": "",
+        "text": "Ready to start your creative journey?"
+      },
+      {
+        "tag": "P",
+        "class": "c2-cta-subtitle",
+        "text": "Take the first step towards a more creative life. Book a free 15-minute consultation where we talk about your dreams, goals, and how I can support you."
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "15 minuters gratis konsultation"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "No obligation"
+      },
+      {
+        "tag": "SPAN",
+        "class": "",
+        "text": "Personal and secure guidance"
+      },
+      {
+        "tag": "A",
+        "class": "c2-cta-button",
+        "text": "Book a free consultation now"
+      }
+    ]
+  }
+}

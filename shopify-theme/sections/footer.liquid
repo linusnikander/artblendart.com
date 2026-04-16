@@ -166,9 +166,7 @@
         >
           {%- if section.settings.newsletter_enable -%}
             <div class="footer-block__newsletter">
-              {%- if request.locale.iso_code == 'sv' -%}
-                <h2 class="footer-block__heading inline-richtext">Prenumerera på vårt nyhetsbrev!</h2>
-              {%- elsif section.settings.newsletter_heading != blank -%}
+              {%- if section.settings.newsletter_heading != blank -%}
                 <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}

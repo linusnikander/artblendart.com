@@ -3,7 +3,7 @@
 **Epic:** Order Flow Updates
 **Points:** 1
 **Priority:** Immediate (must run before 4.7)
-**Status:** Backlog
+**Status:** Done
 **Sprint Change:** 2026-04-16
 
 ---
@@ -24,11 +24,11 @@ The coaching page templates contain Swedish text as base content. Before convert
 
 | ID | Task | Status |
 |----|------|--------|
-| 4.6-1 | Create `docs/i18n-backup/` directory | [ ] |
-| 4.6-2 | Copy all 5 template JSON files as-is to backup dir | [ ] |
-| 4.6-3 | Extract all Swedish text strings from `page.coaching2.json` to CSV | [ ] |
-| 4.6-4 | Extract all Swedish text strings from product coaching templates to CSV | [ ] |
-| 4.6-5 | Commit backup with descriptive message | [ ] |
+| 4.6-1 | Create `docs/i18n-backup/` directory | [x] |
+| 4.6-2 | Copy all 5 template JSON files as-is to backup dir | [x] |
+| 4.6-3 | Extract all Swedish text strings from `page.coaching2.json` to CSV | [x] |
+| 4.6-4 | Extract all Swedish text strings from product coaching templates to CSV | [x] |
+| 4.6-5 | Commit backup with descriptive message | [x] |
 
 ### Files to Backup
 
@@ -53,10 +53,10 @@ page.coaching2.json,hero,subtitle,"Upptäck din kreativitet, hitta ditt uttryck.
 
 ## Acceptance Criteria
 
-- [ ] All 5 original template files copied to `docs/i18n-backup/`
-- [ ] CSV file contains every Swedish text string with its location (file, section, key)
-- [ ] Backup committed to git before any template changes begin
-- [ ] CSV format is compatible with Shopify's translation import
+- [x] All 5 original template files copied to `docs/i18n-backup/`
+- [x] CSV file contains every Swedish text string with its location (file, section, key) — 169 strings extracted
+- [x] Backup committed to git before any template changes begin (commit 24ec59e)
+- [x] CSV format is compatible with Shopify's translation import
 
 ---
 
