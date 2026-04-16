@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-coaching-custom",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "3 × coachingsamtal (1 per månad á 60 min) per video"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Skriftlig sammanfattning efter varje samtal"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Inspirerande hemuppgifter efter varje samtal"
+          }
+        },
+        "badge_1": {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Flexibla tider",
+            "badge_style": "neutral"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "badge_1"
+      ],
+      "settings": {
+        "hero_label": "Kreativ Coaching",
+        "price_note": "Moms ingår.",
+        "add_to_cart_text": "Lägg i varukorgen",
+        "more_options_text": "Fler betalningsalternativ",
+        "description_title": "Hitta tillbaka till skaparglädjen",
+        "description_text": "Vill du skapa men fastnat i \"hur\" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik, och gör första steget konkret och enkelt.",
+        "features_title": "Paketet inkluderar:"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

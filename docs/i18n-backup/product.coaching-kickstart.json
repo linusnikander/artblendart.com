@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-coaching-custom",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "1 × coachingsamtal á 60 min per video"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Skriftlig sammanfattning av samtalet"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Inspirerande hemuppgifter varje månad i 12 månader"
+          }
+        },
+        "badge_1": {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Friskvårdsbidrag godkänd",
+            "badge_style": "success"
+          }
+        },
+        "badge_2": {
+          "type": "badge",
+          "settings": {
+            "badge_text": "Flexibla tider",
+            "badge_style": "neutral"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "badge_1",
+        "badge_2"
+      ],
+      "settings": {
+        "hero_label": "Kreativ Coaching",
+        "price_note": "Moms ingår.",
+        "add_to_cart_text": "Lägg i varukorgen",
+        "more_options_text": "Fler betalningsalternativ",
+        "description_title": "En kickstart för din kreativitet — Friskvårdsbidrag godkänd!",
+        "description_text": "Ta ett första steg mot ett mer kreativt liv. Ett 60-minuters samtal följt av inspirerande hemuppgifter varje månad under 12 månader som håller kreativiteten levande.",
+        "features_title": "Paketet inkluderar:"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

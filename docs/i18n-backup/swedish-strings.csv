@@ -1,0 +1,170 @@
+file,section,setting_key,path,swedish_text
+page.coaching2.json,hero,heading,hero.settings.heading,"Vill du skapa men fastnat i ""hur"" – eller saknar du skaparglädjen du hade förr?"
+page.coaching2.json,hero,subtitle,hero.settings.subtitle,"Upptäck din kreativitet, hitta ditt uttryck och låt skapandet bli en källa till mening, energi och närvaro i ditt liv."
+page.coaching2.json,hero,cta_primary_text,hero.settings.cta_primary_text,Se våra paket
+page.coaching2.json,hero,cta_secondary_text,hero.settings.cta_secondary_text,Läs mer om coachingen
+page.coaching2.json,pain_points,text,pain_points.blocks.pain_1.settings.text,Har du länge burit på idéer som väntat på att få liv?
+page.coaching2.json,pain_points,text,pain_points.blocks.pain_2.settings.text,"Fastnat i prestation, självkritik eller osäkerhet kring din riktning?"
+page.coaching2.json,pain_points,text,pain_points.blocks.pain_3.settings.text,Längtar efter att ge plats åt din kreativitet – kanske för första gången på länge?
+page.coaching2.json,pain_points,text,pain_points.blocks.pain_4.settings.text,Söker inspiration och vägledning för att ta nästa steg?
+page.coaching2.json,pain_points,heading,pain_points.settings.heading,Vad längtar du efter i ditt skapande?
+page.coaching2.json,pain_points,subheading,pain_points.settings.subheading,Känner du igen dig i något av detta?
+page.coaching2.json,pain_points,cta_text,pain_points.settings.cta_text,Du behöver inte veta var du ska börja – vi utforskar det tillsammans.
+page.coaching2.json,pain_points,cta_button_text,pain_points.settings.cta_button_text,Välj ditt paket
+page.coaching2.json,about,title,about.blocks.cred_1.settings.title,Magisterexamen i fri konst
+page.coaching2.json,about,description,about.blocks.cred_1.settings.description,Akademisk grund och djup konstnärlig kompetens
+page.coaching2.json,about,title,about.blocks.cred_2.settings.title,10+ års erfarenhet
+page.coaching2.json,about,description,about.blocks.cred_2.settings.description,Som yrkesverksam konstnär och kreativ coach
+page.coaching2.json,about,title,about.blocks.cred_3.settings.title,Holistiskt synsätt
+page.coaching2.json,about,description,about.blocks.cred_3.settings.description,Skapande som del av personlig utveckling
+page.coaching2.json,about,label,about.settings.label,Om mig
+page.coaching2.json,about,heading,about.settings.heading,Jag heter Therese Parner
+page.coaching2.json,about,content,about.settings.content,"<p>Jag är konstnär, kreativ coach, tidigare lärare inom konst och kulturarbetare inom offentlig sektor. Genom åren har jag arbetat med många olika uttryck och material – från trä och textil till lera, metall och andra oväntade kombinationer.</p><p>För mig är naturen och utomhus som ett magiskt rum där tid och fantasi möts. Här kan idéer ta form, tankarna rensas och skapandeprocessen får egna andetag.</p><p>I coachingen möts lekfull nyfikenhet och handfast guidning. Oavsett om du söker konstnärlig fördjupning, ny inspiration eller en trygg plats för skapandeprocessen, finns jag här som samtalspartner, handledare och påhejare.</p>"
+page.coaching2.json,about,cta_text,about.settings.cta_text,Se våra paket
+page.coaching2.json,personas,name,personas.blocks.persona_1.settings.name,Den kreativa livsnjutaren
+page.coaching2.json,personas,persona,personas.blocks.persona_1.settings.persona,"Eva, 59 år"
+page.coaching2.json,personas,description,personas.blocks.persona_1.settings.description,"Du längtar efter att ge plats åt din kreativitet, kanske för första gången på länge, och vill fylla din fritid med något som ger extra mening. Här får du stöd att hitta ditt uttryck, skapa utan krav och låta processen bli en källa till glädje."
+page.coaching2.json,personas,name,personas.blocks.persona_2.settings.name,Den målmedvetna sökaren
+page.coaching2.json,personas,persona,personas.blocks.persona_2.settings.persona,"Leo, 26 år"
+page.coaching2.json,personas,description,personas.blocks.persona_2.settings.description,"Du vet att du har något att säga, men behöver hjälp att forma din konstnärliga idé. Tillsammans arbetar vi med uttryck, portfölj, ansökningar eller projekt och bygger tillit till din inre drivkraft."
+page.coaching2.json,personas,name,personas.blocks.persona_3.settings.name,Den nyfikna hantverkaren
+page.coaching2.json,personas,persona,personas.blocks.persona_3.settings.persona,"Erik, 45 år"
+page.coaching2.json,personas,description,personas.blocks.persona_3.settings.description,"Du skapar redan – i trä, färg, tyg eller ord – men vill förstå mer och utvecklas vidare. Här får du feedback, tips och nya perspektiv som hjälper dig att ta ditt skapande till nästa nivå."
+page.coaching2.json,personas,name,personas.blocks.persona_4.settings.name,Den uppvaknande kreatören
+page.coaching2.json,personas,persona,personas.blocks.persona_4.settings.persona,"Sofia, 38 år"
+page.coaching2.json,personas,description,personas.blocks.persona_4.settings.description,Du har alltid haft fullt upp med jobb och vardag. Nu känner du allt starkare att du vill ge utrymme åt kreativiteten – som en egen plats utanför vardagens måsten.
+page.coaching2.json,personas,label,personas.settings.label,För dig
+page.coaching2.json,personas,heading,personas.settings.heading,Känner du igen dig?
+page.coaching2.json,personas,subheading,personas.settings.subheading,Jag möter människor i alla åldrar och faser av livet. Här är några exempel på klienter jag arbetar med.
+page.coaching2.json,personas,cta_text,personas.settings.cta_text,Oavsett var du befinner dig i livet – jag finns här för dig.
+page.coaching2.json,personas,cta_button_text,personas.settings.cta_button_text,Se våra paket
+page.coaching2.json,process,title,process.blocks.step_1.settings.title,Första samtalet
+page.coaching2.json,process,duration,process.blocks.step_1.settings.duration,60 min
+page.coaching2.json,process,description,process.blocks.step_1.settings.description,"Vi utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål och redan här verktyg för att komma igång."
+page.coaching2.json,process,title,process.blocks.step_2.settings.title,Skriftlig sammanfattning
+page.coaching2.json,process,description,process.blocks.step_2.settings.description,"Efter varje samtal får du en sammanfattning samt inspirerande hemuppgifter – praktiska, kreativa eller reflekterande."
+page.coaching2.json,process,title,process.blocks.step_3.settings.title,Fortsatt utveckling
+page.coaching2.json,process,description,process.blocks.step_3.settings.description,Vi avslutar varje samtal med en plan för vad du vill fokusera på. Allt material skickas till dig som ett personligt verktyg att återvända till.
+page.coaching2.json,process,label,process.settings.label,Hur det fungerar
+page.coaching2.json,process,heading,process.settings.heading,Din resa till kreativt skapande
+page.coaching2.json,process,intro,process.settings.intro,Min erfarenhet är att de flesta behöver minst tre tillfällen för att känna sig trygga i processen och få en rättvisande bild av vad coachningen kan ge.
+page.coaching2.json,process,quote,process.settings.quote,Du behöver inte förbereda dig – men om du reflekterar lite över vad du vill få ut av coachningen kan vi använda tiden ännu mer effektivt.
+page.coaching2.json,process,cta_text,process.settings.cta_text,Välj ditt paket
+page.coaching2.json,themes,title,themes.blocks.theme_1.settings.title,Bollplank & feedback
+page.coaching2.json,themes,description,themes.blocks.theme_1.settings.description,Få konstruktiv respons på ditt skapande och din process
+page.coaching2.json,themes,title,themes.blocks.theme_2.settings.title,Hitta ditt första steg
+page.coaching2.json,themes,description,themes.blocks.theme_2.settings.description,Börja utforska kreativt skapande på ditt sätt
+page.coaching2.json,themes,title,themes.blocks.theme_3.settings.title,Teknik & formspråk
+page.coaching2.json,themes,description,themes.blocks.theme_3.settings.description,"Utveckla material, teknik och ditt personliga uttryck"
+page.coaching2.json,themes,title,themes.blocks.theme_4.settings.title,Kreativa vanor
+page.coaching2.json,themes,description,themes.blocks.theme_4.settings.description,Integrera skapande i din vardag på ett hållbart sätt
+page.coaching2.json,themes,title,themes.blocks.theme_5.settings.title,Kreativitet som inre resa
+page.coaching2.json,themes,description,themes.blocks.theme_5.settings.description,Självutforskande och personlig utveckling genom konst
+page.coaching2.json,themes,title,themes.blocks.theme_6.settings.title,Portfolio & konstskolor
+page.coaching2.json,themes,description,themes.blocks.theme_6.settings.description,Förberedelse för ansökningar och konstnärliga utbildningar
+page.coaching2.json,themes,label,themes.settings.label,Vad vi kan utforska
+page.coaching2.json,themes,heading,themes.settings.heading,Teman anpassade efter dig
+page.coaching2.json,themes,subheading,themes.settings.subheading,Varje samtal anpassas helt efter dig – där du befinner dig i livet och i ditt skapande.
+page.coaching2.json,themes,cta_line1,themes.settings.cta_line1,Vet du inte vart du ska börja?
+page.coaching2.json,themes,cta_line2,themes.settings.cta_line2,Det är helt okej. Vi utforskar det tillsammans.
+page.coaching2.json,themes,cta_button_text,themes.settings.cta_button_text,Se våra paket
+page.coaching2.json,products,title,products.blocks.product_1.settings.title,Din kreativa plats
+page.coaching2.json,products,tagline,products.blocks.product_1.settings.tagline,En meningsfull fritid
+page.coaching2.json,products,price,products.blocks.product_1.settings.price,1 750
+page.coaching2.json,products,price_period,products.blocks.product_1.settings.price_period,kr/mån
+page.coaching2.json,products,price_total,products.blocks.product_1.settings.price_total,5 250 kr totalt · 3 månader
+page.coaching2.json,products,description,products.blocks.product_1.settings.description,"Vill du skapa men fastnat i ""hur"" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik, och gör första steget konkret och enkelt."
+page.coaching2.json,products,feature_1,products.blocks.product_1.settings.feature_1,3 × coachingsamtal (1 per månad á 60 min) per video
+page.coaching2.json,products,feature_2,products.blocks.product_1.settings.feature_2,Skriftlig sammanfattning efter varje samtal
+page.coaching2.json,products,feature_3,products.blocks.product_1.settings.feature_3,Inspirerande hemuppgifter efter varje samtal
+page.coaching2.json,products,modal_body,products.blocks.product_1.settings.modal_body,"<p><strong>Vill du skapa, men fastnar i hur du ska börja?</strong><br>Eller saknar du skaparglädjen du en gång hade?</p><p>Din kreativa plats är ett coachingpaket för dig som längtar efter att återknyta kontakten med ditt skapande i ett tryggt och prestationsfritt sammanhang.</p><p>Kanske har kreativiteten fått stå tillbaka i ett liv fullt av ansvar. Kanske finns längtan där, men självkritiken eller osäkerheten tar över. Här får du ett lugnt utrymme där skapandet inte handlar om prestation, utan om nyfikenhet, närvaro och lust.</p><p>Tillsammans utforskar vi vad som väcker din kreativitet just nu. Du får stöd att hitta ditt eget uttryck, komma igång med konkreta steg och låta skapandet bli en naturlig och meningsfull del av vardagen.</p><p>Jag fungerar som bollplank, mentor och påhejare i din process.</p><p><strong>Det här paketet passar dig som</strong></p><ul><li>vill komma igång med skapande men inte vet hur du ska börja</li><li>längtar efter mer kreativitet i livet</li><li>vill hitta tillbaka till skaparglädjen</li><li>söker ett tryggt sammanhang för att utforska ditt uttryck</li><li>vill ge kreativiteten en tydlig plats i din vardag</li><li>befinner dig i en fas i livet där det finns lite mer utrymme för dig själv</li><li>vill använda din tid till något som känns meningsfullt och kreativt, något som är bara för dig</li></ul><p>Kanske befinner du dig i en fas i livet där det har öppnats lite mer utrymme för dig själv. Barnen är större, vardagen ser annorlunda ut, och det finns en längtan efter att fylla den där tiden med något som känns meningsfullt, något som inte handlar om ansvar eller prestation, utan bara om dig och ditt skapande.</p><p><strong>Hur går det till?</strong></p><p>Min coachning består av samtal, och min erfarenhet är att de flesta behöver minst tre tillfällen för att få en rättvisande bild av vad coachningen kan ge och känna sig trygga i processen. Samtalen är 60 minuter långa.</p><p><strong>Det första samtalet</strong></p><p>Utforskar din nuvarande situation, din längtan och hur jag kan stötta dig vidare. Du får hjälp att formulera mål, få nya perspektiv på ditt skapande och redan här verktyg för att komma igång.</p><p>Efter varje samtal får du en skriftlig sammanfattning samt inspirerande hemuppgifter, praktiska, kreativa eller reflekterande, som gör att ditt arbete fortsätter utvecklas mellan mötena. Vi avslutar varje samtal med en kort sammanfattning och en plan för vad du vill fokusera på fram till nästa gång.</p><p>Allt material skickas till dig, så att du har din process dokumenterad, ett personligt verktyg som du kan återvända till när du vill.</p><p>Du behöver inte förbereda dig inför det första samtalet, men om du reflekterar lite över vad du vill få ut av coachningen innan vi ses kan vi använda tiden ännu mer effektivt.</p><p><strong>Min utgångspunkt</strong></p><p><em>Jag tror på skapande som en mänsklig nödvändighet, inte en prestation.<br>Jag tror på händerna som tänkande organ.<br>Och på kraften i att arbeta med material, tid och nyfikenhet.</em></p><p><em>Det här är inte en väg mot att bli något.<br>Det är en möjlighet att komma närmare det som redan finns.</em></p><p><strong>Under tre månader får du</strong></p><ul><li>3 coachingsamtal (1 per månad, 60 minuter) via video</li><li>Skriftlig sammanfattning efter varje samtal</li><li>Inspirerande hemuppgifter som hjälper dig att hålla skapandet levande mellan våra träffar</li></ul><p>Hemuppgifterna är enkla och lustbaserade, små steg som hjälper dig att utforska material, idéer och ditt personliga uttryck utan krav på prestation.</p><p><strong>Pris</strong><br>1 750 kr / månad<br>3 månader – totalt 5 250 kr</p>"
+page.coaching2.json,products,title,products.blocks.product_2.settings.title,Idé till verklighet
+page.coaching2.json,products,tagline,products.blocks.product_2.settings.tagline,Gå från idé till genomförande
+page.coaching2.json,products,badge,products.blocks.product_2.settings.badge,Populärast
+page.coaching2.json,products,price,products.blocks.product_2.settings.price,1 750
+page.coaching2.json,products,price_period,products.blocks.product_2.settings.price_period,kr/mån
+page.coaching2.json,products,price_total,products.blocks.product_2.settings.price_total,5 250 kr totalt · 3 månader
+page.coaching2.json,products,description,products.blocks.product_2.settings.description,"Har du en idé som vill ta form, men vet inte hur du ska börja? Här får du stöd i hela processen: från konstnärlig vägledning till handfasta råd om material och tekniker."
+page.coaching2.json,products,feature_1,products.blocks.product_2.settings.feature_1,3 × coachingsamtal (1 per månad á 60 min) per video
+page.coaching2.json,products,feature_2,products.blocks.product_2.settings.feature_2,Skriftlig sammanfattning efter varje samtal
+page.coaching2.json,products,feature_3,products.blocks.product_2.settings.feature_3,Inspirerande hemuppgifter efter varje samtal
+page.coaching2.json,products,modal_body,products.blocks.product_2.settings.modal_body,"<p><strong>Har du en idé som vill ta form, men vet inte hur du ska börja, eller hur du ska ta den hela vägen?</strong></p><p>Kanske finns en tydlig bild inom dig, men som fastnat i hur genomförandet ska gå till.</p><p>Idé till verklighet är ett coachingpaket för dig som vill ge din idé både form och riktning och se den bli verklighet. Här får du stöd i hela processen: från konstnärlig vägledning och idéutveckling till handfasta råd om material, tekniker och metoder för att genomföra ditt projekt.</p><p>Kanske har du burit på din idé länge. Kanske har du påbörjat något, men fastnat i tvivel, perfektionism eller överväldigande möjligheter. Det är lätt att stanna i det abstrakta, i tankar och planer utan att riktigt ta steget in i görandet.</p><p>Här får du ett sammanhang där din idé får landa i det fysiska. Vi arbetar både med konstnärliga perspektiv och praktiska verktyg, så att idéerna kan omsättas i verkliga former, material och uttryck.</p><p>Tillsammans utforskar vi vad din idé vill bli. Vi bryter ner processen i konkreta steg och låter dig arbeta framåt i en takt som är hållbar – utan att tappa kontakt med lusten.</p><p>Jag fungerar som bollplank, vägledare och ett stöd som håller dig kvar i rörelse, både i den konstnärliga processen och när det gäller handfasta beslut kring material, tekniker och praktiska genomföranden.</p><p><strong>Det här paketet passar dig som</strong></p><ul><li>bär på en idé du vill gestalta men inte vet hur du ska börja</li><li>vill ta ditt skapande på allvar och se vad det kan bli</li><li>vill ha stöd i både konstnärliga beslut och praktiska genomföranden</li><li>har påbörjat ett skapande men tappat riktning eller energi</li><li>lätt fastnar i självkritik, tvivel eller perfektionism</li><li>längtar efter att ge din inre värld ett yttre uttryck</li></ul><p>Kanske befinner du dig i ett skede där det inte längre räcker att bara tänka, samla inspiration eller drömma. Det finns en längtan efter att faktiskt göra – att arbeta med händerna, material och tekniker. Att låta något ta form, även om det inte blir perfekt.</p><p><strong>Hur går det till?</strong></p><p>Min coachning består av samtal, och min erfarenhet är att de flesta behöver minst tre tillfällen för att få en rättvisande bild av vad coachningen kan ge och känna sig trygga i processen. Samtalen är 60 minuter långa.</p><p><strong>Det första samtalet</strong></p><p>Vi utforskar din idé, din riktning och vad som står i vägen för att du ska komma vidare. Du får hjälp att förtydliga vad du vill skapa och börja översätta det till konkreta handlingar – både konstnärliga och praktiska. Redan här sätter vi något i rörelse.</p><p>Efter varje samtal får du en skriftlig sammanfattning samt inspirerande och handlingsbaserade hemuppgifter – anpassade efter dig, ditt projekt och dina materialval – som hjälper dig att fortsätta arbeta mellan våra möten. Vi avslutar varje samtal med en tydlig riktning för nästa steg.</p><p>Allt material skickas till dig, så att du har din process samlad – ett levande dokument över ditt skapande som du kan återvända till.</p><p>Du behöver inte förbereda dig inför det första samtalet, men om du reflekterar över din idé och vad du längtar efter att skapa kan vi använda tiden ännu mer effektivt.</p><p><strong>Min utgångspunkt</strong></p><p><em>Jag tror att idéer lever i kroppen lika mycket som i tanken.<br>Jag tror på händerna som ett sätt att förstå.<br>Och på att skapande behöver både riktning, frihet och konkreta verktyg för att kunna växa.</em></p><p><em>Det här handlar inte om att göra något perfekt.<br>Det handlar om att låta något bli till.</em></p><p><strong>Under tre månader får du</strong></p><ul><li>3 coachingsamtal (1 per månad, 60 minuter) via video</li><li>Skriftlig sammanfattning efter varje samtal</li><li>Inspirerande och konkreta hemuppgifter som för ditt skapande framåt mellan våra träffar, inklusive stöd för materialval och tekniker</li></ul><p>Hemuppgifterna hjälper dig att arbeta med din idé i praktiken – genom material, skisser, reflektion och handling – i små steg som gör processen levande och möjlig.</p><p><strong>Pris</strong><br>1 750 kr / månad<br>3 månader – totalt 5 250 kr</p>"
+page.coaching2.json,products,title,products.blocks.product_3.settings.title,Kickstart
+page.coaching2.json,products,tagline,products.blocks.product_3.settings.tagline,En kickstart för din kreativitet
+page.coaching2.json,products,badge,products.blocks.product_3.settings.badge,Friskvårdsbidrag
+page.coaching2.json,products,price,products.blocks.product_3.settings.price,2 500
+page.coaching2.json,products,price_period,products.blocks.product_3.settings.price_period,kr
+page.coaching2.json,products,price_total,products.blocks.product_3.settings.price_total,Engångskostnad · Ingen bindning
+page.coaching2.json,products,description,products.blocks.product_3.settings.description,Ta ett första steg mot ett mer kreativt liv. Ett 60-minuters samtal följt av inspirerande hemuppgifter varje månad under 12 månader som håller kreativiteten levande.
+page.coaching2.json,products,feature_1,products.blocks.product_3.settings.feature_1,1 × coachingsamtal á 60 min per video
+page.coaching2.json,products,feature_2,products.blocks.product_3.settings.feature_2,Skriftlig sammanfattning av samtalet
+page.coaching2.json,products,feature_3,products.blocks.product_3.settings.feature_3,Inspirerande hemuppgifter varje månad i 12 månader
+page.coaching2.json,products,modal_body,products.blocks.product_3.settings.modal_body,"<p><strong>Känner du att kreativiteten vill komma fram, men att det är svårt att veta hur du ska börja?</strong></p><p>Kanske vill du använda friskvårdsbidraget till något som ger både mening och balans i livet, och som väcker glädje, nyfikenhet och lust i ditt skapande.</p><p>Kickstart är ett coachingpaket för dig som vill ta ett första steg mot ett mer kreativt liv. Paketet består av ett 60-minuters samtal via video, där vi tillsammans utforskar din idé, din längtan och hur du kan börja omsätta inspiration till handling. Samtalet ger dig stöd, nya perspektiv och handfasta råd kring både idéutveckling och kreativa metoder, utan att det handlar om prestation eller perfektion.</p><p>Det verkliga hjärtat i Kickstart är det som följer efter samtalet: en inspirerande hemuppgift skickad till dig varje månad under 12 månader. Uppgifterna är utformade för att väcka nyfikenhet, kreativitet och lust till skapande, och är små steg som hjälper dig att hålla din kreativitet levande året runt. De kombinerar skapande med rörelse, utforskande i naturen och experiment med material och tekniker, och ger dig möjlighet att låta kreativiteten bli en naturlig del av vardagen.</p><p><strong>Det här paketet passar dig som</strong></p><ul><li>vill kombinera kreativitet med rörelse och utforskande i naturen</li><li>längtar efter att komma igång med kreativt skapande</li><li>vill uppleva de positiva hälsoeffekterna av skapande, lek och närvaro</li><li>vill få inspiration och vägledning utan långsiktigt engagemang</li><li>vill ha hemuppgifter som håller kreativiteten levande under ett helt år</li><li>vill ge dig själv en meningsfull paus från vardagens krav och prestation</li></ul><p>Kickstart är en möjlighet att öppna dörren till din kreativitet, känna på processen och låta inspiration och skaparlust få plats, med stöd och riktning från samtalet, och med hemuppgifterna som följer dig under året.</p><p><strong>Hur går det till?</strong></p><p>Under det 60-minuters samtalet utforskar vi tillsammans vad som väcker din kreativitet just nu. Du får stöd att hitta riktning, nya perspektiv och konkreta råd som hjälper dig att omsätta inspiration i handling.</p><p><strong>Efter samtalet får du:</strong></p><ul><li>Skriftlig sammanfattning av samtalet</li><li>En inspirerande hemuppgift varje månad under 12 månader, små uppdrag som väcker lust, nyfikenhet och kreativ energi, och som hjälper dig att hålla skapandet levande i vardagen</li></ul><p>Hemuppgifterna är enkla, lustfyllda och handlingsbaserade, små påminnelser om att kreativitet inte behöver vara prestation, utan kan vara lek, utforskande och glädje.</p><p><strong>Min utgångspunkt</strong></p><p><em>Jag tror på skapande som en mänsklig nödvändighet, ett sätt att närma sig sig själv, hitta balans och känna livskraft.<br>Jag tror på nyfikenhet, händerna som verktyg för tanke, och på små steg som skapar långvarig effekt.</em></p><p><em>Det här handlar inte om att prestera.<br>Det handlar om att ta första steget och låta kreativiteten bli en del av ditt liv, med inspiration som följer dig varje månad.</em></p><p><strong>Pris</strong><br>2 500 kr<br>Engångskostnad · Ingen bindning</p>"
+page.coaching2.json,products,secondary_link_text,products.blocks.product_3.settings.secondary_link_text,Läs om friskvårdsbidrag →
+page.coaching2.json,products,label,products.settings.label,Coaching-paket
+page.coaching2.json,products,heading,products.settings.heading,Välj det paket som passar dig
+page.coaching2.json,products,subheading,products.settings.subheading,"Gratis 15-minuters konsultation kan bokas separat om du vill, men ingår inte i paketen."
+page.coaching2.json,cta,text,cta.blocks.benefit_1.settings.text,15 minuters gratis konsultation
+page.coaching2.json,cta,text,cta.blocks.benefit_2.settings.text,Ingen förpliktelse
+page.coaching2.json,cta,text,cta.blocks.benefit_3.settings.text,Online – var du än befinner dig
+page.coaching2.json,cta,text,cta.blocks.benefit_4.settings.text,Personlig och trygg vägledning
+page.coaching2.json,cta,heading,cta.settings.heading,Redo att börja din kreativa resa?
+page.coaching2.json,cta,subtitle,cta.settings.subtitle,"Ta första steget mot ett mer kreativt liv. Boka en kostnadsfri 15-minuters konsultation där vi pratar om dina drömmar, mål och hur jag kan stötta dig."
+page.coaching2.json,cta,cta_text,cta.settings.cta_text,Boka gratis konsultation nu
+page.coaching2.json,testimonial,quote,testimonial.settings.quote,"Jag litar på kompetensen Therese besitter inom det konstnärliga och kreativa, det är en trygghet att luta sig mot henne i samtalen och bolla idéer och få råd."
+page.coaching2.json,testimonial,author,testimonial.settings.author,Kim
+product.coaching.json,main,feature_text,main.blocks.feature_1.settings.feature_text,1 × coachingsamtal á 60 min per video
+product.coaching.json,main,feature_text,main.blocks.feature_2.settings.feature_text,Skriftlig sammanfattning efter 60-minuterssessionen
+product.coaching.json,main,feature_text,main.blocks.feature_3.settings.feature_text,Rekommendation för nästa steg efter sessionen
+product.coaching.json,main,badge_text,main.blocks.badge_1.settings.badge_text,Friskvårdsbidrag godkänd
+product.coaching.json,main,badge_style,main.blocks.badge_1.settings.badge_style,success
+product.coaching.json,main,badge_text,main.blocks.badge_2.settings.badge_text,Flexibla tider
+product.coaching.json,main,badge_style,main.blocks.badge_2.settings.badge_style,neutral
+product.coaching.json,main,wellness_badge_text,main.settings.wellness_badge_text,FRISKVÅRDSBIDRAG
+product.coaching.json,main,hero_label,main.settings.hero_label,Kreativ Coaching
+product.coaching.json,main,price_note,main.settings.price_note,Moms ingår.
+product.coaching.json,main,add_to_cart_text,main.settings.add_to_cart_text,Lägg i varukorgen
+product.coaching.json,main,more_options_text,main.settings.more_options_text,Fler betalningsalternativ
+product.coaching.json,main,description_title,main.settings.description_title,En kickstart för din kreativitet — Friskvårdsbidrag godkänd!
+product.coaching.json,main,description_text,main.settings.description_text,För dig som vill använda friskvårdsbidraget till att öppna dörren till en mer kreativ fritid och som ger mening och balans i livet.
+product.coaching.json,main,features_title,main.settings.features_title,Paketet inkluderar:
+product.coaching-kreativa.json,main,feature_text,main.blocks.feature_1.settings.feature_text,3 × coachingsamtal (1 per månad á 60 min) per video
+product.coaching-kreativa.json,main,feature_text,main.blocks.feature_2.settings.feature_text,Skriftlig sammanfattning efter varje samtal
+product.coaching-kreativa.json,main,feature_text,main.blocks.feature_3.settings.feature_text,Inspirerande hemuppgifter efter varje samtal
+product.coaching-kreativa.json,main,badge_text,main.blocks.badge_1.settings.badge_text,Flexibla tider
+product.coaching-kreativa.json,main,badge_style,main.blocks.badge_1.settings.badge_style,neutral
+product.coaching-kreativa.json,main,hero_label,main.settings.hero_label,Kreativ Coaching
+product.coaching-kreativa.json,main,price_note,main.settings.price_note,Moms ingår.
+product.coaching-kreativa.json,main,add_to_cart_text,main.settings.add_to_cart_text,Lägg i varukorgen
+product.coaching-kreativa.json,main,more_options_text,main.settings.more_options_text,Fler betalningsalternativ
+product.coaching-kreativa.json,main,description_title,main.settings.description_title,Hitta tillbaka till skaparglädjen
+product.coaching-kreativa.json,main,description_text,main.settings.description_text,"Vill du skapa men fastnat i ""hur"" – eller saknar du skaparglädjen du hade förr? Tillsammans hittar vi vägen framåt utan krav eller självkritik, och gör första steget konkret och enkelt."
+product.coaching-kreativa.json,main,features_title,main.settings.features_title,Paketet inkluderar:
+product.coaching-ide.json,main,feature_text,main.blocks.feature_1.settings.feature_text,3 × coachingsamtal (1 per månad á 60 min) per video
+product.coaching-ide.json,main,feature_text,main.blocks.feature_2.settings.feature_text,Skriftlig sammanfattning efter varje samtal
+product.coaching-ide.json,main,feature_text,main.blocks.feature_3.settings.feature_text,Inspirerande hemuppgifter efter varje samtal
+product.coaching-ide.json,main,badge_text,main.blocks.badge_1.settings.badge_text,Populärast
+product.coaching-ide.json,main,badge_style,main.blocks.badge_1.settings.badge_style,success
+product.coaching-ide.json,main,badge_text,main.blocks.badge_2.settings.badge_text,Flexibla tider
+product.coaching-ide.json,main,badge_style,main.blocks.badge_2.settings.badge_style,neutral
+product.coaching-ide.json,main,hero_label,main.settings.hero_label,Kreativ Coaching
+product.coaching-ide.json,main,price_note,main.settings.price_note,Moms ingår.
+product.coaching-ide.json,main,add_to_cart_text,main.settings.add_to_cart_text,Lägg i varukorgen
+product.coaching-ide.json,main,more_options_text,main.settings.more_options_text,Fler betalningsalternativ
+product.coaching-ide.json,main,description_title,main.settings.description_title,Gå från idé till genomförande
+product.coaching-ide.json,main,description_text,main.settings.description_text,"Har du en idé som vill ta form, men vet inte hur du ska börja? Här får du stöd i hela processen: från konstnärlig vägledning till handfasta råd om material och tekniker."
+product.coaching-ide.json,main,features_title,main.settings.features_title,Paketet inkluderar:
+product.coaching-kickstart.json,main,feature_text,main.blocks.feature_1.settings.feature_text,1 × coachingsamtal á 60 min per video
+product.coaching-kickstart.json,main,feature_text,main.blocks.feature_2.settings.feature_text,Skriftlig sammanfattning av samtalet
+product.coaching-kickstart.json,main,feature_text,main.blocks.feature_3.settings.feature_text,Inspirerande hemuppgifter varje månad i 12 månader
+product.coaching-kickstart.json,main,badge_text,main.blocks.badge_1.settings.badge_text,Friskvårdsbidrag godkänd
+product.coaching-kickstart.json,main,badge_style,main.blocks.badge_1.settings.badge_style,success
+product.coaching-kickstart.json,main,badge_text,main.blocks.badge_2.settings.badge_text,Flexibla tider
+product.coaching-kickstart.json,main,badge_style,main.blocks.badge_2.settings.badge_style,neutral
+product.coaching-kickstart.json,main,hero_label,main.settings.hero_label,Kreativ Coaching
+product.coaching-kickstart.json,main,price_note,main.settings.price_note,Moms ingår.
+product.coaching-kickstart.json,main,add_to_cart_text,main.settings.add_to_cart_text,Lägg i varukorgen
+product.coaching-kickstart.json,main,more_options_text,main.settings.more_options_text,Fler betalningsalternativ
+product.coaching-kickstart.json,main,description_title,main.settings.description_title,En kickstart för din kreativitet — Friskvårdsbidrag godkänd!
+product.coaching-kickstart.json,main,description_text,main.settings.description_text,Ta ett första steg mot ett mer kreativt liv. Ett 60-minuters samtal följt av inspirerande hemuppgifter varje månad under 12 månader som håller kreativiteten levande.
+product.coaching-kickstart.json,main,features_title,main.settings.features_title,Paketet inkluderar:
